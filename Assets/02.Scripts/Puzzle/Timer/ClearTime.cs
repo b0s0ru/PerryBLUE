@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Clear : MonoBehaviour
+public class ClearTime : MonoBehaviour
 {
-    public int[] cd;
-    public Changenumber[] d;
+
+    public ChangeTime [] d;
     bool win = false;
     public bool gameclaer = false;
     // Start is called before the first frame update
     void Start()
     {
-      
+
 
 
     }
@@ -22,8 +22,8 @@ public class Clear : MonoBehaviour
         win = true;
         for (int i = 0; i < d.Length; i++)
         {
-           
-            if (cd[i] != d[i].a)
+
+            if (0 != d[i].a)
             {
                 win = false;
             }
@@ -32,7 +32,11 @@ public class Clear : MonoBehaviour
         if (win == true)
         {
             gameclaer = true;
+
+            Debug.Log("Gameclear");
         }
     }
+
+
 }
 
