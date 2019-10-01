@@ -814,26 +814,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2164582068033147501, guid: 3328cdb234cadca42a055f5e80dda3e0,
-        type: 3}
-      propertyPath: m_FillAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164582067891336093, guid: 3328cdb234cadca42a055f5e80dda3e0,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.6037736
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164582067891336093, guid: 3328cdb234cadca42a055f5e80dda3e0,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.6037736
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164582067891336093, guid: 3328cdb234cadca42a055f5e80dda3e0,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.6037736
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3328cdb234cadca42a055f5e80dda3e0, type: 3}
 --- !u!1001 &781691526
@@ -1096,39 +1076,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216985372}
   m_CullTransparentMesh: 0
---- !u!1 &1247210792 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2164582068033147503, guid: 3328cdb234cadca42a055f5e80dda3e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 778672745}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1247210794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247210792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a460f4cf5b94f4094aea60b0c2059b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hps: 100
-  progress: {fileID: 0}
-  hp: {fileID: 1423457691}
---- !u!114 &1423457691 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2164582067891336093, guid: 3328cdb234cadca42a055f5e80dda3e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 778672745}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1575969933 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7661542458899547977, guid: 756eb227871f9614586e6ab685a2e52d,

@@ -16,13 +16,17 @@ public class Player : MonoBehaviour
     float dir=1;
     public Vector2 moveDir;
     SpriteRenderer spriteRenderer;
-    float gravity = 20;
+    public Kpos Kchild;
+    public GameObject Bpos;
+    public GameObject Mpos;
+    float gravity = 25;
+    public bool knife = false;
     public enum PlayerState
     {
-        Wait = 0, Jump, Fall
+        Wait = 0, Jump, Fall, die, Attack, Sit
     }
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         InitPlayer();
     }
@@ -31,14 +35,93 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        SetAnimation();
+       
+        DeadCheck();
 
     }
+
     void FixedUpdate()
     {
-        Playergravity();
-        InputKey();
-        JumpPlayer();
+        if (state != PlayerState.die)
+        {
+            Attack();
+            SetAnimation();
+            Playergravity();
+            InputKey();
+            JumpPlayer();
+            Down();
+            if (knife != false) { Knifes(); }
+        }
+    }
+    void Attack()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && knife == true)
+        {
+            state = PlayerState.Attack;
+            anim.SetTrigger("Attacking");
+            StartCoroutine(Attackis());
+
+
+        }
+    }
+
+    private void Down()
+    {
+
+        if (Input.GetKey(KeyCode.DownArrow) && state == PlayerState.Wait)
+        {
+            anim.SetTrigger("sit");
+            state = PlayerState.Sit;
+            moveDir.x = 0;
+            transform.Translate(new Vector3(0, -0.45f, 0));
+           Mpos.SetActive(false);
+          
+        }
+
+
+        if (Input.GetKey(KeyCode.DownArrow) == false && state == PlayerState.Sit)
+        {
+            anim.SetTrigger("Up");
+            state = PlayerState.Wait;
+            transform.Translate(new Vector3(0, +0.45f, 0));
+            Mpos.SetActive(true);
+        }
+
+
+
+    }
+    void Knifes()
+    {
+        if (knife == true) {
+            anim.SetBool("Knife", true);
+        }
+    }
+    void DeadCheck()
+    {
+
+        if(Hp == 0 && state != PlayerState.die){
+            Die();
+            state = PlayerState.die;
+            Bpos.SetActive(false);
+            Mpos.SetActive(false);
+        }
+        
+    }
+
+    void Die()
+    {
+        anim.SetTrigger("Die");
+        StartCoroutine(Dies());
+    }
+    IEnumerator Dies()
+    {
+        transform.Translate(new Vector3(0, -0.377f, 0));
+        yield return new WaitForSeconds(1f);
+        transform.Translate(new Vector3(0, -0.377f, 0));
+        yield return new WaitForSeconds(0.254f);
+        transform.Translate(new Vector3(0, -0.432f, 0));
+
     }
     void Playergravity()
     {
@@ -55,9 +138,9 @@ public class Player : MonoBehaviour
             state = PlayerState.Fall;
         }
 
-
-        rbody.MovePosition(rbody.position + moveDir * Time.deltaTime);
-
+     
+            rbody.MovePosition(rbody.position + moveDir * Time.deltaTime);
+        
 
     }
 
@@ -81,14 +164,15 @@ public class Player : MonoBehaviour
     }
     void InputKey()
     {
-       
+        if (state == PlayerState.Wait || state==PlayerState.Attack)
+        {
             keys = Input.GetAxis("Horizontal");
             moveDir.x = speed * keys;
             FlipPlayer(keys);
 
 
-        
 
+        }
 
     }
     void FlipPlayer(float key)
@@ -102,12 +186,43 @@ public class Player : MonoBehaviour
         transform.localScale = scale;
     }
 
+
+    IEnumerator Attackis()
+    {
+        yield return new WaitForSeconds(0.1f);
+        if (state == PlayerState.Attack)
+        {
+           Kchild.kp.enabled = true;
+           StartCoroutine(PWaitForIt());
+        }
+
+
+    }
+    IEnumerator PWaitForIt()
+    {
+        yield return new WaitForSeconds(0.15f);
+        if (state == PlayerState.Attack)
+        {
+            state = PlayerState.Wait;
+            if (Kchild.kp.enabled == true)
+            {
+                Kchild.kp.enabled = false;
+            }
+        }
+        else if (Kchild.kp.enabled == true)
+        {
+            Kchild.kp.enabled = false;
+        }
+    }
     void InitPlayer()
     {
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-       
+        
+        Kchild =  transform.GetChild(2).GetComponent<Kpos>();
+        Bpos = transform.GetChild(0).gameObject;
+        Mpos = transform.GetChild(1).gameObject;
         speed = 3.5f;
         Hp = 100;
     }
