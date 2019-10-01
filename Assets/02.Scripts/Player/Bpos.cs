@@ -16,15 +16,17 @@ public class Bpos : MonoBehaviour
     {
 
 
-        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10)
+        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10 && a.state!=Player.PlayerState.die)
         {
 
             a.isGround = true;
             if (a.state == Player.PlayerState.Fall)
             {
                 a.anim.SetTrigger("Land");
+                StartCoroutine("Landai");
+               
             }
-            a.state = Player.PlayerState.Wait;
+           
            
             // a.anim.SetBool("isground", true);
             a.moveDir.y = 0;
@@ -35,6 +37,15 @@ public class Bpos : MonoBehaviour
 
 
     }
+    IEnumerator Landai()
+    {
+        a.transform.Translate(new Vector3(0, -0.13f, 0));
+        a.Mpos.SetActive(false);
+        yield return new WaitForSeconds(0.15f);
+        a.state = Player.PlayerState.Wait;
+        a.transform.Translate(new Vector3(0, +0.13f, 0));
+        a.Mpos.SetActive(true);
+    }
     void OnTriggerExit2D(Collider2D other)
     {
     
@@ -42,7 +53,7 @@ public class Bpos : MonoBehaviour
             if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10)
             {
                 a.isGround = false;
-          //      a.anim.SetTrigger("Fall");
+          //   a.anim.SetTrigger("Fall");
             //    a.anim.SetBool("isground", false);
 
             }
