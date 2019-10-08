@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     public Kpos Kchild;
     public GameObject Bpos;
     public GameObject Mpos;
-    float gravity = 25;
+    float gravity = 28;
     public bool knife = false;
     public enum PlayerState
     {
@@ -126,11 +126,12 @@ public class Player : MonoBehaviour
     void Playergravity()
     {
 
-
+        
         if (isGround == false)
         {
+             
             moveDir.y -= gravity * Time.deltaTime;
-
+        
         }
         if (moveDir.y < 0 && state == PlayerState.Jump)
         {
@@ -153,6 +154,7 @@ public class Player : MonoBehaviour
             moveDir.y = SpeedJump;
             state = PlayerState.Jump;
             anim.SetTrigger("Jumping");
+            
         }
 
 
