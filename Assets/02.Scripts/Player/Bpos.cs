@@ -10,16 +10,22 @@ public class Bpos : MonoBehaviour
     {
         a = gameObject.transform.parent.GetComponent<Player>();
     }
-
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10)
+        {
+            a.isGround = true;
+        }
+    }
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D other)
     {
 
 
-        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10 && a.state!=Player.PlayerState.die)
+        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10 && a.state!=Player.PlayerState.die && a.state !=Player.PlayerState.Jump)
         {
 
-            a.isGround = true;
+           
             if (a.state == Player.PlayerState.Fall)
             {
                 a.anim.SetTrigger("Land");
@@ -39,9 +45,10 @@ public class Bpos : MonoBehaviour
     }
     IEnumerator Landai()
     {
+        
         a.transform.Translate(new Vector3(0, -0.13f, 0));
         a.Mpos.SetActive(false);
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.15f); 
         a.state = Player.PlayerState.Wait;
         a.transform.Translate(new Vector3(0, +0.13f, 0));
         a.Mpos.SetActive(true);
