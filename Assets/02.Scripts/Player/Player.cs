@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
      Rigidbody2D rbody;
     public int Hp;
-    public float speed;
+    public float speed, Fspeed;
     public int Damage;
     public Animator anim;
     float keys;
@@ -126,18 +126,20 @@ public class Player : MonoBehaviour
     void Playergravity()
     {
 
-        
-        if (isGround == false)
+
+        if (isGround == false  )
         {
              
             moveDir.y -= gravity * Time.deltaTime;
-        
-        }
-        if (moveDir.y < 0 && state == PlayerState.Jump)
-        {
             
+        }
+
+        if (moveDir.y < 0)
+        {
             state = PlayerState.Fall;
         }
+          
+        
 
      
             rbody.MovePosition(rbody.position + moveDir * Time.deltaTime);
@@ -153,7 +155,7 @@ public class Player : MonoBehaviour
            
             moveDir.y = SpeedJump + (Mathf.Abs(moveDir.x)*0.4f);
             state = PlayerState.Jump;
-            anim.SetTrigger("Jumping");
+         
             
         }
 
@@ -174,6 +176,11 @@ public class Player : MonoBehaviour
 
 
 
+        }
+        if (state == PlayerState.Fall)
+        {
+            keys = Input.GetAxis("Horizontal");
+            FlipPlayer(keys);
         }
 
     }
@@ -228,5 +235,6 @@ public class Player : MonoBehaviour
         speed = 4.5f;
         Hp = 100;
         SpeedJump = 9;
+        
     }
 }
