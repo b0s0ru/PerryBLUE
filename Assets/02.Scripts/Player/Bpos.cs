@@ -30,7 +30,7 @@ public class Bpos : MonoBehaviour
             {
                 a.anim.SetTrigger("Land");
                 StartCoroutine("Landai");
-               
+                Debug.Log("good");
             }
            
            

@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public int Damage;
     public Animator anim;
     float keys;
-    public float SpeedJump = 9;
+    public float SpeedJump;
     public PlayerState state = PlayerState.Wait;
     public bool isGround = false;
     float dir=1;
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     public Kpos Kchild;
     public GameObject Bpos;
     public GameObject Mpos;
-    float gravity = 28;
+    float gravity = 32;
     public bool knife = false;
     public enum PlayerState
     {
@@ -151,7 +151,7 @@ public class Player : MonoBehaviour
         if (isGround && Input.GetButton("Jump") && state == PlayerState.Wait )
         {
            
-            moveDir.y = SpeedJump;
+            moveDir.y = SpeedJump + (Mathf.Abs(moveDir.x)*0.4f);
             state = PlayerState.Jump;
             anim.SetTrigger("Jumping");
             
@@ -225,7 +225,8 @@ public class Player : MonoBehaviour
         Kchild =  transform.GetChild(2).GetComponent<Kpos>();
         Bpos = transform.GetChild(0).gameObject;
         Mpos = transform.GetChild(1).gameObject;
-        speed = 3.5f;
+        speed = 4.5f;
         Hp = 100;
+        SpeedJump = 9;
     }
 }
