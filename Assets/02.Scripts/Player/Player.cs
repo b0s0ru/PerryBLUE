@@ -127,7 +127,7 @@ public class Player : MonoBehaviour
     {
 
 
-        if (isGround == false  )
+        if (isGround == false)
         {
              
             moveDir.y -= gravity * Time.deltaTime;
@@ -177,11 +177,13 @@ public class Player : MonoBehaviour
 
 
         }
+        /*
         if (state == PlayerState.Fall)
         {
             keys = Input.GetAxis("Horizontal");
             FlipPlayer(keys);
         }
+        */
 
     }
     void FlipPlayer(float key)
