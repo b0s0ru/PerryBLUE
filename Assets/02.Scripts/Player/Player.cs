@@ -153,7 +153,7 @@ public class Player : MonoBehaviour
         if (isGround && Input.GetButton("Jump") && state == PlayerState.Wait )
         {
            
-            moveDir.y = SpeedJump + (Mathf.Abs(moveDir.x)*0.4f);
+            moveDir.y = SpeedJump + (Mathf.Abs(moveDir.x)*0.8f);
             state = PlayerState.Jump;
          
             
@@ -232,9 +232,9 @@ public class Player : MonoBehaviour
         Kchild =  transform.GetChild(2).GetComponent<Kpos>();
         Bpos = transform.GetChild(0).gameObject;
         Mpos = transform.GetChild(1).gameObject;
-        speed = 4.5f;
+        speed = 6.5f;
         Hp = 100;
-        SpeedJump = 9;
+        SpeedJump = 10f;
         
     }
 }
