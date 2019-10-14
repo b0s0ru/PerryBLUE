@@ -25,7 +25,10 @@ public class Kpos : MonoBehaviour
             other.gameObject.SendMessage("MobDamage", 10);
             kp.enabled = false;
         }
-
+        if (other.transform.tag == "Destroy")
+        {
+            other.gameObject.SendMessage("Destroy");
+        }
     
     }
 }

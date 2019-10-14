@@ -22,10 +22,15 @@ public class TimeBlock : MonoBehaviour
     {
 
 
-        if (one) {
-            one = false;
-            StartCoroutine("Clockchange");
+        if (other.transform.tag=="BPos")
+        {
+
+            if (one)
+            {
+                one = false;
+                StartCoroutine("Clockchange");
             }
+        }
     }
 
     // Update is called once per frame
