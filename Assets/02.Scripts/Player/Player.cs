@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-     Rigidbody2D rbody;
+    public Rigidbody2D rbody;
     public int Hp;
     public float speed, Fspeed;
     public int Damage;
@@ -21,10 +21,13 @@ public class Player : MonoBehaviour
     public GameObject Mpos;
     float gravity = 32;
     public bool knife = false;
+  
     public enum PlayerState
+ 
     {
         Wait = 0, Jump, JumpFall, die, Attack, Sit,RunFall
     }
+  
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,10 +37,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetAnimation();
 
-       
         DeadCheck();
-
+        
     }
 
     void FixedUpdate()
@@ -45,7 +48,7 @@ public class Player : MonoBehaviour
         if (state != PlayerState.die)
         {
             Attack();
-            SetAnimation();
+            
             Playergravity();
             InputKey();
             JumpPlayer();
@@ -165,8 +168,10 @@ public class Player : MonoBehaviour
     }
     void SetAnimation()
     {
-
-        anim.SetFloat("speed", Mathf.Abs(moveDir.x));
+        if (keys != 0)
+        {
+            anim.SetFloat("speed", Mathf.Abs(moveDir.x));
+        }
     }
     void InputKey()
     {
@@ -241,4 +246,6 @@ public class Player : MonoBehaviour
         SpeedJump = 10f;
         
     }
+
+    
 }
