@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     public bool knife = false;
     public enum PlayerState
     {
-        Wait = 0, Jump, Fall, die, Attack, Sit
+        Wait = 0, Jump, JumpFall, die, Attack, Sit,RunFall
     }
     // Start is called before the first frame update
     void Awake()
@@ -77,6 +77,7 @@ public class Player : MonoBehaviour
             transform.Translate(new Vector3(0, -0.45f, 0));
            Mpos.SetActive(false);
           
+
         }
 
 
@@ -127,16 +128,16 @@ public class Player : MonoBehaviour
     {
 
 
-        if (isGround == false)
+        if (isGround == false && (state==PlayerState.JumpFall || state == PlayerState.RunFall || state == PlayerState.Jump))
         {
              
             moveDir.y -= gravity * Time.deltaTime;
             
         }
 
-        if (moveDir.y < 0)
+        if (moveDir.y < 0 && state ==PlayerState.Jump)
         {
-            state = PlayerState.Fall;
+            state = PlayerState.JumpFall;
         }
           
         
@@ -155,6 +156,7 @@ public class Player : MonoBehaviour
            
             moveDir.y = SpeedJump + (Mathf.Abs(moveDir.x)*0.8f);
             state = PlayerState.Jump;
+            anim.SetTrigger("Jumping");
          
             
         }
