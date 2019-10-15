@@ -6,6 +6,10 @@ public class Bpos : MonoBehaviour
 {
     // Start is called before the first frame update
     Player a;
+    public bool sidemove;
+    public float sidspeed;
+    public float sidpower = 0.12f;
+    int movevelo;
     private void Start()
     {
         a = gameObject.transform.parent.GetComponent<Player>();
@@ -18,7 +22,26 @@ public class Bpos : MonoBehaviour
             a.isGround = true;
 
         }
+        if (other.gameObject.tag == "Move" && a.moveDir.x == 0 && a.moveDir.y == 0)
+        {
+            
+            sidemove = other.gameObject.GetComponent<MoveBlock>().blockmove;
+            sidspeed = other.gameObject.GetComponent<MoveBlock>().movespeed;
+            
+            if (sidemove == false)
+            {
+               movevelo = 1;
+            }
+            else
+            {
+                movevelo = -1;
+            }
+            a.moveDir.x += sidspeed * sidpower*movevelo;
+            
+            
+        }
     }
+    
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -43,7 +66,9 @@ public class Bpos : MonoBehaviour
             //  a.anim.SetBool("Jumping", false);
 
 
+
         }
+      
 
 
     }
@@ -56,10 +81,11 @@ public class Bpos : MonoBehaviour
         a.state = Player.PlayerState.Wait;
        
         a.transform.Translate(new Vector3(0, +0.13f, 0));
-        a.moveDir.y = 0;0
+        a.moveDir.y = 0;
         a.Mpos.SetActive(true);
 
     }
+    
     void OnTriggerExit2D(Collider2D other)
     {
     

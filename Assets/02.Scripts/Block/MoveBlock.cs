@@ -9,6 +9,7 @@ public class MoveBlock : MonoBehaviour
     public float movespeed = 20;
     float movePower = 0.12f;
     public float a;
+   
     // Start is called before the first frame update
 
     void Start()
@@ -24,7 +25,7 @@ public class MoveBlock : MonoBehaviour
 
 
    void Move() {
-        Vector3 moveVelocity = Vector3.zero;
+       Vector3 moveVelocity = Vector3.zero;
         if (blockmove == false)
         {
             moveVelocity = new Vector3(movePower, 0, 0);
@@ -33,7 +34,7 @@ public class MoveBlock : MonoBehaviour
         {
             moveVelocity = new Vector3(-movePower, 0, 0);
         }
-
+      
         transform.position += moveVelocity * movespeed * Time.deltaTime;
     }
     IEnumerator Blockchange() {
