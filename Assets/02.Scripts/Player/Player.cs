@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     public enum PlayerState
  
     {
-        Wait = 0, Jump, JumpFall, die, Attack, Sit,RunFall
+        Wait = 0, Jump, JumpFall, die, Attack, Sit,RunFall,Falls
     }
   
     // Start is called before the first frame update
