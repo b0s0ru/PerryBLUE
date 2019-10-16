@@ -40,6 +40,28 @@ public class Bpos : MonoBehaviour
             
             
         }
+
+        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10 && a.state != Player.PlayerState.die && (a.state == Player.PlayerState.JumpFall || a.state == Player.PlayerState.RunFall))
+        {
+
+
+            // a.anim.SetBool("isground", true);
+
+            a.moveDir.x = 0;
+            a.anim.SetTrigger("Land");
+
+
+            StartCoroutine("Landai");
+
+
+
+            // a.anim.SetBool("isground", true);
+
+            //  a.anim.SetBool("Jumping", false);
+
+
+
+        }
     }
     
     // Update is called once per frame
@@ -68,12 +90,19 @@ public class Bpos : MonoBehaviour
 
 
         }
-      
+
+        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10)
+        {
+            a.anim.SetBool("isground", true);
+            a.isGround = true;
+
+        }
 
 
     }
     IEnumerator Landai()
     {
+        a.state = Player.PlayerState.Falls;
         a.moveDir.y = 0;
         a.transform.Translate(new Vector3(0, -0.13f, 0));
         a.Mpos.SetActive(false);
