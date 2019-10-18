@@ -7,7 +7,7 @@ public class CameraControl : MonoBehaviour
     Transform target;
    
     private Vector3 offset;
-    public float CameraZ = -10;
+    public float CameraZ = -100;
     // Start is called before the first frame update
     void Start()
     {
