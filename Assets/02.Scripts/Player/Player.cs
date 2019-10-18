@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public float speed, Fspeed;
     public int Damage;
     public Animator anim;
-    float keys;
+    public float keys;
     public float SpeedJump;
     public PlayerState state = PlayerState.Wait;
     public bool isGround = false;
@@ -21,7 +21,8 @@ public class Player : MonoBehaviour
     public GameObject Mpos;
     float gravity = 32;
     public bool knife = false;
-  
+    public bool moveblock = false;
+    public float mbs;
     public enum PlayerState
  
     {
@@ -168,17 +169,24 @@ public class Player : MonoBehaviour
     }
     void SetAnimation()
     {
-        if (keys != 0)
+        if (!moveblock)
         {
             anim.SetFloat("speed", Mathf.Abs(moveDir.x));
         }
+        else
+        {
+            anim.SetFloat("speed", Mathf.Abs(moveDir.x - mbs) );
+        }
+        anim.SetFloat("fallspeed", moveDir.y);
     }
     void InputKey()
     {
         if (state == PlayerState.Wait || state==PlayerState.Attack)
         {
             keys = Input.GetAxis("Horizontal");
-            moveDir.x = speed * keys;
+           
+                moveDir.x = speed * keys;
+          
             FlipPlayer(keys);
 
 
@@ -199,7 +207,7 @@ public class Player : MonoBehaviour
         dir = (key > 0) ? -1 : 1;
 
         Vector3 scale = transform.localScale;
-
+      
         scale.x = Mathf.Abs(scale.x) * dir;
         transform.localScale = scale;
     }

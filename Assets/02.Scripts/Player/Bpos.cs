@@ -9,6 +9,7 @@ public class Bpos : MonoBehaviour
     public bool sidemove;
     public float sidspeed;
     public float sidpower = 0.12f;
+   
     int movevelo;
     private void Start()
     {
@@ -22,12 +23,12 @@ public class Bpos : MonoBehaviour
             a.isGround = true;
 
         }
-        if (other.gameObject.tag == "Move" && a.moveDir.x == 0 && a.moveDir.y == 0)
+        if (other.gameObject.tag == "Move" && a.moveDir.x == 0 )
         {
-            
+            float blockspeeds;
             sidemove = other.gameObject.GetComponent<MoveBlock>().blockmove;
             sidspeed = other.gameObject.GetComponent<MoveBlock>().movespeed;
-            
+            a.moveblock = true;
             if (sidemove == false)
             {
                movevelo = 1;
@@ -36,9 +37,13 @@ public class Bpos : MonoBehaviour
             {
                 movevelo = -1;
             }
-            a.moveDir.x += sidspeed * sidpower*movevelo;
-            
-            
+            blockspeeds = sidspeed * sidpower * movevelo;
+            a.mbs =blockspeeds;
+            a.moveDir.x +=blockspeeds;
+
+
+
+
         }
 
         if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10 && a.state != Player.PlayerState.die && (a.state == Player.PlayerState.JumpFall || a.state == Player.PlayerState.RunFall))
@@ -111,6 +116,7 @@ public class Bpos : MonoBehaviour
        
         a.transform.Translate(new Vector3(0, +0.13f, 0));
         a.moveDir.y = 0;
+
         a.Mpos.SetActive(true);
 
     }
@@ -130,8 +136,14 @@ public class Bpos : MonoBehaviour
 
             //   a.anim.SetTrigger("Fall");
             //    a.anim.SetBool("isground", false);
+            if (other.gameObject.tag == "Move")
+                {
+
+                a.moveblock = false;
+
+                }
 
         }
-        
+
     }
 }

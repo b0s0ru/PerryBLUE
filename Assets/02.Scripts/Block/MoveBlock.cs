@@ -34,7 +34,7 @@ public class MoveBlock : MonoBehaviour
         {
             moveVelocity = new Vector3(-movePower, 0, 0);
         }
-      
+        
         transform.position += moveVelocity * movespeed * Time.deltaTime;
     }
     IEnumerator Blockchange() {
