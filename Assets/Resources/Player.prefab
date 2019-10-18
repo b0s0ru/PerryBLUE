@@ -356,6 +356,7 @@ MonoBehaviour:
   Fspeed: 0
   Damage: 0
   anim: {fileID: 0}
+  keys: 0
   SpeedJump: 9
   state: 0
   isGround: 0
@@ -364,6 +365,8 @@ MonoBehaviour:
   Bpos: {fileID: 0}
   Mpos: {fileID: 0}
   knife: 0
+  moveblock: 0
+  mbs: 0
 --- !u!1 &4890149788593210459
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +461,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00868988, y: -1.3613065}
+  m_Offset: {x: 0.09030151, y: -1.3511051}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -469,7 +472,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.58187866, y: 0.085030794}
+  m_Size: {x: 0.4186554, y: 0.064627886}
   m_EdgeRadius: 0
 --- !u!114 &4890149788593210455
 MonoBehaviour:
