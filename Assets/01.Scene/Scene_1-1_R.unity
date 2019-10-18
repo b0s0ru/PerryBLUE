@@ -954,7 +954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 824747191}
   - component: {fileID: 824747190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1217,6 +1217,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Scene_1-0,1-1_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056017731994268390, guid: d04248413955e03428ad84b7db3b48e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2056017731994268389, guid: d04248413955e03428ad84b7db3b48e5,
         type: 3}
