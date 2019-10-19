@@ -105,19 +105,22 @@ public class Bpos : MonoBehaviour
 
 
     }
+    
     IEnumerator Landai()
     {
         a.state = Player.PlayerState.Falls;
         a.moveDir.y = 0;
         a.transform.Translate(new Vector3(0, -0.13f, 0));
         a.Mpos.SetActive(false);
-        yield return new WaitForSeconds(0.15f); 
+        yield return new WaitForSeconds(0.001f); 
         a.state = Player.PlayerState.Wait;
        
         a.transform.Translate(new Vector3(0, +0.13f, 0));
+        
         a.moveDir.y = 0;
 
         a.Mpos.SetActive(true);
+        
 
     }
     
@@ -129,6 +132,7 @@ public class Bpos : MonoBehaviour
             {
                 a.isGround = false;
             a.anim.SetBool("isground", false);
+            Debug.Log("wall");
             if (a.state == Player.PlayerState.Wait)
             {
                 a.state = Player.PlayerState.RunFall;

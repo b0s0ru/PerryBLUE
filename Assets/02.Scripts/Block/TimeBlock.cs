@@ -9,14 +9,14 @@ public class TimeBlock : MonoBehaviour
     int child;
     public float a;
     bool one = true;
-    BoxCollider2D m_colider;
+    BoxCollider2D m_collider;
     // Start is called before the first frame update
 
 
      void Start()
     {
         child= transform.childCount;
-        m_colider = GetComponent<BoxCollider2D>();
+        m_collider = GetComponent<BoxCollider2D>();
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -52,7 +52,7 @@ public class TimeBlock : MonoBehaviour
             for (int i = 0; i < child; i++)
             {
                 transform.GetChild(i).gameObject.SetActive(false);
-                m_colider.enabled = false;
+                m_collider.enabled = false;
             }
 
         }
@@ -62,7 +62,7 @@ public class TimeBlock : MonoBehaviour
                 for (int i = 0; i < child; i++)
                 {
                     transform.GetChild(i).gameObject.SetActive(true);
-                m_colider.enabled = true;
+                m_collider.enabled = true;
             }
 
             
