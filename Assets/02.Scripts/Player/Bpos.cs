@@ -49,7 +49,7 @@ public class Bpos : MonoBehaviour
         if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10 && a.state != Player.PlayerState.die && (a.state == Player.PlayerState.JumpFall || a.state == Player.PlayerState.RunFall))
         {
 
-
+            Debug.Log("췍");
             // a.anim.SetBool("isground", true);
 
             a.moveDir.x = 0;
@@ -76,10 +76,10 @@ public class Bpos : MonoBehaviour
 
         if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10 && a.state!=Player.PlayerState.die && (a.state==Player.PlayerState.JumpFall|| a.state == Player.PlayerState.RunFall))
         {
-            
-          
-           // a.anim.SetBool("isground", true);
-            
+
+            Debug.Log("췍");
+            // a.anim.SetBool("isground", true);
+
             a.moveDir.x = 0;
             a.anim.SetTrigger("Land");
           
@@ -132,11 +132,12 @@ public class Bpos : MonoBehaviour
             {
                 a.isGround = false;
             a.anim.SetBool("isground", false);
-            Debug.Log("wall");
+         
             if (a.state == Player.PlayerState.Wait)
             {
                 a.state = Player.PlayerState.RunFall;
             }
+           
 
             //   a.anim.SetTrigger("Fall");
             //    a.anim.SetBool("isground", false);
@@ -146,6 +147,15 @@ public class Bpos : MonoBehaviour
                 a.moveblock = false;
 
                 }
+            if ((other.gameObject.tag == "down" || other.gameObject.tag=="time")&& a.state==Player.PlayerState.Sit)
+            {
+                a.state = Player.PlayerState.RunFall;
+                a.anim.SetTrigger("sitFall");
+                a.transform.Translate(new Vector3(0, +0.45f, 0));
+                a.Mpos.SetActive(true);
+                
+
+            }
 
         }
 

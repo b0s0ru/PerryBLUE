@@ -891,6 +891,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 2.5631485
       objectReference: {fileID: 0}
+    - target: {fileID: 4890149788095490041, guid: 96864f776461ae6478f41d0ab2f91b97,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96864f776461ae6478f41d0ab2f91b97, type: 3}
 --- !u!1001 &570529144
@@ -1465,7 +1470,7 @@ GameObject:
   - component: {fileID: 886231335}
   m_Layer: 8
   m_Name: down
-  m_TagString: Untagged
+  m_TagString: down
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2062,7 +2067,7 @@ GameObject:
   - component: {fileID: 1212862325}
   m_Layer: 8
   m_Name: down
-  m_TagString: Untagged
+  m_TagString: down
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2186,7 +2191,7 @@ GameObject:
   - component: {fileID: 1381546630}
   m_Layer: 8
   m_Name: Down
-  m_TagString: Untagged
+  m_TagString: down
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3256,15 +3261,30 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5136086520557248010, guid: 4d6362dc7f383084984502a05ff301ab,
+        type: 3}
+      propertyPath: m_TagString
+      value: time
+      objectReference: {fileID: 0}
     - target: {fileID: 5136086519040462440, guid: 4d6362dc7f383084984502a05ff301ab,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136086519040462440, guid: 4d6362dc7f383084984502a05ff301ab,
+        type: 3}
+      propertyPath: m_TagString
+      value: time
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136086519872636177, guid: 4d6362dc7f383084984502a05ff301ab,
         type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5136086519872636177, guid: 4d6362dc7f383084984502a05ff301ab,
         type: 3}
-      propertyPath: m_Layer
-      value: 8
+      propertyPath: m_TagString
+      value: time
       objectReference: {fileID: 0}
     - target: {fileID: 5136086520557248005, guid: 4d6362dc7f383084984502a05ff301ab,
         type: 3}
@@ -3325,6 +3345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136086519246882999, guid: 4d6362dc7f383084984502a05ff301ab,
+        type: 3}
+      propertyPath: m_TagString
+      value: time
       objectReference: {fileID: 0}
     - target: {fileID: 5136086518742987714, guid: 4d6362dc7f383084984502a05ff301ab,
         type: 3}
