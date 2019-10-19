@@ -78,6 +78,7 @@ public class Player : MonoBehaviour
             anim.SetTrigger("sit");
             state = PlayerState.Sit;
             moveDir.x = 0;
+            keys = 0;
             transform.Translate(new Vector3(0, -0.45f, 0));
            Mpos.SetActive(false);
           
@@ -181,13 +182,16 @@ public class Player : MonoBehaviour
     }
     void InputKey()
     {
-        if (state == PlayerState.Wait || state==PlayerState.Attack)
+        if (state == PlayerState.Wait || state==PlayerState.Attack ||(state==PlayerState.Sit && moveblock))
         {
-            keys = Input.GetAxis("Horizontal");
-           
-                moveDir.x = speed * keys;
+            if (state == PlayerState.Wait || state == PlayerState.Attack)
+            {
+                keys = Input.GetAxis("Horizontal");
+                FlipPlayer(keys);
+            }
+            moveDir.x = speed * keys;
           
-            FlipPlayer(keys);
+            
 
 
 

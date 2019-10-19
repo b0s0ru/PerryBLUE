@@ -18,9 +18,10 @@ public class MoveBlock : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Move();
+
     }
 
 
@@ -42,6 +43,7 @@ public class MoveBlock : MonoBehaviour
         
         yield return new WaitForSeconds(a);
         blockmove = !blockmove;
+        
         StartCoroutine("Blockchange");
     }
 }
