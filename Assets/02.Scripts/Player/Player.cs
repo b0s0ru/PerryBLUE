@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     public GameObject Bpos;
     public GameObject Mpos;
     float gravity = 32;
-    public bool knife = false;
     public bool moveblock = false;
     public float mbs;
     public enum PlayerState
@@ -48,27 +47,16 @@ public class Player : MonoBehaviour
     {
         if (state != PlayerState.die)
         {
-            Attack();
+            
             
             Playergravity();
             InputKey();
             JumpPlayer();
             Down();
-            if (knife != false) { Knifes(); }
+           
         }
     }
-    void Attack()
-    {
-
-        if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && knife == true)
-        {
-            state = PlayerState.Attack;
-            anim.SetTrigger("Attacking");
-            StartCoroutine(Attackis());
-
-
-        }
-    }
+   
 
     private void Down()
     {
@@ -97,12 +85,7 @@ public class Player : MonoBehaviour
 
 
     }
-    void Knifes()
-    {
-        if (knife == true) {
-            anim.SetBool("Knife", true);
-        }
-    }
+  
     void DeadCheck()
     {
 
@@ -217,33 +200,8 @@ public class Player : MonoBehaviour
     }
 
 
-    IEnumerator Attackis()
-    {
-        yield return new WaitForSeconds(0.1f);
-        if (state == PlayerState.Attack)
-        {
-           Kchild.kp.enabled = true;
-           StartCoroutine(PWaitForIt());
-        }
-
-
-    }
-    IEnumerator PWaitForIt()
-    {
-        yield return new WaitForSeconds(0.15f);
-        if (state == PlayerState.Attack)
-        {
-            state = PlayerState.Wait;
-            if (Kchild.kp.enabled == true)
-            {
-                Kchild.kp.enabled = false;
-            }
-        }
-        else if (Kchild.kp.enabled == true)
-        {
-            Kchild.kp.enabled = false;
-        }
-    }
+   
+ 
     void InitPlayer()
     {
         rbody = GetComponent<Rigidbody2D>();

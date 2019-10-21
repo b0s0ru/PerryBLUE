@@ -331,9 +331,10 @@ GameObject:
   - component: {fileID: 6295515466103088213}
   - component: {fileID: 232165974}
   - component: {fileID: 5929565346989682752}
+  - component: {fileID: 1347214026}
   m_Layer: 8
   m_Name: moving_2
-  m_TagString: Untagged
+  m_TagString: Move
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -397,6 +398,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1347214026
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6295515466103088210}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6295515466173118821
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +830,7 @@ GameObject:
   - component: {fileID: 6295515466599959976}
   m_Layer: 8
   m_Name: Moving_#S1-3_P
-  m_TagString: Move
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1002,9 +1024,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6295515466919599985}
   - component: {fileID: 873682553}
+  - component: {fileID: 458507497}
   m_Layer: 8
   m_Name: moving_1
-  m_TagString: Untagged
+  m_TagString: Move
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1040,6 +1063,27 @@ MonoBehaviour:
   blockmove: 0
   movespeed: 20
   a: 0
+--- !u!50 &458507497
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6295515466919599950}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6295515466945418043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,9 +1094,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6295515466945418042}
   - component: {fileID: 586139209}
+  - component: {fileID: 307026788}
   m_Layer: 8
   m_Name: moving_3
-  m_TagString: Untagged
+  m_TagString: Move
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1092,6 +1137,27 @@ MonoBehaviour:
   blockmove: 0
   movespeed: 20
   a: 0
+--- !u!50 &307026788
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6295515466945418043}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6295515467013580479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,9 +1329,10 @@ GameObject:
   - component: {fileID: 6295515467087321659}
   - component: {fileID: 1074721339}
   - component: {fileID: 8922657287546704776}
+  - component: {fileID: 1014042791}
   m_Layer: 8
   m_Name: moving_5
-  m_TagString: Untagged
+  m_TagString: Move
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1327,6 +1394,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1014042791
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6295515467087321656}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6295515467157757184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,9 +1426,10 @@ GameObject:
   - component: {fileID: 6295515467157757187}
   - component: {fileID: 1953714063}
   - component: {fileID: 1305189034671050672}
+  - component: {fileID: 1533645510}
   m_Layer: 8
   m_Name: moving_4
-  m_TagString: Untagged
+  m_TagString: Move
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1404,6 +1493,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2700806, y: 2.1515923}
   m_EdgeRadius: 0
+--- !u!50 &1533645510
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6295515467157757184}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6295515467295436218
 GameObject:
   m_ObjectHideFlags: 0
