@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 4924891143404942821}
   - component: {fileID: 4924891143404942824}
   - component: {fileID: 4924891143404942825}
+  - component: {fileID: 649325592}
   m_Layer: 9
   m_Name: KPlayer
   m_TagString: Player
@@ -472,9 +473,21 @@ MonoBehaviour:
   Kchild: {fileID: 0}
   Bpos: {fileID: 0}
   Mpos: {fileID: 0}
-  knife: 1
   moveblock: 0
+  pnife: 0
   mbs: 0
+--- !u!114 &649325592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924891143404942820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74550ff3f79e40045a82412485072798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4924891143812847549
 GameObject:
   m_ObjectHideFlags: 0
