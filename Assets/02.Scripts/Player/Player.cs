@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public GameObject Mpos;
     float gravity = 32;
     public bool moveblock = false;
+    public bool pnife = false;
     public float mbs;
     public enum PlayerState
  
@@ -47,8 +48,8 @@ public class Player : MonoBehaviour
     {
         if (state != PlayerState.die)
         {
-            
-            
+
+            Attacks();
             Playergravity();
             InputKey();
             JumpPlayer();
@@ -95,7 +96,7 @@ public class Player : MonoBehaviour
             Bpos.SetActive(false);
             Mpos.SetActive(false);
         }
-        
+               
     }
 
     void Die()
@@ -179,6 +180,7 @@ public class Player : MonoBehaviour
 
 
         }
+      
         /*
         if (state == PlayerState.Fall)
         {
@@ -187,6 +189,46 @@ public class Player : MonoBehaviour
         }
         */
 
+    }
+    void Attacks()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && pnife)
+        {
+            state = PlayerState.Attack;
+            anim.SetTrigger("Attacking");
+            StartCoroutine(Attackis());
+
+
+        }
+    }
+
+    IEnumerator Attackis()
+    {
+        yield return new WaitForSeconds(0.1f);
+        if (state == PlayerState.Attack)
+        {
+            Kchild.kp.enabled = true;
+            StartCoroutine(PWaitForIt());
+        }
+
+
+    }
+    IEnumerator PWaitForIt()
+    {
+        yield return new WaitForSeconds(0.15f);
+        if (state == PlayerState.Attack)
+        {
+            state = PlayerState.Wait;
+            if (Kchild.kp.enabled == true)
+            {
+                Kchild.kp.enabled = false;
+            }
+        }
+        else if (Kchild.kp.enabled == true)
+        {
+            Kchild.kp.enabled = false;
+        }
     }
     void FlipPlayer(float key)
     {
