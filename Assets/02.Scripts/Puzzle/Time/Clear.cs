@@ -32,6 +32,7 @@ public class Clear : MonoBehaviour
         if (win == true)
         {
             gameclaer = true;
+            Application.Quit();
         }
     }
 }
