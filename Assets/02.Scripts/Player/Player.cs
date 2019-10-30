@@ -143,7 +143,7 @@ public class Player : MonoBehaviour
         if (isGround && Input.GetButton("Jump") && state == PlayerState.Wait )
         {
            
-            moveDir.y = SpeedJump + (Mathf.Abs(moveDir.x)*0.8f);
+            moveDir.y = SpeedJump;
             state = PlayerState.Jump;
             anim.SetTrigger("Jumping");
          
@@ -255,7 +255,7 @@ public class Player : MonoBehaviour
         Mpos = transform.GetChild(1).gameObject;
         speed = 6.5f;
         Hp = 100;
-        SpeedJump = 10f;
+        SpeedJump = 16.5f;
         
     }
 

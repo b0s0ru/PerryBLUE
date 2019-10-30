@@ -12,7 +12,7 @@ public class ClearTime : MonoBehaviour
     void Start()
     {
 
-
+        
 
     }
 
