@@ -32,7 +32,7 @@ public class ClearTime : MonoBehaviour
         if (win == true)
         {
             gameclaer = true;
-
+            Application.Quit();
             Debug.Log("Gameclear");
         }
     }
