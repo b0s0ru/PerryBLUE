@@ -16,7 +16,7 @@ public class Hpos : MonoBehaviour
         {
 
             a.moveDir.y = -0.5f;
-
+           
 
 
         }
