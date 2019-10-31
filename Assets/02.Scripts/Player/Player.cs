@@ -37,11 +37,19 @@ public class Player : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        SetAnimation();
 
-        DeadCheck();
-        
+    {
+        if (state != PlayerState.die)
+        {
+
+            SetAnimation();
+
+            DeadCheck();
+            Attacks();
+            InputKey();
+            JumpPlayer();
+            Down();
+        }
     }
 
     void FixedUpdate()
@@ -49,11 +57,9 @@ public class Player : MonoBehaviour
         if (state != PlayerState.die)
         {
 
-            Attacks();
+         
             Playergravity();
-            InputKey();
-            JumpPlayer();
-            Down();
+            
            
         }
     }
@@ -166,13 +172,12 @@ public class Player : MonoBehaviour
     }
     void InputKey()
     {
-        if (state == PlayerState.Wait || state==PlayerState.Attack ||(state==PlayerState.Sit && moveblock))
+        if (state != PlayerState.die && state!=PlayerState.Sit || (state==PlayerState.Sit && moveblock))
         {
-            if (state == PlayerState.Wait || state == PlayerState.Attack)
-            {
+            
                 keys = Input.GetAxis("Horizontal");
                 FlipPlayer(keys);
-            }
+            
             moveDir.x = speed * keys;
           
             
@@ -180,15 +185,10 @@ public class Player : MonoBehaviour
 
 
         }
-      
-        /*
-        if (state == PlayerState.Fall)
-        {
-            keys = Input.GetAxis("Horizontal");
-            FlipPlayer(keys);
-        }
-        */
 
+
+      
+        
     }
     void Attacks()
     {
@@ -253,9 +253,9 @@ public class Player : MonoBehaviour
         Kchild =  transform.GetChild(2).GetComponent<Kpos>();
         Bpos = transform.GetChild(0).gameObject;
         Mpos = transform.GetChild(1).gameObject;
-        speed = 6.5f;
+        speed = 7.2f;
         Hp = 100;
-        SpeedJump = 16.5f;
+        SpeedJump = 16.3f;
         
     }
 
