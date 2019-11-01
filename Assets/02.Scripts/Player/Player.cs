@@ -42,13 +42,9 @@ public class Player : MonoBehaviour
         if (state != PlayerState.die)
         {
 
-            SetAnimation();
 
             DeadCheck();
-            Attacks();
-            InputKey();
-            JumpPlayer();
-            Down();
+           
         }
     }
 
@@ -56,8 +52,12 @@ public class Player : MonoBehaviour
     {
         if (state != PlayerState.die)
         {
+            Attacks();
+            InputKey();
+            JumpPlayer();
+            Down();
 
-         
+            SetAnimation();
             Playergravity();
             
            
@@ -72,14 +72,14 @@ public class Player : MonoBehaviour
         {
             anim.SetTrigger("sit");
             state = PlayerState.Sit;
-            moveDir.x = 0;
+           
             keys = 0;
             transform.Translate(new Vector3(0, -0.45f, 0));
            Mpos.SetActive(false);
           
 
         }
-
+      
 
         if (Input.GetKey(KeyCode.DownArrow) == false && state == PlayerState.Sit)
         {
@@ -172,7 +172,32 @@ public class Player : MonoBehaviour
     }
     void InputKey()
     {
-        if (state != PlayerState.die && state!=PlayerState.Sit || (state==PlayerState.Sit && moveblock))
+        if (state == PlayerState.Sit)
+        {
+            if (!moveblock) { moveDir.x = 0; }
+            else
+            {
+                moveDir.x = mbs;
+            }
+        }
+        else if (moveblock &&(state != PlayerState.die))
+        {
+            keys = Input.GetAxis("Horizontal");
+            FlipPlayer(keys);
+            float s = speed * keys;
+            float r = s + mbs;
+            if (r > speed && r>0)
+            {
+                r = speed;
+            }else if(r<speed*-1 && r < 0)
+            {
+                r = speed*-1;
+            }
+                moveDir.x = r;
+           
+
+        }
+       else  if (state != PlayerState.die)
         {
             
                 keys = Input.GetAxis("Horizontal");
