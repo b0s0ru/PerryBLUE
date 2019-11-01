@@ -23,11 +23,10 @@ public class Bpos : MonoBehaviour
             a.isGround = true;
 
         }
-        if (other.gameObject.tag == "Move" && a.moveDir.x == 0 )
+        if (other.gameObject.tag == "Move")
         {
             float blockspeeds;
             sidemove = other.gameObject.GetComponent<MoveBlock>().blockmove;
-            sidspeed = other.gameObject.GetComponent<MoveBlock>().movespeed;
             a.moveblock = true;
             if (sidemove == false)
             {
@@ -39,7 +38,7 @@ public class Bpos : MonoBehaviour
             }
             blockspeeds = sidspeed * sidpower * movevelo;
             a.mbs =blockspeeds;
-            a.moveDir.x +=blockspeeds;
+           
 
 
 
@@ -52,7 +51,7 @@ public class Bpos : MonoBehaviour
             Debug.Log("췍");
             // a.anim.SetBool("isground", true);
 
-            a.moveDir.x = 0;
+            
             a.anim.SetTrigger("Land");
 
 
@@ -72,8 +71,11 @@ public class Bpos : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D other)
     {
-
-
+        if (other.gameObject.tag == "Move")
+        {
+        
+        sidspeed = other.gameObject.GetComponent<MoveBlock>().movespeed;
+        }
         if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10 && a.state!=Player.PlayerState.die && (a.state==Player.PlayerState.JumpFall|| a.state == Player.PlayerState.RunFall))
         {
 
