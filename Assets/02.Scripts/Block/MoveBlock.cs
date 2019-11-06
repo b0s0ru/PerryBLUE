@@ -9,18 +9,20 @@ public class MoveBlock : MonoBehaviour
     public float movespeed = 20;
     float movePower = 0.12f;
     public float a;
-   
+
     // Start is called before the first frame update
 
     void Start()
     {
         StartCoroutine("Blockchange");
-    }
 
+    }
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        Move();
+            Move();
+        
+        
 
     }
 
