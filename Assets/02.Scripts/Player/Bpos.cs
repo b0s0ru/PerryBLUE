@@ -17,12 +17,12 @@ public class Bpos : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10)
+       /* if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10)
         {
             a.anim.SetBool("isground", true);
             a.isGround = true;
 
-        }
+        }*/
         if (other.gameObject.tag == "Move")
         {
             float blockspeeds;
