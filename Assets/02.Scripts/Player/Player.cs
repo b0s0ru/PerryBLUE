@@ -245,12 +245,8 @@ public class Player : MonoBehaviour
         if (state == PlayerState.Attack)
         {
             state = PlayerState.Wait;
-            if (Kchild.kp.enabled == true)
-            {
-                Kchild.kp.enabled = false;
-            }
         }
-        else if (Kchild.kp.enabled == true)
+        if (Kchild.kp.enabled == true)
         {
             Kchild.kp.enabled = false;
         }

@@ -135,7 +135,7 @@ public class Bpos : MonoBehaviour
                 a.isGround = false;
             a.anim.SetBool("isground", false);
          
-            if (a.state == Player.PlayerState.Wait)
+            if (a.state == Player.PlayerState.Wait || a.state==Player.PlayerState.Attack)
             {
                 a.state = Player.PlayerState.RunFall;
             }
