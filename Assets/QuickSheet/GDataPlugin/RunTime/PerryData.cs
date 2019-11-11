@@ -17,16 +17,16 @@ public class PerryData
   public string Name { get {return name; } set { name = value;} }
   
   [SerializeField]
-  string text;
-  public string Text { get {return text; } set { text = value;} }
+  string texts;
+  public string Texts { get {return texts; } set { texts = value;} }
   
   [SerializeField]
-  short choose1;
-  public short Choose1 { get {return choose1; } set { choose1 = value;} }
+  string choose1;
+  public string Choose1 { get {return choose1; } set { choose1 = value;} }
   
   [SerializeField]
-  short choose2;
-  public short Choose2 { get {return choose2; } set { choose2 = value;} }
+  string choose2;
+  public string Choose2 { get {return choose2; } set { choose2 = value;} }
   
   [SerializeField]
   string comment;

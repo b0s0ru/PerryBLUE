@@ -1,4 +1,4 @@
-﻿/*
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,15 +6,12 @@ using UnityEngine;
 public class TextLoader : MonoBehaviour
 {
 
-    public int names;
-    public int log;
-    public int yes;
-    public int no;
+    public int index;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Setting();
     }
 
     // Update is called once per frame
@@ -23,15 +20,27 @@ public class TextLoader : MonoBehaviour
 
     }
 
+    public void Setting()
+    {
+        Texts.instance.Set(index);
+
+    }
     public void Work()
     {
-        Texts.instance.GetText(names, log, yes);
-
+       int s=Texts.instance.NormalScript(index);
+       if(s==1){
+            index++;
+        }
+        else
+        {
+            index++;
+            GameObject.Find("Canvas/UI_normal_script/").SetActive(false);
+        }
 
     }
     public void Work2()
     {
-        Texts.instance.GetText2(names, log, yes, no);
+        //  Texts.instance.GetText2(names, log, yes, no);
     }
 
 
@@ -44,4 +53,3 @@ public class TextLoader : MonoBehaviour
 
     }
 }
-*/

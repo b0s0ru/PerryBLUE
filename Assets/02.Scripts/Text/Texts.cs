@@ -2,25 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-/*
+
 public class Texts : MonoBehaviour
 {
 
 
 
 
-    /*
-    public Text mainText1;
-    public Text mainlog1;
-    public Text yes1;
-    public Text no2;
-    public Text mainText2;
-    public Text mainlog2;
-    public Text yes2;
-    public Level LevelDB;
+
+    public Text name;
+    public Text maintext;
+    public Text Selectmaintext;
+    public Text Next;
+    public int Nextnumber;
+    public Text choose1;
+    public Text chosse2;
+    public Text chosemove1;
+    public Text chosemove2;
+    public Perry PerryDB;
     public int index = 0;
     public static Texts instance;
-    public Scene x;
+  //  public Scene x;
     private void Awake()
     {
         if (Texts.instance == null)
@@ -40,32 +42,39 @@ public class Texts : MonoBehaviour
 
     public void Update()
     {
-
+         
     }
-
-    public void GetText(int index)
+    public void Set(int index)
     {
 
-        mainText1.text = LevelDB.dataArray[index].Textname;
-        mainlog1.text = LevelDB.dataArray[index].Textlog;
-        yes1.text = LevelDB.dataArray[index].Chose1;
-        GameObject.Find("Canvas/UI_object_research/1option").SetActive(true);
-        x.a = LevelDB.dataArray[index].Movesin;
-
-
+        maintext.text = PerryDB.dataArray[index].Texts;
+        name.text = PerryDB.dataArray[index].Name;
+        Next.text = PerryDB.dataArray[index].Choose1;
+       
     }
 
-    public void GetText2(int index)
+    public int NormalScript(int index)
     {
-        mainText2.text = LevelDB.dataArray[index].Textname;
-        mainlog2.text = LevelDB.dataArray[index].Textlog;
+        Nextnumber = PerryDB.dataArray[index].Chosemove1;
+        if (Nextnumber == 1)
+        {
+            maintext.text = PerryDB.dataArray[index + 1].Texts;
+            name.text = PerryDB.dataArray[index + 1].Name;
+            Next.text = PerryDB.dataArray[index + 1].Choose1;
+        }
+        return Nextnumber;
+        // x.a = PerryDB.dataArray[index].Chosemove1;
+    }
+    /*
+    public void SelectScript(int index)
+    {
+        Selectmaintext.text = PerryDB.dataArray[index].Text;
         yes2.text = LevelDB.dataArray[index].Chose1;
         no2.text = LevelDB.dataArray[index].Chose2;
         GameObject.Find("Canvas/UI_object_research/2option").SetActive(true);
-
-    }
+        
+    }*/
 
 
 
 }
-*/
