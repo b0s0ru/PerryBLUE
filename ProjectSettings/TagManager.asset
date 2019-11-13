@@ -20,9 +20,9 @@ TagManager:
   - 
   - Ground
   - Char
-  - 
-  - 
-  - 
+  - BackGround
+  - FrontGround
+  - object
   - 
   - 
   - 
@@ -45,4 +45,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 568180939
+    locked: 0
+  - name: Ground
+    uniqueID: 1880400061
+    locked: 0
+  - name: FrontGround
+    uniqueID: 2538963367
+    locked: 0
+  - name: object
+    uniqueID: 713868829
+    locked: 0
+  - name: Char
+    uniqueID: 634299825
     locked: 0
