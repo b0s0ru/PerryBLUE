@@ -10,7 +10,7 @@ public class Texts : MonoBehaviour
 
 
 
-    public Text name;
+    public Text names;
     public Text maintext;
     public Text Selectmaintext;
     public Text Next;
@@ -48,7 +48,7 @@ public class Texts : MonoBehaviour
     {
 
         maintext.text = PerryDB.dataArray[index].Texts;
-        name.text = PerryDB.dataArray[index].Name;
+        names.text = PerryDB.dataArray[index].Name;
         Next.text = PerryDB.dataArray[index].Choose1;
        
     }
@@ -59,7 +59,7 @@ public class Texts : MonoBehaviour
         if (Nextnumber == 1)
         {
             maintext.text = PerryDB.dataArray[index + 1].Texts;
-            name.text = PerryDB.dataArray[index + 1].Name;
+            names.text = PerryDB.dataArray[index + 1].Name;
             Next.text = PerryDB.dataArray[index + 1].Choose1;
         }
         return Nextnumber;

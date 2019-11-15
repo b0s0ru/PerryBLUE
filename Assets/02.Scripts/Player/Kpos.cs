@@ -10,7 +10,7 @@ public class Kpos : MonoBehaviour
     private void Start()
     {
         kp = GetComponent<Collider2D>();
-        hits = GetComponent<AudioSource>();
+       // hits = GetComponent<AudioSource>();
         kp.enabled = false;
     }
     // Start is called before the first frame update
@@ -20,9 +20,9 @@ public class Kpos : MonoBehaviour
        
         if (other.transform.tag == "Monster")
         {
-            Debug.Log("Mosterhit");
-            hits.Play();
-            other.gameObject.SendMessage("MobDamage", 10);
+            Debug.Log(other.transform.name);
+         //   hits.Play();
+            other.gameObject.SendMessageUpwards("MobDamage", 10);
             kp.enabled = false;
         }
         if (other.transform.tag == "Destroy")
