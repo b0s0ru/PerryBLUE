@@ -19,14 +19,17 @@ public class Player : MonoBehaviour
     public Kpos Kchild;
     public GameObject Bpos;
     public GameObject Mpos;
+    public GameObject SMpos;
+    public GameObject Dpos;
     float gravity = 32;
     public bool moveblock = false;
     public bool pnife = false;
     public float mbs;
+    public bool isUnBeatTime = false;
     public enum PlayerState
  
     {
-        Wait = 0, Jump, JumpFall, die, Attack, Sit,RunFall,Falls
+        Wait = 0, Jump, JumpFall, die, Attack, Sit,RunFall,Falls, Damage
     }
   
     // Start is called before the first frame update
@@ -58,10 +61,11 @@ public class Player : MonoBehaviour
             Down();
 
             SetAnimation();
-            Playergravity();
+          
             
            
         }
+          Playergravity();
     }
    
 
@@ -72,11 +76,13 @@ public class Player : MonoBehaviour
         {
             anim.SetTrigger("sit");
             state = PlayerState.Sit;
-           
-            keys = 0;
             transform.Translate(new Vector3(0, -0.45f, 0));
+            Bpos.transform.Translate(new Vector3(0, +0.3f, 0));
+            keys = 0;
+         
            Mpos.SetActive(false);
-          
+            SMpos.SetActive(true);
+
 
         }
       
@@ -86,7 +92,10 @@ public class Player : MonoBehaviour
             anim.SetTrigger("Up");
             state = PlayerState.Wait;
             transform.Translate(new Vector3(0, +0.45f, 0));
+            Bpos.transform.Translate(new Vector3(0, -0.3f, 0));
             Mpos.SetActive(true);
+            SMpos.SetActive(false);
+           
         }
 
 
@@ -99,37 +108,48 @@ public class Player : MonoBehaviour
         if(Hp == 0 && state != PlayerState.die){
             Die();
             state = PlayerState.die;
+            Dpos.SetActive(true);
             Bpos.SetActive(false);
             Mpos.SetActive(false);
+          
         }
                
     }
 
     void Die()
     {
+        
+      
+      
         anim.SetTrigger("Die");
+        Dpos.transform.Translate(new Vector3(0, +0.255f, 0));
+        transform.Translate(new Vector3(0, -0.255f, 0));
         StartCoroutine(Dies());
     }
     IEnumerator Dies()
     {
-        transform.Translate(new Vector3(0, -0.377f, 0));
-        yield return new WaitForSeconds(1f);
-        transform.Translate(new Vector3(0, -0.377f, 0));
-        yield return new WaitForSeconds(0.254f);
-        transform.Translate(new Vector3(0, -0.432f, 0));
-
+        rbody.constraints = RigidbodyConstraints2D.FreezePositionX;
+       
+      
+        yield return new WaitForSeconds(0.45f);
+        Dpos.transform.Translate(new Vector3(0, +0.455f, 0));
+        transform.Translate(new Vector3(0, -0.455f, 0));
+       
     }
     void Playergravity()
     {
 
 
-        if (isGround == false && (state==PlayerState.JumpFall || state == PlayerState.RunFall || state == PlayerState.Jump))
+        if (isGround == false && (state!=PlayerState.die &&state!=PlayerState.Sit))
         {
              
             moveDir.y -= gravity * Time.deltaTime;
             
         }
-
+        if(state==PlayerState.die)
+        {
+            moveDir.y = -1;
+        }
         if (moveDir.y < 0 && state ==PlayerState.Jump)
         {
             state = PlayerState.JumpFall;
@@ -180,7 +200,7 @@ public class Player : MonoBehaviour
                 moveDir.x = mbs;
             }
         }
-        else if (moveblock &&(state != PlayerState.die))
+        else if (moveblock &&(state != PlayerState.die && state != PlayerState.Damage))
         {
             keys = Input.GetAxis("Horizontal");
             FlipPlayer(keys);
@@ -197,7 +217,7 @@ public class Player : MonoBehaviour
            
 
         }
-       else  if (state != PlayerState.die)
+       else  if (state != PlayerState.die && state != PlayerState.Damage)
         {
             
                 keys = Input.GetAxis("Horizontal");
@@ -227,7 +247,78 @@ public class Player : MonoBehaviour
 
         }
     }
+    void SetDamage(int mDamage)
+    {
+        if (state != PlayerState.die)
+        {
+            if (!isUnBeatTime)
+            {
+                Hp -= mDamage;
+               // state = PlayerState.Damage;
+                isUnBeatTime = true;
 
+
+                StartCoroutine("BeatTime");
+                StartCoroutine("Hit");
+
+            }
+        }
+    }
+    IEnumerator Hit()
+    {
+        rbody.velocity = Vector2.zero;
+        if (state == PlayerState.Sit)
+        {
+            transform.Translate(new Vector3(0, +0.45f, 0));
+            Bpos.transform.Translate(new Vector3(0, -0.3f, 0));
+            Mpos.SetActive(true);
+            SMpos.SetActive(false);
+        }
+        state = PlayerState.Damage;
+
+            moveDir.x = 0;
+            moveDir.y = 0;
+            anim.SetTrigger("Damage");
+            //Vector2 attackedVelocity;
+            // attackedVelocity = new Vector2(dir, 0.5f);
+            // rbody.AddForce(attackedVelocity, ForceMode2D.Impulse);
+            yield return new WaitForSeconds(1f);
+            // anim.SetBool("sit", false);
+            
+                state = PlayerState.Wait;
+            
+           
+        
+        yield return new WaitForSeconds(0.5f);
+
+
+    }
+    IEnumerator BeatTime()
+    {
+        int count = 0;
+
+        for (count = 0; count < 10; count++)
+        {
+
+            if (count % 2 == 0)
+            {
+                spriteRenderer.color = new Color32(255, 255, 255, 90);
+
+            }
+            else
+            {
+                spriteRenderer.color = new Color32(255, 255, 255, 180);
+            }
+            yield return new WaitForSeconds(0.15f);
+
+
+        }
+        spriteRenderer.color = new Color(255, 255, 255, 255);
+
+        isUnBeatTime = false;
+
+        yield return null;
+    }
     IEnumerator Attackis()
     {
         yield return new WaitForSeconds(0.1f);
@@ -237,7 +328,7 @@ public class Player : MonoBehaviour
             StartCoroutine(PWaitForIt());
         }
 
-
+      
     }
     IEnumerator PWaitForIt()
     {
@@ -260,6 +351,7 @@ public class Player : MonoBehaviour
       
         scale.x = Mathf.Abs(scale.x) * dir;
         transform.localScale = scale;
+        
     }
 
 
@@ -274,6 +366,8 @@ public class Player : MonoBehaviour
         Kchild =  transform.GetChild(2).GetComponent<Kpos>();
         Bpos = transform.GetChild(0).gameObject;
         Mpos = transform.GetChild(1).gameObject;
+        SMpos = transform.GetChild(5).gameObject;
+        Dpos= transform.GetChild(6).gameObject;
         speed = 7.2f;
         Hp = 100;
         SpeedJump = 16.3f;

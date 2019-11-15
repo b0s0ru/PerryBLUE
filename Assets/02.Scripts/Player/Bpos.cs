@@ -66,11 +66,19 @@ public class Bpos : MonoBehaviour
 
 
         }
+        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10)
+        {
+            a.anim.SetBool("isground", true);
+            a.isGround = true;
+
+        }
+
     }
-    
+
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D other)
     {
+      
         if (other.gameObject.tag == "Move")
         {
         
@@ -79,7 +87,7 @@ public class Bpos : MonoBehaviour
         if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10 && a.state!=Player.PlayerState.die && (a.state==Player.PlayerState.JumpFall|| a.state == Player.PlayerState.RunFall))
         {
 
-            Debug.Log("췍");
+           
             // a.anim.SetBool("isground", true);
 
             a.moveDir.x = 0;
@@ -154,8 +162,9 @@ public class Bpos : MonoBehaviour
                 a.state = Player.PlayerState.RunFall;
                 a.anim.SetTrigger("sitFall");
                 a.transform.Translate(new Vector3(0, +0.45f, 0));
+                transform.Translate(new Vector3(0, -0.3f, 0));
                 a.Mpos.SetActive(true);
-                
+                a.SMpos.SetActive(false);
 
             }
 
