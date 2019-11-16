@@ -20,6 +20,7 @@ public class MonsterAttack : MonoBehaviour
         {
             
             collision.gameObject.SendMessageUpwards("SetDamage", a.Damage);
+
         }
     }
 

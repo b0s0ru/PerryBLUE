@@ -18,18 +18,21 @@ public class Damages : MonoBehaviour
         {
 
             my.Hp -= mDamage;
-            StartCoroutine("Hit");
             my.state = Monster.MonsterState.Damage;
+            my.anim.SetTrigger("Damage");
+            StartCoroutine("Hit");
+            
+          
         }
     }
     IEnumerator Hit()
     {
 
 
-        spriteRenderer.color = new Color32(0, 255, 255, 255);
-        yield return new WaitForSeconds(0.8f);
-        spriteRenderer.color = new Color(255, 255, 255, 255);
-        my.state = Monster.MonsterState.Tracks;
+      //  spriteRenderer.color = new Color32(0, 255, 255, 255);
+        yield return new WaitForSeconds(1.0f);
+       // spriteRenderer.color = new Color(255, 255, 255, 255);
+        my.state = Monster.MonsterState.Moves;
 
     }
 }

@@ -15,6 +15,7 @@ public class Bpos : MonoBehaviour
     {
         a = gameObject.transform.parent.GetComponent<Player>();
     }
+    
     void OnTriggerStay2D(Collider2D other)
     {
        /* if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10)
@@ -136,7 +137,11 @@ public class Bpos : MonoBehaviour
     
     void OnTriggerExit2D(Collider2D other)
     {
-    
+        if (other.gameObject.tag == "Map")
+        {
+            a.Hp = 0;
+            Destroy(a.gameObject);
+        }
 
             if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10)
             {

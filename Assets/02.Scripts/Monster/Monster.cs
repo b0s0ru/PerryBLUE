@@ -12,7 +12,7 @@ public class Monster : Character
    public static Transform target;
     public MonsterState state;
     
-
+    public Animator anim;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,7 +21,10 @@ public class Monster : Character
         
 
     }
-   
+    private void Start()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {

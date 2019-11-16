@@ -25,7 +25,19 @@ public class Die : MonoBehaviour
 
     void Dead()
     {
-        Destroy(gameObject);
+       
         my.state = Monster.MonsterState.Die;
+        my.anim.SetTrigger("Die");
+        StartCoroutine(Dies());
+    }
+
+    IEnumerator Dies()
+    {
+        
+
+
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+
     }
 }

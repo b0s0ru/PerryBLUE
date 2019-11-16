@@ -111,7 +111,7 @@ public class Player : MonoBehaviour
             Dpos.SetActive(true);
             Bpos.SetActive(false);
             Mpos.SetActive(false);
-          
+            SMpos.SetActive(false);
         }
                
     }
@@ -282,14 +282,14 @@ public class Player : MonoBehaviour
             //Vector2 attackedVelocity;
             // attackedVelocity = new Vector2(dir, 0.5f);
             // rbody.AddForce(attackedVelocity, ForceMode2D.Impulse);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             // anim.SetBool("sit", false);
             
                 state = PlayerState.Wait;
             
            
         
-        yield return new WaitForSeconds(0.5f);
+       // yield return new WaitForSeconds(0.5f);
 
 
     }
@@ -309,7 +309,7 @@ public class Player : MonoBehaviour
             {
                 spriteRenderer.color = new Color32(255, 255, 255, 180);
             }
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.1f);
 
 
         }
