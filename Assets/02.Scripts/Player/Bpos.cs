@@ -137,7 +137,7 @@ public class Bpos : MonoBehaviour
     
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Map")
+        if (other.gameObject.tag == "Map" && a.state!=Player.PlayerState.die)
         {
             a.Hp = 0;
             Destroy(a.gameObject);
@@ -166,8 +166,8 @@ public class Bpos : MonoBehaviour
             {
                 a.state = Player.PlayerState.RunFall;
                 a.anim.SetTrigger("sitFall");
-                a.transform.Translate(new Vector3(0, +0.45f, 0));
-                transform.Translate(new Vector3(0, -0.3f, 0));
+              //  a.transform.Translate(new Vector3(0, +0.45f, 0));
+                //transform.Translate(new Vector3(0, -0.3f, 0));
                 a.Mpos.SetActive(true);
                 a.SMpos.SetActive(false);
 
