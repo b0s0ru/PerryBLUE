@@ -46,7 +46,7 @@ public class Bpos : MonoBehaviour
 
         }
 
-        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10 && a.state != Player.PlayerState.die && (a.state == Player.PlayerState.JumpFall || a.state == Player.PlayerState.RunFall))
+        if (other.gameObject.layer == 8 && a.state != Player.PlayerState.die && (a.state == Player.PlayerState.JumpFall || a.state == Player.PlayerState.RunFall))
         {
 
             Debug.Log("췍");
@@ -54,9 +54,9 @@ public class Bpos : MonoBehaviour
 
             
             a.anim.SetTrigger("Land");
-
-
-            StartCoroutine("Landai");
+            a.moveDir.y = 0;
+            a.state = Player.PlayerState.Wait;
+            //     StartCoroutine("Landai");
 
 
 
@@ -67,7 +67,7 @@ public class Bpos : MonoBehaviour
 
 
         }
-        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10)
+        if (other.gameObject.layer == 8)
         {
             a.anim.SetBool("isground", true);
             a.isGround = true;
@@ -85,20 +85,20 @@ public class Bpos : MonoBehaviour
         
         sidspeed = other.gameObject.GetComponent<MoveBlock>().movespeed;
         }
-        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10 && a.state!=Player.PlayerState.die && (a.state==Player.PlayerState.JumpFall|| a.state == Player.PlayerState.RunFall))
+        if (other.gameObject.layer == 8&& a.state!=Player.PlayerState.die && (a.state==Player.PlayerState.JumpFall|| a.state == Player.PlayerState.RunFall))
         {
 
            
             // a.anim.SetBool("isground", true);
 
             a.moveDir.x = 0;
+
+
+
+          //  StartCoroutine("Landai");
+            a.moveDir.y = 0;
             a.anim.SetTrigger("Land");
-          
-
-            StartCoroutine("Landai");
-         
-           
-
+            a.state = Player.PlayerState.Wait;
             // a.anim.SetBool("isground", true);
 
             //  a.anim.SetBool("Jumping", false);
@@ -107,7 +107,7 @@ public class Bpos : MonoBehaviour
 
         }
 
-        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10)
+        if (other.gameObject.layer == 8)
         {
             a.anim.SetBool("isground", true);
             a.isGround = true;
@@ -116,24 +116,25 @@ public class Bpos : MonoBehaviour
 
 
     }
-    
+    /*
     IEnumerator Landai()
     {
-        a.state = Player.PlayerState.Falls;
-        a.moveDir.y = 0;
-        a.transform.Translate(new Vector3(0, -0.13f, 0));
-        a.Mpos.SetActive(false);
-        yield return new WaitForSeconds(0.001f); 
-        a.state = Player.PlayerState.Wait;
+        
+       // a.state = Player.PlayerState.Falls;
+      
+      //  a.transform.Translate(new Vector3(0, -0.13f, 0));
+      //  a.Mpos.SetActive(false);
+      //  yield return new WaitForSeconds(0.001f); 
        
-        a.transform.Translate(new Vector3(0, +0.13f, 0));
+       
+     //   a.transform.Translate(new Vector3(0, +0.13f, 0));
         
         a.moveDir.y = 0;
 
-        a.Mpos.SetActive(true);
+       // a.Mpos.SetActive(true);
         
 
-    }
+    }*/
     
     void OnTriggerExit2D(Collider2D other)
     {
@@ -143,7 +144,7 @@ public class Bpos : MonoBehaviour
             Destroy(a.gameObject);
         }
 
-            if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10)
+            if (other.gameObject.layer == 8)
             {
                 a.isGround = false;
             a.anim.SetBool("isground", false);
