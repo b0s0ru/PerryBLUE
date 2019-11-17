@@ -76,8 +76,8 @@ public class Player : MonoBehaviour
         {
             anim.SetTrigger("sit");
             state = PlayerState.Sit;
-            transform.Translate(new Vector3(0, -0.45f, 0));
-            Bpos.transform.Translate(new Vector3(0, +0.3f, 0));
+           // transform.Translate(new Vector3(0, -0.45f, 0));
+          // Bpos.transform.Translate(new Vector3(0, +0.3f, 0));
             keys = 0;
          
            Mpos.SetActive(false);
@@ -91,8 +91,8 @@ public class Player : MonoBehaviour
         {
             anim.SetTrigger("Up");
             state = PlayerState.Wait;
-            transform.Translate(new Vector3(0, +0.45f, 0));
-            Bpos.transform.Translate(new Vector3(0, -0.3f, 0));
+         //   transform.Translate(new Vector3(0, +0.45f, 0));
+         //   Bpos.transform.Translate(new Vector3(0, -0.3f, 0));
             Mpos.SetActive(true);
             SMpos.SetActive(false);
            
@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
         if(Hp == 0 && state != PlayerState.die){
             Die();
             state = PlayerState.die;
-            Dpos.SetActive(true);
+           Dpos.SetActive(true);
             Bpos.SetActive(false);
             Mpos.SetActive(false);
             SMpos.SetActive(false);
@@ -123,17 +123,18 @@ public class Player : MonoBehaviour
       
         anim.SetTrigger("Die");
         Dpos.transform.Translate(new Vector3(0, +0.255f, 0));
-        transform.Translate(new Vector3(0, -0.255f, 0));
-        StartCoroutine(Dies());
+      //  transform.Translate(new Vector3(0, -0.255f, 0));
+      //  StartCoroutine(Dies());
     }
     IEnumerator Dies()
     {
+        moveDir.x = 0;
         rbody.constraints = RigidbodyConstraints2D.FreezePositionX;
        
       
-        yield return new WaitForSeconds(0.45f);
+        yield return new WaitForSeconds(3f);
         Dpos.transform.Translate(new Vector3(0, +0.455f, 0));
-        transform.Translate(new Vector3(0, -0.455f, 0));
+      //  transform.Translate(new Vector3(0, -0.455f, 0));
        
     }
     void Playergravity()
@@ -269,8 +270,8 @@ public class Player : MonoBehaviour
         rbody.velocity = Vector2.zero;
         if (state == PlayerState.Sit)
         {
-            transform.Translate(new Vector3(0, +0.45f, 0));
-            Bpos.transform.Translate(new Vector3(0, -0.3f, 0));
+         //   transform.Translate(new Vector3(0, +0.45f, 0));
+         //   Bpos.transform.Translate(new Vector3(0, -0.3f, 0));
             Mpos.SetActive(true);
             SMpos.SetActive(false);
         }
@@ -369,7 +370,7 @@ public class Player : MonoBehaviour
         SMpos = transform.GetChild(5).gameObject;
         Dpos= transform.GetChild(6).gameObject;
         speed = 7.2f;
-        Hp = 100;
+        Hp = 10;
         SpeedJump = 16.3f;
         
     }
