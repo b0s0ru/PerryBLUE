@@ -12,7 +12,7 @@ public class Hpos : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.layer >= 8 && other.gameObject.layer <= 10 && (a.state == Player.PlayerState.Jump))
+        if (other.gameObject.layer == 8 && (a.state == Player.PlayerState.Jump))
         {
 
             a.moveDir.y = -0.5f;

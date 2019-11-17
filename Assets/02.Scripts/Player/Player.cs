@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    
     public Rigidbody2D rbody;
     public int Hp;
     public float speed, Fspeed;
@@ -22,14 +23,17 @@ public class Player : MonoBehaviour
     public GameObject SMpos;
     public GameObject Dpos;
     float gravity = 32;
+    AudioSource Runbgm;
+    AudioSource Attackbgm;
     public bool moveblock = false;
     public bool pnife = false;
     public float mbs;
     public bool isUnBeatTime = false;
+    public bool lands = false;
     public enum PlayerState
  
     {
-        Wait = 0, Jump, JumpFall, die, Attack, Sit,RunFall,Falls, Damage
+        Wait = 0, Jump, JumpFall, die, Attack, Sit,RunFall, Damage
     }
   
     // Start is called before the first frame update
@@ -46,7 +50,7 @@ public class Player : MonoBehaviour
         {
 
 
-            DeadCheck();
+           
            
         }
     }
@@ -55,11 +59,12 @@ public class Player : MonoBehaviour
     {
         if (state != PlayerState.die)
         {
+            DeadCheck();
             Attacks();
             InputKey();
             JumpPlayer();
             Down();
-
+            RunBgm();
             SetAnimation();
           
             
@@ -106,21 +111,24 @@ public class Player : MonoBehaviour
     {
 
         if(Hp == 0 && state != PlayerState.die){
+           
             Die();
             state = PlayerState.die;
            Dpos.SetActive(true);
             Bpos.SetActive(false);
             Mpos.SetActive(false);
             SMpos.SetActive(false);
+            moveDir.x = 0;
+            
         }
                
     }
 
     void Die()
     {
+
+
         
-      
-      
         anim.SetTrigger("Die");
         Dpos.transform.Translate(new Vector3(0, +0.255f, 0));
       //  transform.Translate(new Vector3(0, -0.255f, 0));
@@ -128,7 +136,7 @@ public class Player : MonoBehaviour
     }
     IEnumerator Dies()
     {
-        moveDir.x = 0;
+        
         rbody.constraints = RigidbodyConstraints2D.FreezePositionX;
        
       
@@ -149,6 +157,7 @@ public class Player : MonoBehaviour
         }
         if(state==PlayerState.die)
         {
+           
             moveDir.y = -1;
         }
         if (moveDir.y < 0 && state ==PlayerState.Jump)
@@ -180,7 +189,7 @@ public class Player : MonoBehaviour
 
     }
     void SetAnimation()
-    {
+    {   
         if (!moveblock)
         {
             anim.SetFloat("speed", Mathf.Abs(moveDir.x));
@@ -322,6 +331,8 @@ public class Player : MonoBehaviour
     }
     IEnumerator Attackis()
     {
+        
+        Attackbgm.Play();
         yield return new WaitForSeconds(0.1f);
         if (state == PlayerState.Attack)
         {
@@ -345,7 +356,9 @@ public class Player : MonoBehaviour
     }
     void FlipPlayer(float key)
     {
+        if (state != PlayerState.die)
         if (key == 0) return;
+        
         dir = (key > 0) ? -1 : 1;
 
         Vector3 scale = transform.localScale;
@@ -355,9 +368,25 @@ public class Player : MonoBehaviour
         
     }
 
+    void RunBgm()
+    {
 
-   
- 
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && lands == false && state == PlayerState.Wait)
+        {
+
+            lands = true;
+            Invoke("SRunBgm", 0.3f);
+        }
+
+    }
+    void SRunBgm()
+    {
+        lands = false;
+      
+        Runbgm.Play();
+    }
+
+
     void InitPlayer()
     {
         rbody = GetComponent<Rigidbody2D>();
@@ -366,11 +395,13 @@ public class Player : MonoBehaviour
         
         Kchild =  transform.GetChild(2).GetComponent<Kpos>();
         Bpos = transform.GetChild(0).gameObject;
+        Attackbgm = GetComponent<AudioSource>();
+        Runbgm = Bpos.GetComponent<AudioSource>();
         Mpos = transform.GetChild(1).gameObject;
         SMpos = transform.GetChild(5).gameObject;
         Dpos= transform.GetChild(6).gameObject;
         speed = 7.2f;
-        Hp = 10;
+        Hp = 100;
         SpeedJump = 16.3f;
         
     }
