@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class NextScene : MonoBehaviour
 {
-    public int[] cd;
-    public string password;
+   
+    
     int Scenenumber;
     // Start is called before the first frame update
     void Start()

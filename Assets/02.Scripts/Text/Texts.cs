@@ -15,10 +15,11 @@ public class Texts : MonoBehaviour
     public Text Selectmaintext;
     public Text Next;
     public int Nextnumber;
+    public int QNextnumber;
     public Text choose1;
-    public Text chosse2;
-    public Text chosemove1;
-    public Text chosemove2;
+    public Text choose2;
+    public int chosemove1;
+    public int chosemove2;
     public Perry PerryDB;
     public int index = 0;
     public static Texts instance;
@@ -52,19 +53,63 @@ public class Texts : MonoBehaviour
         Next.text = PerryDB.dataArray[index].Choose1;
        
     }
+    public void Set2(int index)
+    {
+
+        Selectmaintext.text = PerryDB.dataArray[index].Texts;
+        choose1.text = PerryDB.dataArray[index].Choose1;
+        choose2.text = PerryDB.dataArray[index].Choose2;
+
+    }
 
     public int NormalScript(int index)
     {
+       
         Nextnumber = PerryDB.dataArray[index].Chosemove1;
-        if (Nextnumber == 1)
+
+        QNextnumber = PerryDB.dataArray[index+1].Chosemove2;
+        if (Nextnumber == 0)
+        {
+            return Nextnumber;
+        }
+        else if (Nextnumber == 1 && QNextnumber == -1)
         {
             maintext.text = PerryDB.dataArray[index + 1].Texts;
             names.text = PerryDB.dataArray[index + 1].Name;
             Next.text = PerryDB.dataArray[index + 1].Choose1;
+            return Nextnumber;
+        }
+        else if(QNextnumber !=-1)
+        {
+            Selectmaintext.text= PerryDB.dataArray[index + 1].Texts;
+            choose1.text= PerryDB.dataArray[index + 1].Choose1;
+            choose2.text = PerryDB.dataArray[index + 1].Choose2;
+            return index+1;
         }
         return Nextnumber;
         // x.a = PerryDB.dataArray[index].Chosemove1;
     }
+
+  
+    public int yesScript(int s)
+    {
+        int temp = PerryDB.dataArray[s].Chosemove1-2;
+        maintext.text = PerryDB.dataArray[temp].Texts;
+        names.text = PerryDB.dataArray[temp].Name;
+        Next.text = PerryDB.dataArray[temp].Choose1;
+        return temp;
+    }
+    public int noScript(int s)
+    {
+        
+        int temp = PerryDB.dataArray[s].Chosemove2-2;
+        maintext.text = PerryDB.dataArray[temp].Texts;
+        names.text = PerryDB.dataArray[temp].Name;
+        Next.text = PerryDB.dataArray[temp].Choose1;
+        Debug.Log(temp);
+        return temp;
+    }
+   
     /*
     public void SelectScript(int index)
     {
