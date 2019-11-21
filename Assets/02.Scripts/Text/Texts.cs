@@ -66,12 +66,15 @@ public class Texts : MonoBehaviour
     {
        
         Nextnumber = PerryDB.dataArray[index].Chosemove1;
-
+        
         QNextnumber = PerryDB.dataArray[index+1].Chosemove2;
-        if (Nextnumber == 0)
+        
+      
+       if (Nextnumber == 0 || Nextnumber == -2)
         {
             return Nextnumber;
         }
+        
         else if (Nextnumber == 1 && QNextnumber == -1)
         {
             maintext.text = PerryDB.dataArray[index + 1].Texts;
@@ -90,10 +93,11 @@ public class Texts : MonoBehaviour
         // x.a = PerryDB.dataArray[index].Chosemove1;
     }
 
-  
+   
     public int yesScript(int s)
     {
         int temp = PerryDB.dataArray[s].Chosemove1-2;
+        Debug.Log(temp);
         maintext.text = PerryDB.dataArray[temp].Texts;
         names.text = PerryDB.dataArray[temp].Name;
         Next.text = PerryDB.dataArray[temp].Choose1;
