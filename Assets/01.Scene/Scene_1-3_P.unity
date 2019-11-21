@@ -1157,8 +1157,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8922803840385392713, guid: 474c1744570750a47a64e1aea2000d2c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8922803840385392713, guid: 474c1744570750a47a64e1aea2000d2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 474c1744570750a47a64e1aea2000d2c, type: 3}
+--- !u!1 &964205273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8922803840385392713, guid: 474c1744570750a47a64e1aea2000d2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 964205272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &964205274
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964205273}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 40, y: 10.800781}
+    newSize: {x: 40, y: 10.800781}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -20.737936, y: 5.11792}
+      - {x: -19.815516, y: -4.8354487}
+      - {x: 19.446556, y: -4.552978}
+      - {x: 18.33965, y: 5.0237617}
 --- !u!1001 &1060435245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2165,7 +2210,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingShape2D
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 964205274}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70e2e3f1c056a294792aa1fb92c14bee, type: 3}
 --- !u!1001 &1078078553300316728
