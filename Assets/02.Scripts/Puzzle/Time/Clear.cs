@@ -8,12 +8,13 @@ public class Clear : MonoBehaviour
     public Changenumber[] d;
     bool win = false;
     public bool gameclaer = false;
+    int Scenenumber;
     // Start is called before the first frame update
     void Start()
     {
-      
 
 
+        Scenenumber = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
@@ -32,7 +33,8 @@ public class Clear : MonoBehaviour
         if (win == true)
         {
             gameclaer = true;
-            Application.Quit();
+            Invoke("Scenemove", 0.2f);
+            SceneManager.LoadScene(Scenenumber + 1);
         }
     }
 }

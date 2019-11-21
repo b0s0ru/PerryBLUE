@@ -578,7 +578,7 @@ MonoBehaviour:
     chosemove2: -1
   - index: 0
     name: "\uD398\uB9AC"
-    texts: "\uBAA8\uB4E0 \uC870\uC0AC\uB97C \uB05D\uB0B8 \uAC83 \uAC19\uB2E4."
+    texts: "\uCDA9\uBD84\uD788 \uC870\uC0AC\uB97C \uB05D\uB0B8 \uAC83 \uAC19\uB2E4."
     choose1: "\uB9C8\uCE68"
     choose2: 
     comment: "\uC870\uC0AC\uB97C \uBAA8\uB450 \uD588\uC744 \uB54C / \uB2E4\uC74C \uB9F5
@@ -621,7 +621,7 @@ MonoBehaviour:
       \uB2EC\uB825\uC774\uB2E4. \uC138\uC6D4\uC758 \uD754\uC801\uC5D0 \uD76C\uBBF8\uD574\uC9C4
       \uC778\uC1C4\uBC88\uD638\uB294 2052."
     choose1: "\uB2E4\uC74C"
-    choose2: 
+    choose2: 0
     comment: 
     map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
     mapkinds: "\uC870\uC0AC"
@@ -654,7 +654,7 @@ MonoBehaviour:
     mapkinds: "\uC870\uC0AC"
     scenenuber: 
     kinds: O
-    chosemove1: 0
+    chosemove1: -3
     chosemove2: -1
   - index: 0
     name: "\uC5F0\uAD6C\uC18C 3\uCE35 \uC790\uB3D9\uBB38"
@@ -662,6 +662,468 @@ MonoBehaviour:
     choose1: "\uB9C8\uCE68"
     choose2: 
     comment: "\uC22B\uC790\uB9DE\uCD94\uAE30 \uD37C\uC990 0425 / \uB2E4\uC74C \uB9F5
+      \uC774\uB3D9"
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: -3
+    chosemove2: -1
+  - index: 0
+    name: "\uB2E8\uB2E8\uD55C \uACF5\uAD6C\uC0C1\uC790"
+    texts: "\uAD6C\uC131\uD488\uC774 \uC54C\uCC2C \u321C\uC0E8\uC0E4 N90\xB0 \uACF5\uAD6C\uC0C1\uC790.
+      \uB2E8\uB2E8\uD574\uBCF4\uC774\uC9C0\uB9CC \uB9C9\uC0C1 \uC774\uC74C\uC0C8 \uB9C8\uAC10\uC740
+      \uD5D0\uAC81\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uB2E8\uB2E8\uD55C \uACF5\uAD6C\uC0C1\uC790"
+    texts: "\uC774\uAC83\uB9CC \uC788\uC73C\uBA74 \uAC04\uB2E8\uD558\uAC8C \uAE30\uACC4\uB97C
+      \uC190\uBCF4\uB294 \uAC83 \uC815\uB3C4\uB294 \uC5B4\uB835\uC9C0 \uC54A\uC744
+      \uAC83 \uAC19\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uB2E8\uB2E8\uD55C \uACF5\uAD6C\uC0C1\uC790"
+    texts: "\uBC18\uD22C\uBA85\uD55C \uB69C\uAED1 \uC544\uB798\uB85C \uB3D9\uBD09\uB41C
+      \uD488\uC9C8\uBCF4\uC99D\uC11C\uAC00 \uBCF4\uC778\uB2E4. \uC2DC\uB9AC\uC5BC
+      \uB118\uBC84 8214-12565."
+    choose1: "\uB9C8\uCE68"
+    choose2: 
+    comment: "\uC774\uBBF8\uC9C0 [\uD488\uC9C8\uBCF4\uC99D\uC11C]"
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: -3
+    chosemove2: -1
+  - index: 0
+    name: "\uAF49 \uCC2C \uC4F0\uB808\uAE30\uD1B5"
+    texts: "\uD50C\uB77C\uC2A4\uD2F1 \uC7AC\uC9C8\uC758 \uC4F0\uB808\uAE30\uD1B5.
+      \uAD6C\uACA8\uC9C4 \uC885\uC774\uB4E4\uB85C \uAC00\uB4DD \uCC28 \uC788\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uAF49 \uCC2C \uC4F0\uB808\uAE30\uD1B5"
+    texts: "\uC790\uC138\uD788\uBCF4\uB2C8 \uBAA8\uB450 \uD55C \uC0AC\uB78C\uC5D0\uAC8C
+      \uBC1B\uC740 \uD3B8\uC9C0\uB4E4\uC774\uB2E4. \uD655\uC778\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+    choose1: "\uD655\uC778\uD55C\uB2E4."
+    choose2: "\uD655\uC778\uD558\uC9C0 \uC54A\uB294\uB2E4."
+    comment: "\uD655\uC778\uD55C\uB2E4 - \uC774\uBBF8\uC9C0 / \uD655\uC778\uD558\uC9C0
+      \uC54A\uB294\uB2E4 - 22"
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: -3
+    chosemove2: 22
+  - index: 0
+    name: "\uCC22\uC5B4\uC9C4 \uC0AC\uC9C4"
+    texts: "\uADC0\uD241\uC774\uAC00 \uCC22\uC5B4\uC9C4 \uC0AC\uC9C4. \uC6D0\uB798\uB294
+      3\uBA85\uC758 \uC0AC\uC9C4\uC73C\uB85C \uCD94\uC815\uB41C\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uCC22\uC5B4\uC9C4 \uC0AC\uC9C4"
+    texts: "\uC5B4\uAE68\uB3D9\uBB34\uB97C \uD558\uACE0 \uC788\uB294 \uB0A8\uB140
+      \uB450 \uBA85\uACFC, \uC5BC\uAD74 \uBD80\uBD84\uC774 \uC18C\uC2E4\uB41C \uB2E4\uB978
+      \uC0AC\uB78C."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uCC22\uC5B4\uC9C4 \uC0AC\uC9C4"
+    texts: "\uC0AC\uC9C4 \uB4B7\uBA74\uC5D0 \uAFB9\uAFB9 \uB20C\uB7EC \uC4F4 \uAE00\uC528\uAC00
+      \uC788\uB2E4. \u201C\uBC30\uC2E0\uC790\u201D"
+    choose1: "\uB9C8\uCE68"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 0
+    chosemove2: -1
+  - index: 0
+    name: "\uC77C\uBC18 \uC2A4\uD328\uB108"
+    texts: "\uD3C9\uBC94\uD55C \uC2A4\uD328\uB108\uB2E4. \uC190\uC7A1\uC774 \uC544\uB798
+      \uBD80\uBD84\uC5D0 \uD14C\uC774\uD504\uB85C \uBD99\uC5EC\uB193\uC740 \uBA54\uC2DC\uC9C0\uAC00
+      \uC788\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uC77C\uBC18 \uC2A4\uD328\uB108"
+    texts: "\uD655\uC778\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+    choose1: "\uD655\uC778\uD55C\uB2E4."
+    choose2: "\uD655\uC778\uD558\uC9C0 \uC54A\uB294\uB2E4."
+    comment: "\uC774\uBBF8\uC9C0 [\uBA54\uC2DC\uC9C0]"
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: -3
+    chosemove2: 22
+  - index: 0
+    name: "\uC77C\uBC18 \uC2A4\uD328\uB108"
+    texts: "\uC774 \uB3C4\uAD6C\uB294 \uB9D0\uB809\uC758 \uAC83\uC774 \uC544\uB2D9\uB2C8\uB2E4.\uB9CC\uC57D
+      \uC774 \uBA4D\uCCAD\uD55C \uB3C4\uAD6C\uAC00 \uBA4B\uB300\uB85C \uB3CC\uC544\uB2E4\uB2C8\uB294
+      \uAC83\uC744 \uBC1C\uACAC\uD55C\uB2E4\uBA74 \uC7AC\uBE68\uB9AC \uACF5\uAD6C\uC0C1\uC790\uC5D0
+      \uB123\uC5B4\uC8FC\uC2ED\uC2DC\uC624."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uD734\uB300\uC6A9 \uB124\uBE14\uB77C\uC774\uC800"
+    texts: "\uD3D0\uC5D0 \uAE30\uCCB4 \uD615\uD0DC\uB85C \uC57D\uBB3C\uC744 \uD22C\uC5EC\uD560
+      \uB54C \uC0AC\uC6A9\uB418\uB294 \uC57D\uBB3C \uC804\uB2EC \uC7A5\uCE58, \uB124\uBE14\uB77C\uC774\uC800."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uD734\uB300\uC6A9 \uB124\uBE14\uB77C\uC774\uC800\uD3D0\uC5D0 \uAE30\uCCB4
+      \uD615\uD0DC\uB85C \uC57D\uBB3C\uC744 \uD22C\uC5EC\uD560 \uB54C \uC0AC\uC6A9\uB418\uB294
+      \uC57D\uBB3C \uC804\uB2EC \uC7A5\uCE58, \uB124\uBE14\uB77C\uC774\uC800. "
+    texts: "\uCC9C\uC2DD, \uB0AD\uD3EC\uC131 \uC12C\uC720\uC99D, COPD \uBC0F \uAE30\uD0C0
+      \uD638\uD761\uAE30 \uC9C8\uD658 \uB610\uB294 \uC7A5\uC560\uC758 \uCE58\uB8CC\uC5D0
+      \uC77C\uBC18\uC801\uC73C\uB85C \uC0AC\uC6A9\uB41C\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uD734\uB300\uC6A9 \uB124\uBE14\uB77C\uC774\uC800\uD3D0\uC5D0 \uAE30\uCCB4
+      \uD615\uD0DC\uB85C \uC57D\uBB3C\uC744 \uD22C\uC5EC\uD560 \uB54C \uC0AC\uC6A9\uB418\uB294
+      \uC57D\uBB3C \uC804\uB2EC \uC7A5\uCE58, \uB124\uBE14\uB77C\uC774\uC800. "
+    texts: "\uD638\uC2A4\uAC00 \uAE38\uAC8C \uC5F0\uACB0\uB418\uC5B4, \uC5F0\uAE30\uB97C
+      \uD761\uC785\uD558\uB294 \uD615\uD0DC\uB2E4. \uC624\uB798 \uC0AC\uC6A9\uD55C
+      \uB4EF \uD50C\uB77C\uC2A4\uD2F1\uC774 \uB204\uB807\uAC8C \uBCC0\uC0C9\uB418\uC5C8\uB2E4."
+    choose1: "\uB9C8\uCE68"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 0
+    chosemove2: -1
+  - index: 0
+    name: "\uC5F0\uAD6C\uC18C 2\uCE35 \uC790\uB3D9\uBB38"
+    texts: "\uB3C4\uC5B4\uB77D\uC774 \uC124\uCE58\uB41C \uC790\uB3D9\uBB38. \uB178\uB780
+      \uD3EC\uC2A4\uD2B8\uC787 \uC5EC\uB7EC \uC7A5\uC744 \uC808\uB300 \uB5A8\uC5B4\uB728\uB9AC\uC9C0
+      \uBABB\uD558\uB3C4\uB85D \uD14C\uC774\uD504\uB85C \uBD99\uC5EC\uB193\uC558\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uC5F0\uAD6C\uC18C 2\uCE35 \uC790\uB3D9\uBB38"
+    texts: "\u201C\uB9D0\uB809\uC740 \uACFC\uD559\uC790\uC8FC\uC81C\uC5D0 \uC0AC\uCE59\uC5F0\uC0B0\uC744
+      \uBABB\uD569\uB2C8\uB2E4. \uD2B9\uD788 \uBE7C\uAE30\uB97C \uBABB\uD569\uB2C8\uB2E4.
+      - \uD074\uB77C\uB9C8\uB9AC\u201D"
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uC5F0\uAD6C\uC18C 2\uCE35 \uC790\uB3D9\uBB38"
+    texts: "\uB9DE\uC2B5\uB2C8\uB2E4. \uADF8\uB9AC\uACE0 \uC22B\uC790 \uC554\uAE30\uB3C4
+      \uBABB\uD569\uB2C8\uB2E4. \uAC70\uAFB8\uB85C \uB4A4\uC9D1\uC5B4\uC77D\uAE30\uB3C4
+      \uBABB\uD574\uC694. - \uC120\uBC30\u201D"
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uC5F0\uAD6C\uC18C 2\uCE35 \uC790\uB3D9\uBB38"
+    texts: "\u201C\uC138\uC0C1\uC5D0 \uB204\uAC00 \uC2DC\uB9AC\uC5BC\uB118\uBC84\uB97C
+      \uB4A4\uC9D1\uC5B4 \uC77D\uACE0 \uBE7C\uAE30\uAE4C\uC9C0 \uD569\uB2C8\uAE4C.
+      -\uAC00 \uB9C8\uC774\uB108\uC2A4\uB77C\uACE0 \uC0DD\uAC01\uD574? - \uB9D0\uB809\u201D"
+    choose1: "\uB9C8\uCE68"
+    choose2: 
+    comment: "\uC22B\uC790\uB9DE\uCD94\uAE30 \uD37C\uC990 52393 / \uB9DE\uCD9C\uACBD\uC6B0
+      - 69"
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: -3
+    chosemove2: -1
+  - index: 0
+    name: "\uD398\uB9AC"
+    texts: "\uADF8\uB798\uB3C4 \uBCF4\uC548\uC740 \uD655\uC2E4\uD55C \uAC83 \uAC19\uB2E4."
+    choose1: "\uB9C8\uCE68"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: C
+    chosemove1: 0
+    chosemove2: -1
+  - index: 0
+    name: "\uAF49 \uCC2C \uC4F0\uB808\uAE30\uD1B5"
+    texts: "\uD50C\uB77C\uC2A4\uD2F1 \uC7AC\uC9C8\uC758 \uC4F0\uB808\uAE30\uD1B5.
+      \uAD6C\uACA8\uC9C4 \uC885\uC774\uB4E4\uB85C \uAC00\uB4DD \uCC28 \uC788\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uAF49 \uCC2C \uC4F0\uB808\uAE30\uD1B5"
+    texts: "\uC790\uC138\uD788 \uBCF4\uB2C8 \uBAA8\uB450 \uD55C \uC0AC\uB78C\uC5D0\uAC8C
+      \uBC1B\uC740 \uD3B8\uC9C0\uB4E4\uC774\uB2E4. \uD655\uC778\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+    choose1: "\uD655\uC778\uD55C\uB2E4."
+    choose2: "\uD655\uC778\uD558\uC9C0 \uC54A\uB294\uB2E4."
+    comment: "\uD655\uC778\uD55C\uB2E4 - \uC774\uBBF8\uC9C0 (1),(2),(3) / \uD655\uC778\uD558\uC9C0
+      \uC54A\uB294\uB2E4 - 22"
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: -3
+    chosemove2: 22
+  - index: 0
+    name: "\uBCF4\uB0B4\uB824\uB2E4 \uB9CC \uD3B8\uC9C0"
+    texts: "\uC791\uC740 \uB178\uD2B8\uB85C\uBD80\uD130 \uCC22\uACA8\uB098\uC628 \uC870\uAC01.
+      \uC0C1\uB2F9\uD788 \uC545\uD544\uC774\uB77C \uC54C\uC544\uBCF4\uB294\uB370 \uC2DC\uAC04\uC774
+      \uAC78\uB9B0\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uBCF4\uB0B4\uB824\uB2E4 \uB9CC \uD3B8\uC9C0"
+    texts: "\uD655\uC778\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+    choose1: "\uD655\uC778\uD55C\uB2E4."
+    choose2: "\uD655\uC778\uD558\uC9C0 \uC54A\uB294\uB2E4."
+    comment: "\uD655\uC778\uD55C\uB2E4 - \uC774\uBBF8\uC9C0 /  \uD655\uC778\uD558\uC9C0
+      \uC54A\uB294\uB2E4 - 22"
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: -3
+    chosemove2: 22
+  - index: 0
+    name: "\uBC29\uC804\uB41C \uAC00\uC815\uC6A9 \uC548\uB4DC\uB85C\uC774\uB4DC"
+    texts: "1\uCE35 \uC5F0\uAD6C\uC18C \uCD9C\uC785\uBB38\uC744 \uB9C9\uACE0 \uC788\uB294
+      \uAD6C\uC2DD \uAC00\uC815\uC6A9 \uC548\uB4DC\uB85C\uC774\uB4DC\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uBC29\uC804\uB41C \uAC00\uC815\uC6A9 \uC548\uB4DC\uB85C\uC774\uB4DC"
+    texts: "\uBC29\uC804\uB41C \uB4EF \uC791\uB3D9\uD558\uC9C0 \uC54A\uB294\uB2E4.
+      \uBB34\uAC70\uC6CC\uC11C \uBC00\uC5B4\uB0BC \uC218 \uC5C6\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uBC29\uC804\uB41C \uAC00\uC815\uC6A9 \uC548\uB4DC\uB85C\uC774\uB4DC"
+    texts: "\uBE44\uC0C1\uC6A9 \uC608\uBE44 \uC804\uB825\uC744 \uC0AC\uC6A9\uD558\uAE30
+      \uC704\uD574\uC11C\uB294 \uD328\uC2A4\uC6CC\uB4DC\uB97C \uC785\uB825\uD574\uC57C
+      \uD55C\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uBC29\uC804\uB41C \uAC00\uC815\uC6A9 \uC548\uB4DC\uB85C\uC774\uB4DC"
+    texts: "\uC554\uD638 \uD78C\uD2B8 \u201C\uD074\uB77C\uB9C8\uB9AC\uAC00 \uC0AC\uACFC\uD55C
+      \uC5ED\uC0AC\uC801\uC778 \uC21C\uAC04.\u201D"
+    choose1: "\uB9C8\uCE68"
+    choose2: 
+    comment: "\uC22B\uC790\uB9DE\uCD94\uAE30 \uD37C\uC990 330302  / \uB9DE\uCD9C\uACBD\uC6B0
+      - 77"
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: -3
+    chosemove2: -1
+  - index: 0
+    name: "\uD398\uB9AC"
+    texts: "\uAC00\uC815\uC6A9 \uC548\uB4DC\uB85C\uC774\uB4DC\uAC00 \uC791\uB3D9\uB41C\uB2E4.
+      \uC5F0\uAD6C\uC18C \uCD9C\uC785\uBB38\uC5D0 \uC811\uADFC\uD560 \uC218 \uC788\uB2E4."
+    choose1: "\uB9C8\uCE68"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: C
+    chosemove1: 0
+    chosemove2: -1
+  - index: 0
+    name: "\uAEBC\uC838\uAC00\uB294 \uAC00\uC815\uC6A9 \uC548\uB4DC\uB85C\uC774\uB4DC"
+    texts: "\uBE44\uC0C1\uC6A9 \uC608\uBE44 \uC804\uB825\uC744 \uC0AC\uC6A9\uC911\uC778
+      \uAC00\uC815\uC6A9 \uC548\uB4DC\uB85C\uC774\uB4DC."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uAEBC\uC838\uAC00\uB294 \uAC00\uC815\uC6A9 \uC548\uB4DC\uB85C\uC774\uB4DC"
+    texts: "\uB9C8\uC9C0\uB9C9\uC73C\uB85C \uC785\uB825\uB41C \uD504\uB85C\uADF8\uB798\uBC0D
+      \uBA85\uB839\uC5B4 : PROTECT THIS"
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "\uAEBC\uC838\uAC00\uB294 \uAC00\uC815\uC6A9 \uC548\uB4DC\uB85C\uC774\uB4DC"
+    texts: "\uD654\uBA74\uC5D0 \uBA54\uC2DC\uC9C0\uAC00 \uB5A0 \uC788\uB2E4."
+    choose1: "\uB9C8\uCE68"
+    choose2: 
+    comment: "\uC774\uBBF8\uC9C0"
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: -3
+    chosemove2: -1
+  - index: 0
+    name: "1\uCE35 \uC5F0\uAD6C\uC18C \uCD9C\uC785\uBB38"
+    texts: "\uC5B4\uB5A4 \uBCF4\uC548\uBCF4\uB2E4 \uAC15\uB825\uD55C \uBCF4\uC548
+      \uD504\uB85C\uADF8\uB7A8\uC774 \uC791\uB3D9 \uC911\uC774\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "1\uCE35 \uC5F0\uAD6C\uC18C \uCD9C\uC785\uBB38"
+    texts: "\uAC00\uC815\uC6A9 \uC548\uB4DC\uB85C\uC774\uB4DC\uC758 \uC608\uBE44 \uC804\uB825\uACFC
+      \uC5F0\uACB0\uB418\uC5B4 \uC788\uB294 \uAC83 \uAC19\uB2E4."
+    choose1: "\uB2E4\uC74C"
+    choose2: 
+    comment: 
+    map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
+    mapkinds: "\uC870\uC0AC"
+    scenenuber: 
+    kinds: O
+    chosemove1: 1
+    chosemove2: -1
+  - index: 0
+    name: "1\uCE35 \uC5F0\uAD6C\uC18C \uCD9C\uC785\uBB38"
+    texts: "\uC554\uD638\uB294 \uBB34\uC5C7\uC77C\uAE4C?"
+    choose1: "\uB9C8\uCE68"
+    choose2: 
+    comment: "\uC22B\uC790\uB9DE\uCD94\uAE30 \uD37C\uC990 0422 / \uB2E4\uC74C \uB9F5
       \uC774\uB3D9"
     map: "\uC758\uBB38\uC758 \uC5F0\uAD6C\uC18C"
     mapkinds: "\uC870\uC0AC"

@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     public float mbs;
     public bool isUnBeatTime = false;
     public bool lands = false;
+    public int Key=0;
     public enum PlayerState
  
     {
