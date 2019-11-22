@@ -30,7 +30,8 @@ public class Move : MonoBehaviour
     void Moving()
     {
         Vector3 moveVelocity = Vector3.zero;
-        if(movementFlag == 1)
+
+        if (movementFlag == 1)
         {
             moveVelocity = Vector3.left;
             transform.localScale = new Vector3(1, 1, 1);
