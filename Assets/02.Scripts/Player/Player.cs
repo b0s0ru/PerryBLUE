@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public GameObject Mpos;
     public GameObject SMpos;
     public GameObject Dpos;
+    public GameObject eyesight;
     float gravity = 32;
     AudioSource Runbgm;
     AudioSource Attackbgm;
@@ -31,6 +32,10 @@ public class Player : MonoBehaviour
     public bool isUnBeatTime = false;
     public bool lands = false;
     public int Key=0;
+    public bool isperry = true;
+    public bool ischange = false;
+    public bool Finedustdamage = false;
+
     public enum PlayerState
  
     {
@@ -51,30 +56,80 @@ public class Player : MonoBehaviour
         {
 
 
-           
-           
+            
+
         }
     }
-
+    
     void FixedUpdate()
     {
         if (state != PlayerState.die)
         {
-            DeadCheck();
+           
             Attacks();
             InputKey();
             JumpPlayer();
             Down();
             RunBgm();
             SetAnimation();
-          
-            
-           
+            Change();
+            DeadCheck();
+
         }
           Playergravity();
     }
-   
 
+    private void Change()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && ischange == false && isperry==true)
+        {
+            isperry = false;
+            ischange = true;
+            StartCoroutine(ChangeTime());
+            eyesight.SetActive(false);
+            
+        }
+        else if (Input.GetKey(KeyCode.LeftShift) && ischange == false && isperry == false)
+        {
+            isperry = true;
+            ischange = true;
+            StartCoroutine(ChangeTime());
+            eyesight.SetActive(true);
+
+        }
+
+        if (isperry == false&&Finedustdamage==false)
+        {
+            StartCoroutine(Finedust());
+            Finedustdamage = true;
+        }
+
+    }
+    IEnumerator Finedust()
+    {
+        Hp -= 1;
+        yield return new WaitForSeconds(1f);
+        Finedustdamage = false;
+    }
+    
+    IEnumerator ChangeTime()
+    {
+       
+        yield return new WaitForSeconds(2f);
+        ischange = false;
+
+    }
+    void killmob(int plushp)
+    {
+        if (Hp + plushp > 100)
+        {
+            Hp = 100;
+        }
+        else
+        {
+            Hp += plushp;
+        }
+    }
     private void Down()
     {
 
@@ -131,21 +186,22 @@ public class Player : MonoBehaviour
 
         
         anim.SetTrigger("Die");
-        Dpos.transform.Translate(new Vector3(0, +0.255f, 0));
+      //  Dpos.transform.Translate(new Vector3(0, +0.255f, 0));
       //  transform.Translate(new Vector3(0, -0.255f, 0));
-      //  StartCoroutine(Dies());
+        StartCoroutine(Dies());
     }
     IEnumerator Dies()
     {
-        
-        rbody.constraints = RigidbodyConstraints2D.FreezePositionX;
-       
-      
+
+        //  rbody.constraints = RigidbodyConstraints2D.FreezePositionX;
+       // Dpos.transform.Translate(new Vector3(0, +0.455f, 0));
+
         yield return new WaitForSeconds(3f);
-        Dpos.transform.Translate(new Vector3(0, +0.455f, 0));
-      //  transform.Translate(new Vector3(0, -0.455f, 0));
+      
+      
        
     }
+    
     void Playergravity()
     {
 
@@ -249,7 +305,7 @@ public class Player : MonoBehaviour
     void Attacks()
     {
 
-        if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && pnife)
+        if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && pnife&&isperry==true)
         {
             state = PlayerState.Attack;
             anim.SetTrigger("Attacking");
@@ -390,6 +446,8 @@ public class Player : MonoBehaviour
 
     void InitPlayer()
     {
+       
+       
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -401,10 +459,13 @@ public class Player : MonoBehaviour
         Mpos = transform.GetChild(1).gameObject;
         SMpos = transform.GetChild(5).gameObject;
         Dpos= transform.GetChild(6).gameObject;
+        
         speed = 7.2f;
         Hp = 100;
         SpeedJump = 16.3f;
-        
+        isperry = true;
+        eyesight = GameObject.Find("background").transform.Find("eye").gameObject;
+        eyesight.SetActive(true);
     }
 
     

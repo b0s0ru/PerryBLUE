@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
         public int Hp;
         public float speed;
         public int Damage;
-    
+        public int plushp;
 
    
 }

@@ -35,7 +35,7 @@ public class Downblock : MonoBehaviour
         }
     
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if (!fall)
         {

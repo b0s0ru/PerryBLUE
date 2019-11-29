@@ -11,14 +11,14 @@ public class Monster : Character
 
    public static Transform target;
     public MonsterState state;
-    
+   
     public Animator anim;
     // Start is called before the first frame update
     void Awake()
     {
 
         target =  GameObject.FindWithTag("Player").GetComponent<Transform>();
-        
+       
 
     }
     private void Start()

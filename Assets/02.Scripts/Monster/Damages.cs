@@ -32,7 +32,7 @@ public class Damages : MonoBehaviour
       //  spriteRenderer.color = new Color32(0, 255, 255, 255);
         yield return new WaitForSeconds(1.0f);
        // spriteRenderer.color = new Color(255, 255, 255, 255);
-        my.state = Monster.MonsterState.Moves;
+       
 
     }
 }

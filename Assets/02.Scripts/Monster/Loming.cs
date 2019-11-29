@@ -12,6 +12,7 @@ public class Loming : Monster
         Hp = 30;
         Damage = 10;
         speed = 2;
+        plushp = 10;
         state = MonsterState.Moves;
         anim = GetComponent<Animator>();
     }
