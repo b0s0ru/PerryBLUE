@@ -23,6 +23,7 @@ public class Kpos : MonoBehaviour
             Debug.Log(other.transform.name);
             hits.Play();
             other.gameObject.SendMessageUpwards("MobDamage", 10);
+                
             kp.enabled = false;
         }
         if (other.transform.tag == "Destroy")
