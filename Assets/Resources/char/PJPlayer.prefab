@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 649325592}
   - component: {fileID: 802858084}
   m_Layer: 9
-  m_Name: KPlayer
+  m_Name: PJPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -599,7 +599,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 5545425012529214135, guid: a7e6d4496bdfd7845af7f5249c0788c8,
+  m_Sprite: {fileID: 1849478172702205651, guid: 7e91f1a52da21e441b9a7aef09c62901,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -642,7 +642,7 @@ Animator:
   m_GameObject: {fileID: 4924891143404942820}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ffbfb0f11ca75564398125469451b7a7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3da58e01442d3b34ca57363274e2a87d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
