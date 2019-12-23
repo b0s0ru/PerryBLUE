@@ -55,9 +55,10 @@ public class Player : MonoBehaviour
         if (state != PlayerState.die)
         {
 
-
-            
-
+            DeadCheck();
+            Change();
+            RunBgm();
+            Down();
         }
     }
     
@@ -69,33 +70,32 @@ public class Player : MonoBehaviour
             Attacks();
             InputKey();
             JumpPlayer();
-            Down();
-            RunBgm();
+           
             SetAnimation();
-            Change();
-            DeadCheck();
-
+          
+           
         }
           Playergravity();
     }
 
     private void Change()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && ischange == false && isperry==true)
+        if (Input.GetKey(KeyCode.LeftShift) && ischange == false && isperry==true &&state==PlayerState.Wait)
         {
             isperry = false;
             ischange = true;
             StartCoroutine(ChangeTime());
             eyesight.SetActive(false);
-            
+            anim.SetBool("Perry", false);
+           
         }
-        else if (Input.GetKey(KeyCode.LeftShift) && ischange == false && isperry == false)
+        else if (Input.GetKey(KeyCode.LeftShift) && ischange == false && isperry == false && state == PlayerState.Wait)
         {
             isperry = true;
             ischange = true;
             StartCoroutine(ChangeTime());
             eyesight.SetActive(true);
-
+            anim.SetBool("Perry",true);
         }
 
         if (isperry == false&&Finedustdamage==false)
@@ -176,6 +176,10 @@ public class Player : MonoBehaviour
             SMpos.SetActive(false);
             moveDir.x = 0;
             
+        }
+        if (Hp < 0)
+        {
+            Hp = 0;
         }
                
     }
