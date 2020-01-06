@@ -10,7 +10,7 @@ public class Stop : MonoBehaviour
     void Start()
     {
         a = gameObject.transform.parent.GetComponent<Monster>();
-        b = gameObject.transform.parent.GetComponent<Move>();
+        b = gameObject.transform.parent.GetComponent<Move>(); ;
     }
 
     // Update is called once per frame
@@ -22,19 +22,16 @@ public class Stop : MonoBehaviour
 
     {
 
-        if (a.state != Monster.MonsterState.Die)
-        {
-            if (collision.gameObject.layer == 8)
-            {
 
-                if (b.movementFlag == 1)
-                {
-                    b.movementFlag = 2;
-                }
-                else if (b.movementFlag == 2)
-                {
-                    b.movementFlag = 1;
-                }
+        if (collision.gameObject.layer ==8)
+        {
+
+            if (b.movementFlag == 1)
+            {
+                b.movementFlag = 2;
+            }else if (b.movementFlag == 2)
+            {
+                b.movementFlag = 1;
             }
         }
     }
