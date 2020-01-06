@@ -8,18 +8,21 @@ public class Sensing : MonoBehaviour
     public int a;
     static TextLoader s;
    
-   
+    bool q = true;
     private void Awake()
     {
         s = GameObject.Find("UI_Script/TextManager").gameObject.GetComponent<TextLoader>();
        
         a = a-2;
     }
-    public void Textload()
+    void OnTriggerStay2D(Collider2D other)
     {
-       
+        
+        if (other.gameObject.tag == "Mpos" && Input.GetKey(KeyCode.UpArrow))
+        {
             s.ObjectsWork(a);
+          
+        }
 
-       
     }
 }
