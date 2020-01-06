@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
         {
 
             DeadCheck();
-            Change();
+            
             RunBgm();
             Down();
         }
@@ -78,48 +78,9 @@ public class Player : MonoBehaviour
           Playergravity();
     }
 
-    private void Change()
-    {
-        if (Input.GetKey(KeyCode.LeftShift) && ischange == false && isperry==true &&state==PlayerState.Wait)
-        {
-            isperry = false;
-            ischange = true;
-            StartCoroutine(ChangeTime());
-            eyesight.SetActive(false);
-            anim.SetBool("Perry", false);
-           
-        }
-        else if (Input.GetKey(KeyCode.LeftShift) && ischange == false && isperry == false && state == PlayerState.Wait)
-        {
-            isperry = true;
-            ischange = true;
-            StartCoroutine(ChangeTime());
-            eyesight.SetActive(true);
-            anim.SetBool("Perry",true);
-        }
-
-        if (isperry == false&&Finedustdamage==false)
-        {
-            StartCoroutine(Finedust());
-            Finedustdamage = true;
-        }
-
-    }
-    IEnumerator Finedust()
-    {
-        Hp -= 1;
-        yield return new WaitForSeconds(1f);
-        Finedustdamage = false;
-    }
     
-    IEnumerator ChangeTime()
-    {
-       
-        yield return new WaitForSeconds(2f);
-        ischange = false;
-
-    }
-    void killmob(int plushp)
+   
+    public void Killmob(int plushp)
     {
         if (Hp + plushp > 100)
         {
@@ -288,7 +249,7 @@ public class Player : MonoBehaviour
            
 
         }
-       else  if (state != PlayerState.die && state != PlayerState.Damage)
+       else if (state != PlayerState.die && state != PlayerState.Damage)
         {
             
                 keys = Input.GetAxis("Horizontal");
@@ -468,7 +429,7 @@ public class Player : MonoBehaviour
         Hp = 100;
         SpeedJump = 16.3f;
         isperry = true;
-        eyesight = GameObject.Find("background").transform.Find("eye").gameObject;
+        eyesight = transform.GetChild(7).gameObject;
         eyesight.SetActive(true);
     }
 
