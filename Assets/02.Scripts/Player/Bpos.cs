@@ -46,7 +46,7 @@ public class Bpos : MonoBehaviour
 
         }
 
-        if (other.gameObject.layer == 8 && a.state != Player.PlayerState.die && (a.state == Player.PlayerState.JumpFall || a.state == Player.PlayerState.RunFall))
+        if (other.gameObject.layer == 8 && a.state != Player.PlayerState.die && (a.state == Player.PlayerState.JumpFall))
         {
 
             Debug.Log("췍");
@@ -85,7 +85,7 @@ public class Bpos : MonoBehaviour
         
         sidspeed = other.gameObject.GetComponent<MoveBlock>().movespeed;
         }
-        if (other.gameObject.layer == 8&& a.state!=Player.PlayerState.die && (a.state==Player.PlayerState.JumpFall|| a.state == Player.PlayerState.RunFall))
+        if (other.gameObject.layer == 8&& a.state!=Player.PlayerState.die && (a.state==Player.PlayerState.JumpFall))
         {
 
            
@@ -151,7 +151,7 @@ public class Bpos : MonoBehaviour
          
             if (a.state == Player.PlayerState.Wait || a.state==Player.PlayerState.Attack)
             {
-                a.state = Player.PlayerState.RunFall;
+                a.state = Player.PlayerState.JumpFall;
             }
            
 
@@ -165,7 +165,7 @@ public class Bpos : MonoBehaviour
                 }
             if ((other.gameObject.tag == "down" || other.gameObject.tag=="time")&& a.state==Player.PlayerState.Sit)
             {
-                a.state = Player.PlayerState.RunFall;
+                a.state = Player.PlayerState.JumpFall;
                 a.anim.SetTrigger("sitFall");
               //  a.transform.Translate(new Vector3(0, +0.45f, 0));
                 //transform.Translate(new Vector3(0, -0.3f, 0));
