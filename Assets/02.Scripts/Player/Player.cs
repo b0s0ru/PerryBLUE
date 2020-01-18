@@ -430,7 +430,7 @@ public class Player : MonoBehaviour
     }
     IEnumerator DownAirAttackis()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         if (state == PlayerState.Attack)
         {
             state = PlayerState.JumpFall;
@@ -441,7 +441,7 @@ public class Player : MonoBehaviour
         }
         if (moveDir.y < 0)
         {
-            moveDir.y = 7;
+            moveDir.y = 5f;
         }
 
     }
