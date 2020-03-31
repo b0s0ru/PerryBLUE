@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     public Vector2 moveDir;
     SpriteRenderer spriteRenderer;
     public Kpos Kchild;
+    public Kpos KUpchild;
+    public Kpos KDownchild;
     public GameObject Bpos;
     public GameObject Mpos;
     public GameObject SMpos;
@@ -39,7 +41,7 @@ public class Player : MonoBehaviour
     public enum PlayerState
  
     {
-        Wait = 0, Jump, JumpFall, die, Attack, Sit,RunFall, Damage
+        Wait = 0, Jump, JumpFall, die, Attack, Sit, Damage
     }
   
     // Start is called before the first frame update
@@ -275,9 +277,41 @@ public class Player : MonoBehaviour
             state = PlayerState.Attack;
             anim.SetTrigger("Attacking");
             StartCoroutine(Attackis());
-
+        }
+        else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.DownArrow)&&(state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
+        {
+            state = PlayerState.Attack;
+            Attackbgm.Play();
+            anim.SetTrigger("DownAttacking");
+            KDownchild.kp.enabled = true;
+            StartCoroutine(DownAirAttackis());
+          
 
         }
+        else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.UpArrow)&&(state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
+        {
+            state = PlayerState.Attack;
+            Attackbgm.Play();
+            anim.SetTrigger("UpAttacking");
+            KUpchild.kp.enabled = true;
+            StartCoroutine(UpAirAttackis());
+            if (moveDir.y > 0)
+            {
+                moveDir.y = 0;
+            }
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Z) && (state == PlayerState.Jump || state==PlayerState.JumpFall)&& pnife && isperry == true)
+        {
+            state = PlayerState.Attack;
+            Attackbgm.Play();
+            anim.SetTrigger("Attacking");
+            Kchild.kp.enabled = true;
+            StartCoroutine(AirAttackis());
+           
+
+        }
+
     }
     void SetDamage(int mDamage)
     {
@@ -364,6 +398,53 @@ public class Player : MonoBehaviour
 
       
     }
+    IEnumerator AirAttackis()
+    {
+        yield return new WaitForSeconds(0.3f);
+        if (state == PlayerState.Attack)
+        {
+            state = PlayerState.JumpFall;
+        }
+        if (Kchild.kp.enabled == true)
+        {
+            Kchild.kp.enabled = false;
+        }
+        if (moveDir.y > 0)
+        {
+            moveDir.y = 0;
+        }
+    }
+    IEnumerator UpAirAttackis()
+    {
+        yield return new WaitForSeconds(0.3f);
+        if (state == PlayerState.Attack)
+        {
+            state = PlayerState.JumpFall;
+        }
+        if (KUpchild.kp.enabled == true)
+        {
+            KUpchild.kp.enabled = false;
+        }
+        
+        
+    }
+    IEnumerator DownAirAttackis()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (state == PlayerState.Attack)
+        {
+            state = PlayerState.JumpFall;
+        }
+        if (KDownchild.kp.enabled == true)
+        {
+            KDownchild.kp.enabled = false;
+        }
+        if (moveDir.y < 0)
+        {
+            moveDir.y = 5f;
+        }
+
+    }
     IEnumerator PWaitForIt()
     {
         yield return new WaitForSeconds(0.15f);
@@ -424,7 +505,8 @@ public class Player : MonoBehaviour
         Mpos = transform.GetChild(1).gameObject;
         SMpos = transform.GetChild(5).gameObject;
         Dpos= transform.GetChild(6).gameObject;
-        
+        KUpchild = transform.GetChild(8).GetComponent<Kpos>();
+        KDownchild = transform.GetChild(9).GetComponent<Kpos>();
         speed = 7.2f;
         Hp = 100;
         SpeedJump = 16.3f;
