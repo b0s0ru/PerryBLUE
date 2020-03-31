@@ -2365,7 +2365,7 @@ AnimatorStateMachine:
     m_Position: {x: -1380, y: -3630, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2751233950650490338}
-    m_Position: {x: 250, y: -3800, z: 0}
+    m_Position: {x: 440, y: -3780, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8035287276580285493}
     m_Position: {x: -680, y: -4250, z: 0}
@@ -2377,7 +2377,7 @@ AnimatorStateMachine:
     m_Position: {x: -1260, y: -4040, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1460117874683436050}
-    m_Position: {x: -1530, y: -2740, z: 0}
+    m_Position: {x: -1140, y: -2500, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3212320734729428244}
     m_Position: {x: 890, y: -2820, z: 0}
@@ -2389,7 +2389,7 @@ AnimatorStateMachine:
     m_Position: {x: 220, y: -2400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1312122062509915548}
-    m_Position: {x: 60, y: -3510, z: 0}
+    m_Position: {x: 390, y: -3410, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5936174276022141163}
     m_Position: {x: -510, y: -2470, z: 0}
@@ -2398,7 +2398,7 @@ AnimatorStateMachine:
     m_Position: {x: -1080, y: -2930, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2121569915446880875}
-    m_Position: {x: -810, y: -2420, z: 0}
+    m_Position: {x: -760, y: -1830, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8386743410358301717}
     m_Position: {x: -870, y: -3210, z: 0}
@@ -2423,7 +2423,7 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -690, y: -1420, z: 0}
+  m_AnyStatePosition: {x: -270, y: -1830, z: 0}
   m_EntryPosition: {x: -980, y: -1920, z: 0}
   m_ExitPosition: {x: -1050, y: -1790, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -9685,7 +9685,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0b0a6ac1d12687f4b8da94c07826a237, type: 2}
+  m_Motion: {fileID: 7400000, guid: a71eab1b079a0da43a9301090f53465c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -11679,91 +11679,91 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Jumping
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Land
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Knife
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Damage
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Die
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Attacking
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: sit
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Up
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isground
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: fallspeed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: sitFall
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Perry
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: UpAttacking
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: DownAttacking
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    
+
     public Rigidbody2D rbody;
     public int Hp;
     public float speed, Fspeed;
     public int Damage;
-    public Animator anim;
+    public  Animator anim;
     public float keys;
     public float SpeedJump;
     public PlayerState state = PlayerState.Wait;
     public bool isGround = false;
-    float dir=1;
+    float dir = 1;
     public Vector2 moveDir;
     SpriteRenderer spriteRenderer;
     public Kpos Kchild;
@@ -33,17 +33,17 @@ public class Player : MonoBehaviour
     public float mbs;
     public bool isUnBeatTime = false;
     public bool lands = false;
-    public int Key=0;
+    public int Key = 0;
     public bool isperry = true;
     public bool ischange = false;
     public bool Finedustdamage = false;
-
+    public bool read = false;
     public enum PlayerState
- 
+
     {
-        Wait = 0, Jump, JumpFall, die, Attack, Sit, Damage
+        Wait = 0, Jump, JumpFall, die, Attack, Sit, Damage,JumpDamage,JumpAttack
     }
-  
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -58,30 +58,33 @@ public class Player : MonoBehaviour
         {
 
             DeadCheck();
-            
+
             RunBgm();
             Down();
         }
     }
-    
+
     void FixedUpdate()
     {
-        if (state != PlayerState.die)
+        if (read == false)
         {
-           
             Attacks();
+
             InputKey();
             JumpPlayer();
-           
+
             SetAnimation();
-          
-           
+            Playergravity();
         }
-          Playergravity();
+
+       
     }
 
-    
-   
+
+    public void exit(){
+
+        read = false;
+    }
     public void Killmob(int plushp)
     {
         if (Hp + plushp > 100)
@@ -96,7 +99,7 @@ public class Player : MonoBehaviour
     private void Down()
     {
 
-        if (Input.GetKey(KeyCode.DownArrow) && state == PlayerState.Wait)
+        if (Input.GetKey(KeyCode.DownArrow) && state == PlayerState.Wait && read==false)
         {
             anim.SetTrigger("sit");
             state = PlayerState.Sit;
@@ -200,7 +203,7 @@ public class Player : MonoBehaviour
     void JumpPlayer()
     {
 
-        if (isGround && Input.GetButton("Jump") && state == PlayerState.Wait )
+        if (isGround && Input.GetButton("Jump") && state == PlayerState.Wait && read == false)
         {
            
             moveDir.y = SpeedJump;
@@ -226,90 +229,96 @@ public class Player : MonoBehaviour
     }
     void InputKey()
     {
-        if (state == PlayerState.Sit)
+        if (read == false)
         {
-            if (!moveblock) { moveDir.x = 0; }
-            else
+            if (state == PlayerState.Sit)
             {
-                moveDir.x = mbs;
+                if (!moveblock) { moveDir.x = 0; }
+                else
+                {
+                    moveDir.x = mbs;
+                }
             }
-        }
-        else if (moveblock &&(state != PlayerState.die && state != PlayerState.Damage))
-        {
-            keys = Input.GetAxis("Horizontal");
-            FlipPlayer(keys);
-            float s = speed * keys;
-            float r = s + mbs;
-            if (r > speed && r>0)
+            else if (moveblock && (state != PlayerState.die && state != PlayerState.Damage && state!= PlayerState.JumpDamage))
             {
-                r = speed;
-            }else if(r<speed*-1 && r < 0)
-            {
-                r = speed*-1;
-            }
-                moveDir.x = r;
-           
-
-        }
-       else if (state != PlayerState.die && state != PlayerState.Damage)
-        {
-            
                 keys = Input.GetAxis("Horizontal");
                 FlipPlayer(keys);
-            
-            moveDir.x = speed * keys;
-          
-            
+                float s = speed * keys;
+                float r = s + mbs;
+                if (r > speed && r > 0)
+                {
+                    r = speed;
+                }
+                else if (r < speed * -1 && r < 0)
+                {
+                    r = speed * -1;
+                }
+                moveDir.x = r;
+
+
+            }
+            else if (state != PlayerState.die && state != PlayerState.Damage && state != PlayerState.JumpDamage)
+            {
+
+                keys = Input.GetAxis("Horizontal");
+                FlipPlayer(keys);
+
+                moveDir.x = speed * keys;
+
+
+
+
+
+            }
 
 
 
         }
-
-
-      
-        
     }
     void Attacks()
     {
+        if (read == false)
+        {
 
-        if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && pnife&&isperry==true)
-        {
-            state = PlayerState.Attack;
-            anim.SetTrigger("Attacking");
-            StartCoroutine(Attackis());
-        }
-        else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.DownArrow)&&(state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
-        {
-            state = PlayerState.Attack;
-            Attackbgm.Play();
-            anim.SetTrigger("DownAttacking");
-            KDownchild.kp.enabled = true;
-            StartCoroutine(DownAirAttackis());
-          
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.UpArrow)&&(state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
-        {
-            state = PlayerState.Attack;
-            Attackbgm.Play();
-            anim.SetTrigger("UpAttacking");
-            KUpchild.kp.enabled = true;
-            StartCoroutine(UpAirAttackis());
-            if (moveDir.y > 0)
+            if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && pnife && isperry == true)
             {
-                moveDir.y = 0;
+                state = PlayerState.Attack;
+                anim.SetTrigger("Attacking");
+                StartCoroutine(Attackis());
             }
+            else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.DownArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
+            {
+                state = PlayerState.JumpAttack;
+                Attackbgm.Play();
+                anim.SetTrigger("DownAttacking");
+                KDownchild.kp.enabled = true;
+                StartCoroutine(DownAirAttackis());
 
-        }
-        else if (Input.GetKeyDown(KeyCode.Z) && (state == PlayerState.Jump || state==PlayerState.JumpFall)&& pnife && isperry == true)
-        {
-            state = PlayerState.Attack;
-            Attackbgm.Play();
-            anim.SetTrigger("Attacking");
-            Kchild.kp.enabled = true;
-            StartCoroutine(AirAttackis());
-           
 
+            }
+            else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.UpArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
+            {
+                state = PlayerState.JumpAttack;
+                Attackbgm.Play();
+                anim.SetTrigger("UpAttacking");
+                KUpchild.kp.enabled = true;
+                StartCoroutine(UpAirAttackis());
+                if (moveDir.y > 0)
+                {
+                    moveDir.y = 0;
+                }
+
+            }
+            else if (Input.GetKeyDown(KeyCode.Z) && (state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
+            {
+                state = PlayerState.JumpAttack;
+                Attackbgm.Play();
+                anim.SetTrigger("Attacking");
+                Kchild.kp.enabled = true;
+                StartCoroutine(AirAttackis());
+
+
+            }
         }
 
     }
@@ -340,7 +349,14 @@ public class Player : MonoBehaviour
             Mpos.SetActive(true);
             SMpos.SetActive(false);
         }
-        state = PlayerState.Damage;
+        if (state != PlayerState.Jump && state != PlayerState.JumpFall)
+        {
+            state = PlayerState.Damage;
+        }
+        else
+        {
+            state = PlayerState.JumpDamage;
+        }
 
             moveDir.x = 0;
             moveDir.y = 0;
@@ -401,7 +417,7 @@ public class Player : MonoBehaviour
     IEnumerator AirAttackis()
     {
         yield return new WaitForSeconds(0.3f);
-        if (state == PlayerState.Attack)
+        if (state == PlayerState.JumpAttack)
         {
             state = PlayerState.JumpFall;
         }
@@ -417,7 +433,7 @@ public class Player : MonoBehaviour
     IEnumerator UpAirAttackis()
     {
         yield return new WaitForSeconds(0.3f);
-        if (state == PlayerState.Attack)
+        if (state == PlayerState.JumpAttack)
         {
             state = PlayerState.JumpFall;
         }
@@ -431,7 +447,7 @@ public class Player : MonoBehaviour
     IEnumerator DownAirAttackis()
     {
         yield return new WaitForSeconds(0.5f);
-        if (state == PlayerState.Attack)
+        if (state == PlayerState.JumpAttack)
         {
             state = PlayerState.JumpFall;
         }
@@ -441,8 +457,9 @@ public class Player : MonoBehaviour
         }
         if (moveDir.y < 0)
         {
-            moveDir.y = 5f;
+            moveDir.y = 3f;
         }
+
 
     }
     IEnumerator PWaitForIt()
@@ -474,7 +491,7 @@ public class Player : MonoBehaviour
     void RunBgm()
     {
 
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && lands == false && state == PlayerState.Wait)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && lands == false && state == PlayerState.Wait && read == false)
         {
 
             lands = true;
