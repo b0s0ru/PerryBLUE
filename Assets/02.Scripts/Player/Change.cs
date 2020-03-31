@@ -21,7 +21,7 @@ public class Change : MonoBehaviour
     }
     private void Changes()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && a.ischange == false && a.isperry == true && a.state == Player.PlayerState.Wait)
+        if (Input.GetKey(KeyCode.LeftShift) && a.ischange == false && a.isperry == true && a.state == Player.PlayerState.Wait && a.read == false)
         {
             a.isperry = false;
             a.ischange = true;
@@ -30,7 +30,7 @@ public class Change : MonoBehaviour
             a.anim.SetBool("Perry", false);
 
         }
-        else if (Input.GetKey(KeyCode.LeftShift) && a.ischange == false && a.isperry == false && a.state == Player.PlayerState.Wait)
+        else if (Input.GetKey(KeyCode.LeftShift) && a.ischange == false && a.isperry == false && a.state == Player.PlayerState.Wait&& a.read == false)
         {
             a.isperry = true;
             a.ischange = true;
@@ -48,9 +48,12 @@ public class Change : MonoBehaviour
     }
     IEnumerator Finedust()
     {
-        a.Hp -= 1;
-        yield return new WaitForSeconds(1f);
-        a.Finedustdamage = false;
+        if (a.read == false)
+        {
+            a.Hp -= 1;
+            yield return new WaitForSeconds(1f);
+            a.Finedustdamage = false;
+        }
     }
 
     IEnumerator ChangeTime()

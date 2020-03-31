@@ -1,7 +1,40 @@
 fileFormatVersion: 2
 guid: a5ca5fdd7326be640b192daa5defd16f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5345123330303919601
+    second: pj_p_die_0
+  - first:
+      213: -5180258329125582151
+    second: pj_p_die_1
+  - first:
+      213: 5711318415020207215
+    second: pj_p_die_2
+  - first:
+      213: -6020610753692310432
+    second: pj_p_die_3
+  - first:
+      213: 1741567083938097141
+    second: pj_p_die_4
+  - first:
+      213: -8344300486053110756
+    second: pj_p_die_5
+  - first:
+      213: -1500492290036622908
+    second: pj_p_die_6
+  - first:
+      213: 1218440812149801740
+    second: pj_p_die_7
+  - first:
+      213: 6066221598037218773
+    second: pj_p_die_8
+  - first:
+      213: 6502968779291223967
+    second: pj_p_die_9
+  - first:
+      213: -6481339644136955234
+    second: pj_p_die_10
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +73,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +102,273 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pj_p_die_0
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 604
+        width: 182
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bebc3862cd18fb4abf63951acffb963
+      internalID: 5345123330303919601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pj_p_die_1
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 604
+        width: 176
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b67543a539cc944ab186ddcc431c3f
+      internalID: -5180258329125582151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pj_p_die_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 603
+        width: 225
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7b65127cc6de94f861a237650e4cdd
+      internalID: 5711318415020207215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pj_p_die_3
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 604
+        width: 257
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83802048555a22a42a26cf7ec47cdb65
+      internalID: -6020610753692310432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pj_p_die_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 304
+        width: 214
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fe778dfa7127e45bfe742e7aad900f
+      internalID: 1741567083938097141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pj_p_die_5
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 304
+        width: 222
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc056a65ce3e65645958fe2d697bc106
+      internalID: -8344300486053110756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pj_p_die_6
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 304
+        width: 222
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924490995b50f5748af71e1c3f98c1b0
+      internalID: -1500492290036622908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pj_p_die_7
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 304
+        width: 222
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c1adf9954c8614e9ae7117f3cdd6b7
+      internalID: 1218440812149801740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pj_p_die_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 4
+        width: 222
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e70094c12deb548832052dcd159bd3
+      internalID: 6066221598037218773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pj_p_die_9
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 3
+        width: 222
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfffcdb126043584dbccf11879ce6f40
+      internalID: 6502968779291223967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pj_p_die_10
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 4
+        width: 222
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b53dcd9c16a3140b26291e7cff737f
+      internalID: -6481339644136955234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

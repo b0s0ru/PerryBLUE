@@ -11,11 +11,13 @@ public class TextLoader : MonoBehaviour
     GameObject nq;
     GameObject ny;
     public clear door;
+    Player a;
     int s;
     public bool Allclear = false;
     // Start is called before the first frame update
     void Start()
     {
+        a = GameObject.Find("Player").GetComponent<Player>();
         ns= GameObject.Find("UI_Script/nextSceneManager").GetComponent<NextScene>();
         nq = GameObject.Find("Canvas/UI_Script/UI_normal_script/").gameObject;
         ny = GameObject.Find("Canvas/UI_Script/UI_yesno_script/").gameObject;
@@ -70,8 +72,9 @@ public class TextLoader : MonoBehaviour
         }
         else if (s == 0)
         {
+            a.exit();
+            nq.SetActive(false);
 
-            nq.SetActive(false); nq.SetActive(false);
         }
         else if (s == -2)
         {
@@ -109,14 +112,7 @@ public class TextLoader : MonoBehaviour
             }
         }
 
-        else
-        {
-            nq.SetActive(false);
-            ny.SetActive(true);
-            index++;
-
-
-        }
+  
 
     }
 
@@ -135,6 +131,11 @@ public class TextLoader : MonoBehaviour
     public void Work2()
     {
         //  Texts.instance.GetText2(names, log, yes, no);
+    }
+
+    public void Masing()
+    {
+
     }
 
     //2씩 뺴준걸 기억할것

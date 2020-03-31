@@ -15,12 +15,14 @@ public class AudioControl : MonoBehaviour
         if (a == 0)
         {
             i = 0;
-           audios1.Audio2(0);
-        }else if(a == 1){
-            i = 1;
-            audios1.Audio2(i);
+            audios1.Audio2(0);
         }
-        else if (a == 2)
+        else if (a == 1)
+        {
+            i = 1;
+            audios1.Audio2(2);
+        }
+       /* else if (a == 2)
         {
             i = 2;
             audios1.Audio2(i);
