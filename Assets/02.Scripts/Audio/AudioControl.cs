@@ -6,7 +6,7 @@ public class AudioControl : MonoBehaviour
 {
     static public Audios audios1;
     int a;
-    int i = 0;
+    int i;
     // Start is called before the first frame update
     void Start()
     {

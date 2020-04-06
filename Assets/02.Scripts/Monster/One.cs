@@ -1,19 +1,18 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Loming : Monster
+public class One : Monster
 {
-   
+
 
     // Start is called before the first frame update
     void Start()
     {
-        Hp = 30;
-        Damage = 10;
-        speed = 2;
-        plushp = 10;
+        Hp = 60;
+        Damage = 20;
+        //speed = 2;
+        plushp = 20;
         state = MonsterState.Moves;
         anim = GetComponent<Animator>();
     }
@@ -21,9 +20,9 @@ public class Loming : Monster
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-        
+
+
     }
 
-    
+
 }
