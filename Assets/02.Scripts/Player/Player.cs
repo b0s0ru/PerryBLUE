@@ -185,7 +185,7 @@ public class Player : MonoBehaviour
         if(state==PlayerState.die)
         {
            
-            moveDir.y = -1;
+            moveDir.y -= gravity * Time.deltaTime;
         }
         if (moveDir.y < 0 && state ==PlayerState.Jump)
         {

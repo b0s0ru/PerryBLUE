@@ -39,7 +39,7 @@ public class Change : MonoBehaviour
             a.anim.SetBool("Perry", true);
         }
 
-        if (a.isperry == false && a.Finedustdamage == false)
+        if (a.isperry == false && a.Finedustdamage == false&& a.read == false)
         {
             StartCoroutine(Finedust());
             a.Finedustdamage = true;
@@ -48,18 +48,17 @@ public class Change : MonoBehaviour
     }
     IEnumerator Finedust()
     {
-        if (a.read == false)
-        {
+        
             a.Hp -= 1;
             yield return new WaitForSeconds(1f);
             a.Finedustdamage = false;
-        }
+        
     }
 
     IEnumerator ChangeTime()
     {
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         a.ischange = false;
 
     }

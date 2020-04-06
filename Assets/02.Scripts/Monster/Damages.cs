@@ -25,19 +25,20 @@ public class Damages : MonoBehaviour
             }
             if (my.Hp>0)
             {
-                my.state = Monster.MonsterState.Damage;
+               
                 my.anim.SetTrigger("Damage");
+                StopCoroutine("Hit");
                 StartCoroutine("Hit");
             }   
 
         }
     }
     IEnumerator Hit()
-    {
-
-            //  spriteRenderer.color = new Color32(0, 255, 255, 255);
-            yield return new WaitForSeconds(1.5f);
-        // spriteRenderer.color = new Color(255, 255, 255, 255);\
+    {   
+        my.state = Monster.MonsterState.Damage;
+        //  spriteRenderer.color = new Color32(0, 255, 255, 255);
+        yield return new WaitForSeconds(1.5f);
+        // spriteRenderer.color = new Color(255, 255, 255, 255);
         if (my.state != Monster.MonsterState.Die)
         {
             my.state = Monster.MonsterState.Moves;
