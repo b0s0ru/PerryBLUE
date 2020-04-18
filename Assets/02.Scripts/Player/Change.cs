@@ -28,6 +28,7 @@ public class Change : MonoBehaviour
             StartCoroutine(ChangeTime());
             a.eyesight.SetActive(false);
             a.anim.SetBool("Perry", false);
+            a.Jumppower();
 
         }
         else if (Input.GetKey(KeyCode.LeftShift) && a.ischange == false && a.isperry == false && a.state == Player.PlayerState.Wait&& a.read == false)
@@ -37,6 +38,7 @@ public class Change : MonoBehaviour
             StartCoroutine(ChangeTime());
             a.eyesight.SetActive(true);
             a.anim.SetBool("Perry", true);
+            a.Jumppower();
         }
 
         if (a.isperry == false && a.Finedustdamage == false&& a.read == false)
@@ -50,7 +52,7 @@ public class Change : MonoBehaviour
     {
         
             a.Hp -= 1;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.5f);
             a.Finedustdamage = false;
         
     }

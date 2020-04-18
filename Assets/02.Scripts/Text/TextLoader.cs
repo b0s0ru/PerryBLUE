@@ -76,10 +76,10 @@ public class TextLoader : MonoBehaviour
             nq.SetActive(false);
 
         }
-        else if (s == -2)
+       /* else if (s == -2)
         {
             ns.Scenemove();
-        }
+        }*/
         else if (s == -3)
         {
             if (index == 36)

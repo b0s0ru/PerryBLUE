@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class NextScene : MonoBehaviour
+public class BackScene : MonoBehaviour
 {
-   
-    
+
+
     int Scenenumber;
     // Start is called before the first frame update
     void Start()
@@ -23,9 +23,7 @@ public class NextScene : MonoBehaviour
 
         if (collision.transform.tag == "Mpos")
         {
-
-            SceneManager.LoadScene(Scenenumber + 1);
-           
+            SceneManager.LoadScene(Scenenumber - 1);
             
 
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -38,15 +39,29 @@ public class Player : MonoBehaviour
     public bool ischange = false;
     public bool Finedustdamage = false;
     public bool read = false;
+    int map=0;
+    
     public enum PlayerState
 
     {
         Wait = 0, Jump, JumpFall, die, Attack, Sit, Damage,JumpDamage,JumpAttack
     }
+    public static Player instance;
 
     // Start is called before the first frame update
     void Awake()
     {
+       
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+         DontDestroyOnLoad(this.gameObject);
         InitPlayer();
     }
 
@@ -509,8 +524,7 @@ public class Player : MonoBehaviour
 
     void InitPlayer()
     {
-       
-       
+        
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -526,11 +540,61 @@ public class Player : MonoBehaviour
         KDownchild = transform.GetChild(9).GetComponent<Kpos>();
         speed = 7.2f;
         Hp = 100;
-        SpeedJump = 16.3f;
-        isperry = true;
+        Jumppower();
         eyesight = transform.GetChild(7).gameObject;
         eyesight.SetActive(true);
+        
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode level)
+    {
+        MoveSetting(SceneManager.GetActiveScene().buildIndex);
     }
 
-    
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    public void Jumppower()
+    {
+        if (isperry)
+        {
+            SpeedJump = 16.3f * 1.2f;
+        }
+        else
+        {
+            SpeedJump = 16.3f;
+        }
+    }
+    public void MoveSetting(int buildIndex)
+    {
+       
+
+        if (map==0)
+        {
+
+            Vector2 xy =GameObject.Find("Load").transform.position;
+            transform.position = xy;
+            map = buildIndex;
+            
+        }
+        else if (map <buildIndex)
+        {
+            Vector2 xy = GameObject.Find("Start").transform.position;
+            transform.position = xy;
+            map = buildIndex;
+        }
+        else if(map > buildIndex)
+        {
+            Vector2 xy = GameObject.Find("Back").transform.position;
+            transform.position = xy;
+            map = buildIndex;
+        }
+        
+    }
 }
