@@ -989,9 +989,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8235607682360053437, guid: 165d4a644c2e3674e95e6d2cfbab061f,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235607682360053437, guid: 165d4a644c2e3674e95e6d2cfbab061f,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2113557296}
+    - target: {fileID: 8235607682360053437, guid: 165d4a644c2e3674e95e6d2cfbab061f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235607682360053437, guid: 165d4a644c2e3674e95e6d2cfbab061f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235607682360053437, guid: 165d4a644c2e3674e95e6d2cfbab061f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235607682360053437, guid: 165d4a644c2e3674e95e6d2cfbab061f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2041850357}
+    - target: {fileID: 8235607682360053437, guid: 165d4a644c2e3674e95e6d2cfbab061f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Load
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235607682360053437, guid: 165d4a644c2e3674e95e6d2cfbab061f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235607682360053434, guid: 165d4a644c2e3674e95e6d2cfbab061f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 182
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235607682360053434, guid: 165d4a644c2e3674e95e6d2cfbab061f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 165d4a644c2e3674e95e6d2cfbab061f, type: 3}
 --- !u!224 &1227809287 stripped
