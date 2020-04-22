@@ -11,8 +11,22 @@ public class StartScene : MonoBehaviour
     }
     public void Sin()
     {
-
+        
+        PlayerPrefs.DeleteKey("map");
         SceneManager.LoadScene(a);
 
+    }
+    public void Load()
+    {
+        if (PlayerPrefs.HasKey("map"))
+        {
+            a = PlayerPrefs.GetInt("map");
+            SceneManager.LoadScene(a);
+        }
+        else
+        {
+            PlayerPrefs.DeleteKey("map");
+            SceneManager.LoadScene(a);
+        }
     }
 }

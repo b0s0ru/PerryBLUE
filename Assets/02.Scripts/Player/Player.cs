@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     public bool Finedustdamage = false;
     public bool read = false;
     int map=0;
-    
+    public int index;
     public enum PlayerState
 
     {
@@ -99,6 +99,10 @@ public class Player : MonoBehaviour
     public void exit(){
 
         read = false;
+    }
+    public void full()
+    {
+        Hp = 100;
     }
     public void Killmob(int plushp)
     {
@@ -547,7 +551,8 @@ public class Player : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode level)
     {
-        MoveSetting(SceneManager.GetActiveScene().buildIndex);
+        index= SceneManager.GetActiveScene().buildIndex;
+        MoveSetting(index);
     }
 
     private void OnEnable()
