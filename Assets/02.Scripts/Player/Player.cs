@@ -38,7 +38,8 @@ public class Player : MonoBehaviour
     public bool isperry = true;
     public bool ischange = false;
     public bool Finedustdamage = false;
-    public bool read = false;
+    public bool stop = false;
+    FadeController black;
     int map=0;
     public int index;
     public enum PlayerState
@@ -81,8 +82,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (read == false)
-        {
+       
             Attacks();
 
             InputKey();
@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
 
             SetAnimation();
             Playergravity();
-        }
+       
 
        
     }
@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
 
     public void exit(){
 
-        read = false;
+        stop = false;
     }
     public void full()
     {
@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
     private void Down()
     {
 
-        if (Input.GetKey(KeyCode.DownArrow) && state == PlayerState.Wait && read==false)
+        if (Input.GetKey(KeyCode.DownArrow) && state == PlayerState.Wait && stop==false)
         {
             anim.SetTrigger("sit");
             state = PlayerState.Sit;
@@ -222,7 +222,7 @@ public class Player : MonoBehaviour
     void JumpPlayer()
     {
 
-        if (isGround && Input.GetButton("Jump") && state == PlayerState.Wait && read == false)
+        if (isGround && Input.GetButton("Jump") && state == PlayerState.Wait && stop == false)
         {
            
             moveDir.y = SpeedJump;
@@ -248,7 +248,7 @@ public class Player : MonoBehaviour
     }
     void InputKey()
     {
-        if (read == false)
+        if (stop == false)
         {
             if (state == PlayerState.Sit)
             {
@@ -296,7 +296,7 @@ public class Player : MonoBehaviour
     }
     void Attacks()
     {
-        if (read == false)
+        if (stop == false)
         {
 
             if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && pnife && isperry == true)
@@ -343,7 +343,8 @@ public class Player : MonoBehaviour
     }
     void SetDamage(int mDamage)
     {
-        if (state != PlayerState.die)
+
+        if (state != PlayerState.die || stop==false)
         {
             if (!isUnBeatTime)
             {
@@ -360,6 +361,7 @@ public class Player : MonoBehaviour
     }
     IEnumerator Hit()
     {
+
         rbody.velocity = Vector2.zero;
         if (state == PlayerState.Sit)
         {
@@ -510,7 +512,7 @@ public class Player : MonoBehaviour
     void RunBgm()
     {
 
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && lands == false && state == PlayerState.Wait && read == false)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && lands == false && state == PlayerState.Wait && stop == false)
         {
 
             lands = true;
@@ -528,7 +530,8 @@ public class Player : MonoBehaviour
 
     void InitPlayer()
     {
-        
+
+       
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -551,10 +554,24 @@ public class Player : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode level)
     {
-        index= SceneManager.GetActiveScene().buildIndex;
+        black = GameObject.Find("Canvas").transform.Find("black").GetComponent<FadeController>();
+        index = SceneManager.GetActiveScene().buildIndex;
         MoveSetting(index);
+        StartCoroutine("Black");
+        
     }
+    IEnumerator Black()
+    {
+       
+       
+        
+        moveDir.x = 0;
+        moveDir.y = 0;
+        yield return new WaitForSeconds(0.5f);
+        stop = false;
+        black.FadeOut(0.5f);
 
+    }
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -578,7 +595,7 @@ public class Player : MonoBehaviour
     }
     public void MoveSetting(int buildIndex)
     {
-       
+        
 
         if (map==0)
         {

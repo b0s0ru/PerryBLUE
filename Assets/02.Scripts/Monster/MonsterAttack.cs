@@ -18,7 +18,8 @@ public class MonsterAttack : MonoBehaviour
 
         if (collision.transform.tag == "Mpos" && a.state != Monster.MonsterState.Die)
         {
-            
+            a.GetComponent<Rigidbody2D>().WakeUp();
+
             collision.gameObject.SendMessageUpwards("SetDamage", a.Damage);
 
         }
