@@ -18,6 +18,7 @@ public class Select : MonoBehaviour
     {
         if (other.gameObject.tag == "Mpos" && Input.GetKey(KeyCode.UpArrow))
         {
+
             s.ObjectsWork2(a);
 
         }

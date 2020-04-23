@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Change : MonoBehaviour
 {
     Player a;
@@ -18,10 +18,15 @@ public class Change : MonoBehaviour
         {
             Changes();
         }
+        
     }
-    private void Changes()
+    void OnSceneLoaded(Scene scene, LoadSceneMode level)
     {
-        if (Input.GetKey(KeyCode.LeftShift) && a.ischange == false && a.isperry == true && a.state == Player.PlayerState.Wait && a.read == false)
+        StopCoroutine("Finddust");
+    }
+        private void Changes()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && a.ischange == false && a.isperry == true && a.state == Player.PlayerState.Wait && a.stop == false)
         {
             a.isperry = false;
             a.ischange = true;
@@ -31,7 +36,7 @@ public class Change : MonoBehaviour
             a.Jumppower();
 
         }
-        else if (Input.GetKey(KeyCode.LeftShift) && a.ischange == false && a.isperry == false && a.state == Player.PlayerState.Wait&& a.read == false)
+        else if (Input.GetKey(KeyCode.LeftShift) && a.ischange == false && a.isperry == false && a.state == Player.PlayerState.Wait&& a.stop == false)
         {
             a.isperry = true;
             a.ischange = true;
@@ -41,7 +46,7 @@ public class Change : MonoBehaviour
             a.Jumppower();
         }
 
-        if (a.isperry == false && a.Finedustdamage == false&& a.read == false)
+        if (a.isperry == false && a.Finedustdamage == false&& a.stop == false)
         {
             StartCoroutine(Finedust());
             a.Finedustdamage = true;

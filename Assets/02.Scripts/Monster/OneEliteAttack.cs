@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OneAttack : MonoBehaviour
+public class OneEliteAttack : MonoBehaviour
 {
     Monster mob;
     Vector3 playerPos;
@@ -13,13 +13,13 @@ public class OneAttack : MonoBehaviour
     public Transform firePos;
     bool bulletis = true;
     GameObject ins;
-   
+
     // Start is called before the first frame update
     void Start()
     {
         mob = GetComponent<Monster>();
         anim = GetComponent<Animator>();
-        MonsterBullet = Resources.Load("Bullet", typeof(GameObject)) as GameObject;
+        MonsterBullet = Resources.Load("Bullets", typeof(GameObject)) as GameObject;
 
     }
 
@@ -32,7 +32,7 @@ public class OneAttack : MonoBehaviour
 
         if (mob.state == Monster.MonsterState.Tracks)
         {
-           
+            
             //anim.SetBool("Atacking", true);
             Atacks();
             if (bulletis == true)
@@ -41,23 +41,23 @@ public class OneAttack : MonoBehaviour
                 StartCoroutine("Monsteratack");
             }
         }
-      
+
     }
 
     IEnumerator Monsteratack()
     {
-       
-      
-         ins = Instantiate(MonsterBullet, firePos.position, firePos.rotation);
-        
-        yield return new WaitForSeconds(2f);
+
+
+        ins = Instantiate(MonsterBullet, firePos.position, firePos.rotation);
+
+        yield return new WaitForSeconds(0.5f);
         bulletis = true;
 
     }
 
     void Atacks()
     {
-       
+
         if (dir.x < 0)
         {
 

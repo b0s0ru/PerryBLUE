@@ -5,7 +5,7 @@ using UnityEngine;
 public class OneMonsterAttack : MonoBehaviour
 {
 
-    float Damage = 25;
+    public float Damage;
 
     Transform c;
     Vector2 dir;
@@ -17,12 +17,12 @@ public class OneMonsterAttack : MonoBehaviour
       c=Monster.target.GetComponent<Transform>();
         dir = c.position - transform.position;
         GetComponent<Rigidbody2D>().AddForce(dir * Time.deltaTime * 5000);
-     
+        
     }
     private void Start()
     {
-       
-        
+
+        Destroy(gameObject, 10f);
     }
     private void Update()
     {

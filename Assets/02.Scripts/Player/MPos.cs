@@ -21,6 +21,7 @@ public class MPos : MonoBehaviour
         if (other.gameObject.tag == "Object"){
         yes = true;
         others = other;
+            a.GetComponent<Rigidbody2D>().WakeUp();
         }
     }
     void OnTriggerExit2D(Collider2D other)
@@ -38,9 +39,9 @@ public class MPos : MonoBehaviour
 
         if (yes)
         {
-            if (others.gameObject.tag == "Object" && Input.GetKey(KeyCode.UpArrow) && a.isperry == false && a.read == false)
+            if (others.gameObject.tag == "Object" && Input.GetKey(KeyCode.UpArrow) && a.isperry == false && a.stop == false)
             {
-                a.read = true;
+                a.stop = true;
 
                 others.gameObject.SendMessage("Textload");
             }
