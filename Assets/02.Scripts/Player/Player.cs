@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     public bool stop = false;
     FadeController black;
     int map=0;
+    GameObject whatswitch;
     public int index;
     public enum PlayerState
 
@@ -87,7 +88,7 @@ public class Player : MonoBehaviour
 
             InputKey();
             JumpPlayer();
-
+            
             SetAnimation();
             Playergravity();
        
@@ -185,10 +186,11 @@ public class Player : MonoBehaviour
         //  rbody.constraints = RigidbodyConstraints2D.FreezePositionX;
        // Dpos.transform.Translate(new Vector3(0, +0.455f, 0));
 
-        yield return new WaitForSeconds(3f);
-      
-      
-       
+        yield return new WaitForSeconds(5f);
+        GameObject.Find("Canvas").transform.Find("UI_dead").gameObject.SetActive(true);
+        GameObject.Destroy(gameObject);
+
+
     }
     
     void Playergravity()
@@ -294,6 +296,40 @@ public class Player : MonoBehaviour
 
         }
     }
+
+    public void Jenu(bool rsq, GameObject switchs)
+    {
+        
+        if (stop == false)
+        {
+            bool q = false;
+            whatswitch = switchs;
+            if (0 <= switchs.transform.position.x - transform.position.x && !rsq)
+            {
+                q = true;
+            }
+            else if (0 >= switchs.transform.position.x - transform.position.x && rsq)
+            {
+                q = true;
+            }
+         
+
+            if (isperry == false && state == PlayerState.Wait && Input.GetKeyDown(KeyCode.Z) && q==true)
+            {
+                anim.SetTrigger("Button");
+                StartCoroutine("JButton");
+               
+                if (rsq)
+                {
+                    transform.localScale = new Vector3(1, 1, 1);
+                }
+                else
+                {
+                    transform.localScale = new Vector3(-1, 1, 1);
+                }
+            }
+        }
+    }
     void Attacks()
     {
         if (stop == false)
@@ -344,7 +380,7 @@ public class Player : MonoBehaviour
     void SetDamage(int mDamage)
     {
 
-        if (state != PlayerState.die || stop==false)
+        if (state != PlayerState.die&& stop==false)
         {
             if (!isUnBeatTime)
             {
@@ -435,6 +471,17 @@ public class Player : MonoBehaviour
 
       
     }
+    IEnumerator JButton()
+    {
+        moveDir.x = 0;
+        stop = true;
+        yield return new WaitForSeconds(1f);
+        whatswitch.SendMessage("Change");
+        yield return new WaitForSeconds(1f);
+        stop = false;
+
+
+    }
     IEnumerator AirAttackis()
     {
         yield return new WaitForSeconds(0.3f);
@@ -522,9 +569,12 @@ public class Player : MonoBehaviour
     }
     void SRunBgm()
     {
-        lands = false;
-      
-        Runbgm.Play();
+        if (state != PlayerState.die)
+        {
+            lands = false;
+
+            Runbgm.Play();
+        }
     }
 
 
@@ -595,9 +645,8 @@ public class Player : MonoBehaviour
     }
     public void MoveSetting(int buildIndex)
     {
-        
 
-        if (map==0)
+         if (map==0)
         {
 
             Vector2 xy =GameObject.Find("Load").transform.position;

@@ -25,6 +25,18 @@ public class StartScene : MonoBehaviour
         StartCoroutine("Scenemove");
        
     }
+    public void resan()
+    {
+        black.FadeIn(0.3f);
+        
+        StartCoroutine("Scenemove");
+
+    }
+    public void Re()
+    {
+        Destroy(GameObject.Find("Player").gameObject);
+        SceneManager.LoadScene(0);
+    }
     IEnumerator Scenemove()
     {
         yield return new WaitForSeconds(0.3f);
