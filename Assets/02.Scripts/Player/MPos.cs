@@ -16,13 +16,15 @@ public class MPos : MonoBehaviour
     // Update is called once per frame
 
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
+        
         if (other.gameObject.tag == "Object"){
         yes = true;
         others = other;
-            a.GetComponent<Rigidbody2D>().WakeUp();
+        a.GetComponent<Rigidbody2D>().WakeUp();
         }
+     
     }
     void OnTriggerExit2D(Collider2D other)
     {
