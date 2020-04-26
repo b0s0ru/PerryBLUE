@@ -187,7 +187,7 @@ public class Player : MonoBehaviour
        // Dpos.transform.Translate(new Vector3(0, +0.455f, 0));
 
         yield return new WaitForSeconds(5f);
-        GameObject.Find("Canvas").transform.Find("UI_dead").gameObject.SetActive(true);
+        
         GameObject.Destroy(gameObject);
 
 
@@ -652,7 +652,7 @@ public class Player : MonoBehaviour
             Vector2 xy =GameObject.Find("Load").transform.position;
             transform.position = xy;
             map = buildIndex;
-            
+           
         }
         else if (map <buildIndex)
         {

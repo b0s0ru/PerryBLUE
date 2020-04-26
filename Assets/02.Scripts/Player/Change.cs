@@ -46,7 +46,7 @@ public class Change : MonoBehaviour
             a.Jumppower();
         }
 
-        if (a.isperry == false && a.Finedustdamage == false&& a.stop == false)
+        if (a.isperry == false && a.Finedustdamage == false&& a.stop == false && a.state!=Player.PlayerState.die)
         {
             StartCoroutine(Finedust());
             a.Finedustdamage = true;
