@@ -150,6 +150,8 @@ public class Bpos : MonoBehaviour
         {
             a.Hp = 0;
             Destroy(a.gameObject);
+            a.state = Player.PlayerState.die;
+            GameObject.Find("Canvas").transform.Find("UI_dead").gameObject.SetActive(true);
         }
 
             if (other.gameObject.layer == 8)
