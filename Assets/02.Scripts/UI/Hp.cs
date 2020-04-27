@@ -22,9 +22,12 @@ public class Hp : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        hps = Players.Hp;
-        progress.fillAmount = hps / 100;
-        string str = hps.ToString();
-        hp.text = str;
+        if (hps!=0)
+        {
+            hps = Players.Hp;
+            progress.fillAmount = hps / 100;
+            string str = hps.ToString();
+            hp.text = str;
+        }
     }
 }
