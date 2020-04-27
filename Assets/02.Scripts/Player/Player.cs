@@ -217,7 +217,7 @@ public class Player : MonoBehaviour
 
      
             rbody.MovePosition(rbody.position + moveDir * Time.deltaTime);
-        
+       
 
     }
 
@@ -259,6 +259,7 @@ public class Player : MonoBehaviour
                 {
                     moveDir.x = mbs;
                 }
+                
             }
             else if (moveblock && (state != PlayerState.die && state != PlayerState.Damage && state!= PlayerState.JumpDamage))
             {
@@ -275,7 +276,7 @@ public class Player : MonoBehaviour
                     r = speed * -1;
                 }
                 moveDir.x = r;
-
+               
 
             }
             else if (state != PlayerState.die && state != PlayerState.Damage && state != PlayerState.JumpDamage)
@@ -285,7 +286,7 @@ public class Player : MonoBehaviour
                 FlipPlayer(keys);
 
                 moveDir.x = speed * keys;
-
+               
 
 
 
