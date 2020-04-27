@@ -149,9 +149,10 @@ public class Bpos : MonoBehaviour
         if (other.gameObject.tag == "Map" && a.state!=Player.PlayerState.die)
         {
             a.Hp = 0;
+            GameObject.Find("Canvas").transform.Find("UI_dead").gameObject.SetActive(true);
             Destroy(a.gameObject);
             a.state = Player.PlayerState.die;
-            GameObject.Find("Canvas").transform.Find("UI_dead").gameObject.SetActive(true);
+            
         }
 
             if (other.gameObject.layer == 8)
