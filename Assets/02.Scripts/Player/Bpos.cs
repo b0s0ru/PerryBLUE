@@ -177,6 +177,7 @@ public class Bpos : MonoBehaviour
             if ((other.gameObject.tag == "down" || other.gameObject.tag=="time")&& a.state==Player.PlayerState.Sit)
             {
                 a.state = Player.PlayerState.JumpFall;
+                a.Vcamera.SendMessage("UP");
                 a.anim.SetTrigger("sitFall");
               //  a.transform.Translate(new Vector3(0, +0.45f, 0));
                 //transform.Translate(new Vector3(0, -0.3f, 0));

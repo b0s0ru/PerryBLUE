@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
     int map=0;
     GameObject whatswitch;
     public int index;
+    public GameObject Vcamera;
     public enum PlayerState
 
     {
@@ -121,6 +122,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.DownArrow) && state == PlayerState.Wait && stop==false)
         {
+            Vcamera.SendMessage("Down");
             anim.SetTrigger("sit");
             state = PlayerState.Sit;
            // transform.Translate(new Vector3(0, -0.45f, 0));
@@ -136,6 +138,8 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.DownArrow) == false && state == PlayerState.Sit)
         {
+           
+            Vcamera.SendMessage("UP");
             anim.SetTrigger("Up");
             state = PlayerState.Wait;
          //   transform.Translate(new Vector3(0, +0.45f, 0));
@@ -381,8 +385,10 @@ public class Player : MonoBehaviour
     void SetDamage(int mDamage)
     {
 
+
         if (state != PlayerState.die&& stop==false)
         {
+            Vcamera.SendMessage("UP");
             if (!isUnBeatTime)
             {
                 Hp -= mDamage;
@@ -607,6 +613,7 @@ public class Player : MonoBehaviour
     {
         black = GameObject.Find("Canvas").transform.Find("black").GetComponent<FadeController>();
         index = SceneManager.GetActiveScene().buildIndex;
+        Vcamera = GameObject.Find("CM").gameObject;
         MoveSetting(index);
         StartCoroutine("Black");
         
