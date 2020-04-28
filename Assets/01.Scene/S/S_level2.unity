@@ -140,7 +140,7 @@ PrefabInstance:
     - target: {fileID: 4924891143404942823, guid: 2e609e4f8f573e74583c395583cd3639,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.1
+      value: -49.4
       objectReference: {fileID: 0}
     - target: {fileID: 4924891143404942823, guid: 2e609e4f8f573e74583c395583cd3639,
         type: 3}
@@ -186,6 +186,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740362531, guid: 2e609e4f8f573e74583c395583cd3639, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.08
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e609e4f8f573e74583c395583cd3639, type: 3}
@@ -44886,8 +44890,8 @@ GameObject:
   - component: {fileID: 7310716786793858823}
   - component: {fileID: 7310716786793858822}
   m_Layer: 0
-  m_Name: CM vcam
-  m_TagString: Untagged
+  m_Name: CM
+  m_TagString: Vcam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
