@@ -469,7 +469,7 @@ public class Player : MonoBehaviour
     {
         
         Attackbgm.Play();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.01f);
         if (state == PlayerState.Attack)
         {
             Kchild.kp.enabled = true;

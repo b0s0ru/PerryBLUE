@@ -302,7 +302,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1177,7 +1176,7 @@ GameObject:
   - component: {fileID: 1511798472}
   - component: {fileID: 1511798471}
   m_Layer: 0
-  m_Name: CM vcam
+  m_Name: CM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
