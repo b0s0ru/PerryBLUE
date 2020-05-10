@@ -336,7 +336,7 @@ public class Player : MonoBehaviour
         }
     }
     void Attacks()
-    {
+    {   
         if (stop == false)
         {
 

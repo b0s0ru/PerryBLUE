@@ -16,7 +16,7 @@ public class Button : MonoBehaviour
         t = GetComponent<Transform>();
         a = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         b=GameObject.Find("Player").GetComponent<Player>();
-        q = gameObject.transform.parent.GetChild(1).gameObject;
+        q = transform.GetChild(0).gameObject;
         if (s)
         {
 

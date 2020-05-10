@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7841629376838367768}
   - component: {fileID: 7841629376838367767}
   m_Layer: 13
-  m_Name: "\uC9C0\uC625\uC5D0\uC11C \uB3CC\uC544\uC628 \uBE14\uB8E8\uD321"
+  m_Name: Blue
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,6 +55,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -66,6 +67,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -166,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePos: {fileID: 8986758595739238570}
+  delay: 2
 --- !u!114 &7841629376838367767
 MonoBehaviour:
   m_ObjectHideFlags: 0
