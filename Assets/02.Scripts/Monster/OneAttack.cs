@@ -13,7 +13,7 @@ public class OneAttack : MonoBehaviour
     public Transform firePos;
     bool bulletis = true;
     GameObject ins;
-   
+    public float delay;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +28,13 @@ public class OneAttack : MonoBehaviour
     {
         if (Monster.target == null) return;
         playerPos = Monster.target.transform.position;
-        dir = playerPos - transform.position;
-
+        
+       
+       
         if (mob.state == Monster.MonsterState.Tracks)
         {
-           
+            
+            
             //anim.SetBool("Atacking", true);
             Atacks();
             if (bulletis == true)
@@ -50,7 +52,7 @@ public class OneAttack : MonoBehaviour
       
          ins = Instantiate(MonsterBullet, firePos.position, firePos.rotation);
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(delay);
         bulletis = true;
 
     }
