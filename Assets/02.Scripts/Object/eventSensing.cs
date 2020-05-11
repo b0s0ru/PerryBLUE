@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class eventSensing : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /*// Start is called before the first frame update
     void Start()
     {
         
@@ -20,5 +20,5 @@ public class eventSensing : MonoBehaviour
 
         
 
-    }
+    }*/
 }

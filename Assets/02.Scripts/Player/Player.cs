@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     GameObject whatswitch;
     public int index;
     public GameObject Vcamera;
+    public bool[] Read = new bool[100];
     public enum PlayerState
 
     {
@@ -199,7 +200,10 @@ public class Player : MonoBehaviour
     
     void Playergravity()
     {
-
+        if (stop == true)
+        {
+            moveDir.x = 0;
+        }
 
         if (isGround == false && (state!=PlayerState.die &&state!=PlayerState.Sit))
         {
@@ -620,9 +624,9 @@ public class Player : MonoBehaviour
     }
     IEnumerator Black()
     {
-       
-       
-        
+
+
+        stop = true;
         moveDir.x = 0;
         moveDir.y = 0;
         yield return new WaitForSeconds(0.5f);

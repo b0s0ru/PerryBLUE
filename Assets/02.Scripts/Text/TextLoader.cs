@@ -6,7 +6,7 @@ using UnityEngine;
 public class TextLoader : MonoBehaviour
 {
 
-   public int index;
+/*   public int index;
     static NextScene ns;
     GameObject nq;
     GameObject ny;
@@ -80,7 +80,7 @@ public class TextLoader : MonoBehaviour
         {
             ns.Scenemove();
         }*/
-        else if (s == -3)
+      /*  else if (s == -3)
         {
             if (index == 36)
             {
@@ -184,5 +184,5 @@ public class TextLoader : MonoBehaviour
     {
         index=Texts.instance.noScript(index);
         nq.SetActive(true);
-    }
+    }*/
 }
