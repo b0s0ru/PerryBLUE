@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13efbbaff3e91144b8a2f0f5b6b885c6, type: 3}
+  m_Name: New
+  m_EditorClassIdentifier: 
+  SheetName: Blue
+  WorksheetName: New
+  dataArray:
+  - number: "\uC774\uBCA4\uD2B8\uC758\uC2DC\uC791\uC744 \uC758\uBBF8\uD55C\uB2E4"
+    name: "\uC774\uB984"
+    text: "\uB300\uC0AC"
+    next: "0(\uB9C8\uCE68), 1(\uB2E4\uC74C)"
+  - number: 1
+    name: "\uD398\uB9AC"
+    text: "\uC774\uBCA4\uD2B8 1\uBC88\uC785\uB2C8\uB2E4."
+    next: 1
+  - number: 0
+    name: "\uD398\uB9AC"
+    text: Bark! Bark!
+    next: 1
+  - number: 0
+    name: "\uC81C\uB204"
+    text: '?'
+    next: 0
+  - number: 2
+    name: "\uC81C\uB204"
+    text: "\uC800 \uBAAC\uC2A4\uD130\uB294 \uBB50\uC9C0???!"
+    next: 1
+  - number: 0
+    name: "\uD398\uB9AC"
+    text: "\uC800\uBAAC\uC2A4\uD130\uB294 \uBC14\uB85C!!!"
+    next: 1

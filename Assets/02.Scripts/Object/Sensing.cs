@@ -18,7 +18,7 @@ public class Sensing : MonoBehaviour
     public void Textload()
     {
        
-            s.ObjectsWork(a);
+           // s.ObjectsWork(a);
 
        
     }

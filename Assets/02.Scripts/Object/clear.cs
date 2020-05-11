@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class clear : MonoBehaviour
 {
-    public int a;
+/*    public int a;
     static TextLoader s;
     public bool [] d;
     // Start is called before the first frame update
@@ -42,5 +42,5 @@ public class clear : MonoBehaviour
 
         }
 
-    }
+    }*/
 }
