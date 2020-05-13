@@ -31,11 +31,13 @@ public class Stop : MonoBehaviour
                 {
                     b.movementFlag = 2;
                     StartCoroutine("StopRoutie");
+              
                 }
                 else if (b.movementFlag == 2)
                 {
                     b.movementFlag = 1;
                     StartCoroutine("StopRoutie");
+                  
                 }
             }
         }
@@ -44,7 +46,7 @@ public class Stop : MonoBehaviour
     IEnumerator StopRoutie()
     {
         b.StopCoroutine("ChangeMovement");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         b.StartCoroutine("ChangeMovement");
     }
 }
