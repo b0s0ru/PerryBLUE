@@ -59,7 +59,7 @@ public class OneAttack : MonoBehaviour
 
     void Atacks()
     {
-       
+        dir = playerPos- transform.position;
         if (dir.x < 0)
         {
 

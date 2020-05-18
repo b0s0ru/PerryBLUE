@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -46828,7 +46828,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1724783784}
   m_Lens:
-    FieldOfView: 100
+    FieldOfView: 90
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -46898,7 +46898,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6250726815295263550}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -58.672146, y: 60.985332, z: -20.757908}
+  m_LocalPosition: {x: -58.672146, y: 60.29502, z: -20.757908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6250726815786897802}
@@ -47044,7 +47044,7 @@ PrefabInstance:
     - target: {fileID: 4244008067673252408, guid: e68f3c4b177317541b006a79bb682e3b,
         type: 3}
       propertyPath: field of view
-      value: 100
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4244008067673252408, guid: e68f3c4b177317541b006a79bb682e3b,
         type: 3}
@@ -47054,12 +47054,12 @@ PrefabInstance:
     - target: {fileID: 4244008067673252409, guid: e68f3c4b177317541b006a79bb682e3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -58.672146
+      value: -66.10899
       objectReference: {fileID: 0}
     - target: {fileID: 4244008067673252409, guid: e68f3c4b177317541b006a79bb682e3b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 60.985336
+      value: 60.56348
       objectReference: {fileID: 0}
     - target: {fileID: 4244008067673252409, guid: e68f3c4b177317541b006a79bb682e3b,
         type: 3}
