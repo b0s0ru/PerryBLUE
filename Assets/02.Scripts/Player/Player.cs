@@ -44,7 +44,10 @@ public class Player : MonoBehaviour
     GameObject whatswitch;
     public int index;
     public GameObject Vcamera;
-    public bool[] Read = new bool[100];
+    public bool[] Read;
+    public int max = 300;
+  
+    
     public enum PlayerState
 
     {
@@ -55,7 +58,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-       
+        
         if (instance == null)
         {
             instance = this;
@@ -123,7 +126,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.DownArrow) && state == PlayerState.Wait && stop==false)
         {
-            Vcamera.SendMessage("Down");
+            
             anim.SetTrigger("sit");
             state = PlayerState.Sit;
            // transform.Translate(new Vector3(0, -0.45f, 0));
@@ -132,7 +135,7 @@ public class Player : MonoBehaviour
          
            Mpos.SetActive(false);
             SMpos.SetActive(true);
-
+            Vcamera.SendMessage("Down");
 
         }
       
@@ -197,6 +200,7 @@ public class Player : MonoBehaviour
 
 
     }
+
     
     void Playergravity()
     {
@@ -592,7 +596,7 @@ public class Player : MonoBehaviour
     void InitPlayer()
     {
 
-       
+        Read = new bool[1000];
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -611,7 +615,27 @@ public class Player : MonoBehaviour
         Jumppower();
         eyesight = transform.GetChild(7).gameObject;
         eyesight.SetActive(true);
-        
+        Textsave();
+
+    }
+    void Textsave()
+    {
+        for (int i = 1; i <= max; i++)
+        {
+            if(PlayerPrefs.HasKey("texts" + i))
+            {
+               
+                Read[i] = (PlayerPrefs.GetInt("texts" + i)!=0) ? true : false ;
+                
+            }
+            else
+            {
+                PlayerPrefs.SetInt("texts" + i, 0);
+            }
+
+       
+        }
+        PlayerPrefs.Save();
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode level)
     {
@@ -658,26 +682,29 @@ public class Player : MonoBehaviour
     public void MoveSetting(int buildIndex)
     {
 
-         if (map==0)
+        if (map == 0)
         {
 
-            Vector2 xy =GameObject.Find("Load").transform.position;
+            Vector2 xy = GameObject.Find("Load").transform.position;
             transform.position = xy;
             map = buildIndex;
-           
+
         }
-        else if (map <buildIndex)
+        else if (map < buildIndex)
         {
             Vector2 xy = GameObject.Find("Start").transform.position;
             transform.position = xy;
             map = buildIndex;
         }
-        else if(map > buildIndex)
+        else if (map > buildIndex)
         {
             Vector2 xy = GameObject.Find("Back").transform.position;
             transform.position = xy;
             map = buildIndex;
         }
-        
+
     }
+
+
+
 }
