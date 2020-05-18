@@ -15,9 +15,10 @@ public class OneMonsterAttack : MonoBehaviour
     {
       //  Destroy(this.gameObject, 3);
       c=Monster.target.GetComponent<Transform>();
-        dir = c.position - transform.position;
+        dir= (c.position - transform.position);
         dir.Normalize();
-        GetComponent<Rigidbody2D>().AddForce(dir * Time.deltaTime * 60000);
+
+        GetComponent<Rigidbody2D>().AddForce(dir * 250);
         
     }
     private void Start()
