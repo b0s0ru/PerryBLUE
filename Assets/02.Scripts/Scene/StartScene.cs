@@ -15,6 +15,11 @@ public class StartScene : MonoBehaviour
     {
         black.FadeIn(0.3f);
         PlayerPrefs.DeleteKey("map");
+        for(int i=0; i<=1000; i++) {
+            PlayerPrefs.DeleteKey("texts" + i);
+        }
+       
+
         StartCoroutine("Scenemove");
         
 
@@ -25,7 +30,7 @@ public class StartScene : MonoBehaviour
         StartCoroutine("Scenemove");
        
     }
-    public void resan()
+   /* public void resan()
     {
         black.FadeIn(0.3f);
         
@@ -36,7 +41,7 @@ public class StartScene : MonoBehaviour
     {
         Destroy(GameObject.Find("Player").gameObject);
         SceneManager.LoadScene(0);
-    }
+    }*/
     IEnumerator Scenemove()
     {
         yield return new WaitForSeconds(0.3f);
