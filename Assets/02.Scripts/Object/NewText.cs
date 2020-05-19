@@ -32,5 +32,10 @@ public class NewText : MonoBehaviour
         }
 
     }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        
+    }
 }
 
