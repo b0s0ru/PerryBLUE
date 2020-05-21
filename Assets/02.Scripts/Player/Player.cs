@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
     public GameObject Vcamera;
     public bool[] Read;
     public int max = 300;
-  
+    
     
     public enum PlayerState
 
