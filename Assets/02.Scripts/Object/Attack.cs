@@ -14,7 +14,7 @@ public class Attack : MonoBehaviour
 
 
         if (collision.transform.tag == "Mpos")
-        {
+        {   
             collision.transform.parent.GetComponent<Rigidbody2D>().WakeUp();
             collision.gameObject.SendMessageUpwards("SetDamage",Deal);
            
