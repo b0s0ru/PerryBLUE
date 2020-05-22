@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
         {
 
             DeadCheck();
-
+          
             RunBgm();
             Down();
         }
@@ -88,19 +88,20 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-       
+        if (state != PlayerState.die)
+        {
             Attacks();
-
+           
             InputKey();
             JumpPlayer();
             
             SetAnimation();
             Playergravity();
-       
+        }
 
        
     }
-
+   
 
     public void exit(){
 
@@ -135,7 +136,7 @@ public class Player : MonoBehaviour
          
            Mpos.SetActive(false);
             SMpos.SetActive(true);
-            Vcamera.SendMessage("Down");
+           
 
         }
       
@@ -143,7 +144,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow) == false && state == PlayerState.Sit)
         {
            
-            Vcamera.SendMessage("UP");
+           
             anim.SetTrigger("Up");
             state = PlayerState.Wait;
          //   transform.Translate(new Vector3(0, +0.45f, 0));
@@ -305,6 +306,11 @@ public class Player : MonoBehaviour
 
             }
 
+          
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                GameObject.Find("Canvas").transform.Find("UI_menu").SendMessage("Esc");
+            }
 
 
         }
@@ -396,7 +402,7 @@ public class Player : MonoBehaviour
 
         if (state != PlayerState.die&& stop==false)
         {
-            Vcamera.SendMessage("UP");
+           
             if (!isUnBeatTime)
             {
                 Hp -= mDamage;
@@ -654,8 +660,9 @@ public class Player : MonoBehaviour
         moveDir.x = 0;
         moveDir.y = 0;
         yield return new WaitForSeconds(0.5f);
-        stop = false;
+       
         black.FadeOut(0.5f);
+        stop = false;
 
     }
     private void OnEnable()

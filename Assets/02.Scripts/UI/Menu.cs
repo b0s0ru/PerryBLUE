@@ -13,18 +13,14 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Esc();
+        
     }
 
     public void Esc()
     {
-
-        
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
             Time.timeScale = 0;
             transform.Find("UI_menu").gameObject.SetActive(true);
-        }
+        
     }
     public void GO()
     {
