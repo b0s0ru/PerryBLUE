@@ -5,21 +5,29 @@ using UnityEngine;
 public class Sensing : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int a;
-    static TextLoader s;
-   
-   
-    private void Awake()
-    {
-        s = GameObject.Find("UI_Script/TextManager").gameObject.GetComponent<TextLoader>();
-       
-        a = a-2;
-    }
-    public void Textload()
-    {
-       
-           // s.ObjectsWork(a);
 
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
        
+
+
+        if (other.gameObject.tag == "Mpos")
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+        }
+
     }
+    void OnTriggerExit2D(Collider2D other)
+    {
+
+
+
+        if (other.gameObject.tag == "Mpos")
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
+
+    }
+
 }
