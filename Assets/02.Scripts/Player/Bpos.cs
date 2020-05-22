@@ -174,7 +174,7 @@ public class Bpos : MonoBehaviour
                 a.moveblock = false;
 
                 }
-            if ((other.gameObject.tag == "down" || other.gameObject.tag=="time")&& a.state==Player.PlayerState.Sit)
+            if ((other.gameObject.tag == "down" || other.gameObject.tag=="time")&& (a.state==Player.PlayerState.Sit||a.state ==Player.PlayerState.See))
             {
                 a.state = Player.PlayerState.JumpFall;
                 a.Vcamera.SendMessage("UP");

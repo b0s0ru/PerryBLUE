@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Cinemachine;
 public class Player : MonoBehaviour
 {
 
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     int map=0;
     GameObject whatswitch;
     public int index;
-    public GameObject Vcamera;
+    public CinemachineVirtualCamera Vcamera;
     public bool[] Read;
     public int max = 300;
     
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     public enum PlayerState
 
     {
-        Wait = 0, Jump, JumpFall, die, Attack, Sit, Damage,JumpDamage,JumpAttack
+        Wait = 0, Jump, JumpFall, die, Attack, Sit, Damage,JumpDamage,JumpAttack,See
     }
     public static Player instance;
 
@@ -78,11 +78,8 @@ public class Player : MonoBehaviour
     {
         if (state != PlayerState.die)
         {
-
             DeadCheck();
-          
-            RunBgm();
-            Down();
+
         }
     }
 
@@ -94,7 +91,10 @@ public class Player : MonoBehaviour
            
             InputKey();
             JumpPlayer();
-            
+            MultSee();
+
+            RunBgm();
+            Down();
             SetAnimation();
             Playergravity();
         }
@@ -102,7 +102,24 @@ public class Player : MonoBehaviour
        
     }
    
+    public void MultSee()
+    {
 
+        if (Input.GetKeyDown(KeyCode.C) && state == PlayerState.Wait && !isperry && stop == false)
+        {
+
+            Vcamera.m_Lens.FieldOfView = 120;
+            state=PlayerState.See;
+
+        }
+        else if (Input.GetKeyDown(KeyCode.C) && state == PlayerState.See && stop == false)
+        {
+            
+            Vcamera.m_Lens.FieldOfView = 90;
+            state = PlayerState.Wait;
+
+        }
+    }
     public void exit(){
 
         stop = false;
@@ -210,7 +227,7 @@ public class Player : MonoBehaviour
             moveDir.x = 0;
         }
 
-        if (isGround == false && (state!=PlayerState.die &&state!=PlayerState.Sit))
+        if (isGround == false && (state!=PlayerState.die &&state!=PlayerState.Sit &&state != PlayerState.See))
         {
              
             moveDir.y -= gravity * Time.deltaTime;
@@ -265,7 +282,7 @@ public class Player : MonoBehaviour
     {
         if (stop == false)
         {
-            if (state == PlayerState.Sit)
+            if (state == PlayerState.Sit || state== PlayerState.See)
             {
                 if (!moveblock) { moveDir.x = 0; }
                 else
@@ -405,6 +422,7 @@ public class Player : MonoBehaviour
            
             if (!isUnBeatTime)
             {
+                Vcamera.m_Lens.FieldOfView = 90;
                 Hp -= mDamage;
                // state = PlayerState.Damage;
                 isUnBeatTime = true;
@@ -647,7 +665,7 @@ public class Player : MonoBehaviour
     {
         black = GameObject.Find("Canvas").transform.Find("black").GetComponent<FadeController>();
         index = SceneManager.GetActiveScene().buildIndex;
-        Vcamera = GameObject.Find("CM").gameObject;
+        Vcamera = GameObject.Find("CM").GetComponent<CinemachineVirtualCamera>();
         MoveSetting(index);
         StartCoroutine("Black");
         
