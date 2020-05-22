@@ -16,7 +16,7 @@ public class FadeController : MonoBehaviour {
 		StartCoroutine(CoFadeOut(fadeOutTime, nextEvent));
 	}
 
-	// 투명 -> 불투명
+	
 	IEnumerator CoFadeIn(float fadeOutTime, System.Action nextEvent = null){
 		Image sr = this.gameObject.GetComponent<Image>();
 		Color tempColor = sr.color;
@@ -33,7 +33,7 @@ public class FadeController : MonoBehaviour {
 		if(nextEvent != null) nextEvent();
 	}
 
-	// 불투명 -> 투명
+	
 	IEnumerator CoFadeOut(float fadeOutTime, System.Action nextEvent = null){
 		Image sr = this.gameObject.GetComponent<Image>();
 		Color tempColor = sr.color;
