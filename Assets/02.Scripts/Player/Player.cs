@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     public bool ischange = false;
     public bool Finedustdamage = false;
     public bool stop = false;
-    FadeController black;
+    //FadeController black;
     int map=0;
     GameObject whatswitch;
     public int index;
@@ -76,11 +76,7 @@ public class Player : MonoBehaviour
     void Update()
 
     {
-        if (state != PlayerState.die)
-        {
-           
-
-        }
+        
     }
 
     void FixedUpdate()
@@ -640,6 +636,7 @@ public class Player : MonoBehaviour
         eyesight = transform.GetChild(7).gameObject;
         eyesight.SetActive(true);
         Textsave();
+        //GameObject.Find("Canvas").transform.Find("UI_HPbar").GetChild(0).gameObject.SetActive(true);
 
     }
     void Textsave()
@@ -663,7 +660,7 @@ public class Player : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode level)
     {
-        black = GameObject.Find("Canvas").transform.Find("black").GetComponent<FadeController>();
+        //black = GameObject.Find("Canvas").transform.Find("black").GetComponent<FadeController>();
         index = SceneManager.GetActiveScene().buildIndex;
         Vcamera = GameObject.Find("CM").GetComponent<CinemachineVirtualCamera>();
         MoveSetting(index);
@@ -678,8 +675,8 @@ public class Player : MonoBehaviour
         moveDir.x = 0;
         moveDir.y = 0;
         yield return new WaitForSeconds(0.5f);
-       
-        black.FadeOut(0.5f);
+
+        FadeController.instance.FadeOut(0.5f);
         stop = false;
 
     }
