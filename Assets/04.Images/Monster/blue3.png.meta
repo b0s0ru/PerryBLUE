@@ -1,33 +1,27 @@
 fileFormatVersion: 2
-guid: eb841118172f95145bc52a3bda209076
+guid: 582e01c8af320ea4599421cabf0bc031
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3621428172583921299
-    second: Red_slice_0
+      213: 66326773847995623
+    second: blue3_0
   - first:
-      213: -4473393168259767087
-    second: Red_slice_1
+      213: -7550040593366984040
+    second: blue3_1
   - first:
-      213: -805902038252488548
-    second: Red_slice_2
+      213: -4379455387799083709
+    second: blue3_2
   - first:
-      213: 5227125194191148103
-    second: Red_slice_3
+      213: 4643507745751942801
+    second: blue3_3
   - first:
-      213: -2753114120014331568
-    second: Red_slice_4
+      213: -4330287096723644827
+    second: blue3_4
   - first:
-      213: 9167853993912122360
-    second: Red_slice_5
-  - first:
-      213: -8986762578926800026
-    second: Red_slice_6
-  - first:
-      213: 4775917688965197968
-    second: Red_slice_7
+      213: 3203183258841516415
+    second: blue3_5
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -81,6 +75,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -110,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red_slice_0
+      name: blue3_0
       rect:
         serializedVersion: 2
-        x: 128
-        y: 420
-        width: 144
-        height: 360
+        x: 13
+        y: 208
+        width: 173
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 396e47e5cb5e14230800000000000000
-      internalID: 3621428172583921299
+      spriteID: 7e4be4279d3abe000800000000000000
+      internalID: 66326773847995623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red_slice_1
+      name: blue3_1
       rect:
         serializedVersion: 2
-        x: 527
-        y: 422
-        width: 144
-        height: 356
+        x: 202
+        y: 208
+        width: 196
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d4a7315d905be1c0800000000000000
-      internalID: -4473393168259767087
+      spriteID: 89ad498051ed83790800000000000000
+      internalID: -7550040593366984040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red_slice_2
+      name: blue3_2
       rect:
         serializedVersion: 2
-        x: 936
-        y: 422
-        width: 138
-        height: 356
+        x: 445
+        y: 208
+        width: 153
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c987236bd5cd0d4f0800000000000000
-      internalID: -805902038252488548
+      spriteID: 345a094378c0933c0800000000000000
+      internalID: -4379455387799083709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red_slice_3
+      name: blue3_3
       rect:
         serializedVersion: 2
-        x: 1336
-        y: 422
-        width: 138
-        height: 348
+        x: 0
+        y: 1
+        width: 197
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 744124c6baa7a8840800000000000000
-      internalID: 5227125194191148103
+      spriteID: 196c15141bd017040800000000000000
+      internalID: 4643507745751942801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red_slice_4
+      name: blue3_4
       rect:
         serializedVersion: 2
-        x: 110
-        y: 19
-        width: 180
-        height: 362
+        x: 204
+        y: 6
+        width: 192
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0510f626b49fac9d0800000000000000
-      internalID: -2753114120014331568
+      spriteID: 56e545014dab7e3c0800000000000000
+      internalID: -4330287096723644827
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red_slice_5
+      name: blue3_5
       rect:
         serializedVersion: 2
-        x: 508
-        y: 16
-        width: 183
-        height: 356
+        x: 407
+        y: 6
+        width: 187
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,50 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fb37c352a2ca3f70800000000000000
-      internalID: 9167853993912122360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Red_slice_6
-      rect:
-        serializedVersion: 2
-        x: 923
-        y: 19
-        width: 154
-        height: 294
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6637b426c0b984380800000000000000
-      internalID: -8986762578926800026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Red_slice_7
-      rect:
-        serializedVersion: 2
-        x: 1300
-        y: 17
-        width: 185
-        height: 229
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 090764f85d7774240800000000000000
-      internalID: 4775917688965197968
+      spriteID: f790ab5e33ef37c20800000000000000
+      internalID: 3203183258841516415
       vertices: []
       indices: 
       edges: []

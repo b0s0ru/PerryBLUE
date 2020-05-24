@@ -11,7 +11,7 @@ public class MonsterAttack : MonoBehaviour
         a = gameObject.transform.parent.GetComponent<Monster>();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
 
     {
        

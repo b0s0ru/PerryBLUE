@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
     {
         if (state != PlayerState.die)
         {
-            DeadCheck();
+           
 
         }
     }
@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
             InputKey();
             JumpPlayer();
             MultSee();
-
+            DeadCheck();
             RunBgm();
             Down();
             SetAnimation();
@@ -280,7 +280,7 @@ public class Player : MonoBehaviour
     }
     void InputKey()
     {
-        if (stop == false)
+        if (stop == false && Hp >0) 
         {
             if (state == PlayerState.Sit || state== PlayerState.See)
             {
