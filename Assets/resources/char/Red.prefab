@@ -135,8 +135,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03929627, y: -0.08238125}
-  m_Size: {x: 1.4385927, y: 1.4385927}
+  m_Offset: {x: 0.1737647, y: 2.192953}
+  m_Size: {x: 6.9414015, y: 7.5491104}
   m_Direction: 0
 --- !u!114 &7805706616056329488
 MonoBehaviour:
@@ -235,7 +235,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.36, y: 1.95}
+  m_Size: {x: 6, y: 6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -253,7 +253,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1.6255637
+  m_Mass: 42.061237
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -337,4 +337,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePos: {fileID: 7262718830865306483}
   delay: 0.5
-  s: Bullet
+  s: Bullets
