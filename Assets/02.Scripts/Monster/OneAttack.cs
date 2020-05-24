@@ -14,12 +14,13 @@ public class OneAttack : MonoBehaviour
     bool bulletis = true;
     GameObject ins;
     public float delay;
+    public string s;
     // Start is called before the first frame update
     void Start()
     {
         mob = GetComponent<Monster>();
         anim = GetComponent<Animator>();
-        MonsterBullet = Resources.Load("Bullet", typeof(GameObject)) as GameObject;
+        MonsterBullet = Resources.Load(s, typeof(GameObject)) as GameObject;
 
     }
 
@@ -28,33 +29,51 @@ public class OneAttack : MonoBehaviour
     {
         if (Monster.target == null) return;
         playerPos = Monster.target.transform.position;
-        
-       
-       
+
+
+
         if (mob.state == Monster.MonsterState.Tracks)
         {
-            
-            
+
+
             //anim.SetBool("Atacking", true);
             Atacks();
             if (bulletis == true)
             {
                 bulletis = false;
-                StartCoroutine("Monsteratack");
+                StartCoroutine("Delays");
             }
+            
+        }
+        if (mob.state == Monster.MonsterState.Moves && !bulletis)
+        {
+            StopCoroutine("Monsteratack");
+            StopCoroutine("Delays");
+            bulletis = true;
         }
       
+      
     }
+    IEnumerator Delays()
+    {
 
+        yield return new WaitForSeconds(1.5f);
+        
+        StartCoroutine("Monsteratack");
+    }
     IEnumerator Monsteratack()
     {
-       
-      
-         ins = Instantiate(MonsterBullet, firePos.position, firePos.rotation);
-        
-        yield return new WaitForSeconds(delay);
-        bulletis = true;
+        if (mob.state == Monster.MonsterState.Tracks)
+        {
 
+
+            ins = Instantiate(MonsterBullet, firePos.position, firePos.rotation);
+
+            yield return new WaitForSeconds(delay);
+         
+            StartCoroutine("Monsteratack");
+        }
+       
     }
 
     void Atacks()

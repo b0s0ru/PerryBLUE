@@ -25,7 +25,7 @@ public class Sasne : MonoBehaviour
         {
 
             mob.state = Monster.MonsterState.Tracks;
-            s.WakeUp();
+            mob.anim.SetTrigger("Sanse");
 
         }
        
@@ -37,8 +37,8 @@ public class Sasne : MonoBehaviour
     {
 
         mob.state = Monster.MonsterState.Moves;
+            mob.anim.SetTrigger("Back");
 
-
-    }
+        }
 }
 }   
