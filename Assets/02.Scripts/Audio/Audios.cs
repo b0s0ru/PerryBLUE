@@ -7,17 +7,61 @@ public class Audios : MonoBehaviour
     public AudioClip[] bgm;
 
     public static Audios instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
-    void Awake()
+
+    public static Audios Instance
+
     {
-        if (instance == null)
-            instance = this;
 
-        else if (instance != this)
-            Destroy(gameObject);
+        get
 
+        {
+
+            if (instance == null)
+
+            {
+
+                var obj = FindObjectOfType<Audios>();
+
+                if (obj != null)
+
+                {
+
+                    instance = obj;
+
+                }
+
+                else
+
+                {
+
+                    var newSingleton = new GameObject("Audiomanager").AddComponent<Audios>();
+
+                    instance = newSingleton;
+
+                }
+
+            }
+
+            return instance;
+
+        }
+
+        private set
+
+        {
+
+            instance = value;
+
+        }
+
+    }
+
+    private void Awake()
+
+    {
+
+        var objs = FindObjectsOfType<Texts>();
         DontDestroyOnLoad(gameObject);
-
-
     }
     // Start is called before the first frame update
 

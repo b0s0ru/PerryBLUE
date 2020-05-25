@@ -14,13 +14,16 @@ public class PlayerWake : MonoBehaviour
         a = Player.instance.GetComponent<Player>();
         StartCoroutine("Wake");
     }
+    private void Update()
+    {
+        a.stop = true;
+    }
 
     // Update is called once per frame
     IEnumerator Wake()
     {
-        yield return new WaitForSeconds(0.51f);
-        a.stop = true;
-        yield return new WaitForSeconds(5.0f);
+        
+        yield return new WaitForSeconds(5.51f);
         Destroy(gameObject);
         s.color = new Color(255, 255, 255, 255);
         Player.instance.GetComponent<Player>().stop = false;
