@@ -88,7 +88,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1800698267475459776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38c227dc6d861f141afd1c6581c739da, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b32842f15eb3a840a12856690d86db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &2524869765142911471
@@ -238,15 +238,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1800698268277492142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 780a3527e45dfc54baad33bd7d97be05, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a1f1ec267ced2d45bcbf4156fe1081e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 0
-  speed: 0
-  Damage: 0
-  plushp: 0
-  state: 0
-  anim: {fileID: 0}
+  movementFlag: 0
 --- !u!114 &1800698268277492139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,10 +251,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1800698268277492142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4386c02650218944a8e59a24dbe7e78a, type: 3}
+  m_Script: {fileID: 11500000, guid: ab16e951b1fea3841956b696081a8a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementFlag: 0
+  Hp: 0
+  speed: 0
+  Damage: 0
+  plushp: 0
+  state: 0
+  anim: {fileID: 0}
 --- !u!114 &1800698268277492132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1800698268277492142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccf0d0ee81f93334a83f4c8671d94a62, type: 3}
+  m_Script: {fileID: 11500000, guid: f242ca8f8c72ab046859192d84a9dc38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &1800698268277492134
@@ -360,6 +360,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1800698268498621370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ee626703821b241b0ecff5747374de, type: 3}
+  m_Script: {fileID: 11500000, guid: 173cd0422cf61f44294b4b5d574f90ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -5,13 +5,13 @@ using UnityEngine;
 public class Sasne : MonoBehaviour
 {
     Monster mob;
-    Rigidbody2D s;
+   
   
     // Start is called before the first frame update
     void Start()
     {
         mob = gameObject.transform.parent.GetComponent<Monster>();
-        s = transform.parent.GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -42,3 +42,4 @@ public class Sasne : MonoBehaviour
         }
 }
 }   
+

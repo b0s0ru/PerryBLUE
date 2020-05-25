@@ -9,7 +9,7 @@ public class StartScene : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        black = GameObject.Find("Canvas").transform.Find("black").GetComponent<FadeController>();
+        black =  FadeController.instance.GetComponent<FadeController>();
     }
     public void Sin()
     {
@@ -44,6 +44,7 @@ public class StartScene : MonoBehaviour
     }*/
     IEnumerator Scenemove()
     {
+
         yield return new WaitForSeconds(0.3f);
         if (PlayerPrefs.HasKey("map"))
         {
@@ -52,8 +53,9 @@ public class StartScene : MonoBehaviour
         }
         else
         {
+            
             PlayerPrefs.DeleteKey("map");
-            SceneManager.LoadScene(a);
+            SceneManager.LoadScene(22);
         }
     }
 }

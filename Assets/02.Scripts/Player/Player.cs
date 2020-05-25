@@ -96,10 +96,10 @@ public class Player : MonoBehaviour
             RunBgm();
             Down();
             SetAnimation();
-            Playergravity();
+           
         }
+        Playergravity();
 
-       
     }
    
     public void MultSee()
@@ -461,10 +461,15 @@ public class Player : MonoBehaviour
             // attackedVelocity = new Vector2(dir, 0.5f);
             // rbody.AddForce(attackedVelocity, ForceMode2D.Impulse);
             yield return new WaitForSeconds(0.5f);
-            // anim.SetBool("sit", false);
-            
-                state = PlayerState.Wait;
-            
+        // anim.SetBool("sit", false);
+        if (moveDir.y == 0)
+        {
+            state = PlayerState.Wait;
+        }
+        else
+        {
+            state = PlayerState.JumpFall;
+        }
            
         
        // yield return new WaitForSeconds(0.5f);
@@ -707,7 +712,7 @@ public class Player : MonoBehaviour
     public void MoveSetting(int buildIndex)
     {
 
-        if (map == 0)
+        if (map == 0 || map==24)
         {
 
             Vector2 xy = GameObject.Find("Load").transform.position;

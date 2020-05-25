@@ -13,8 +13,8 @@ public class BackScene : MonoBehaviour
     void Start()
     {
         Scenenumber = SceneManager.GetActiveScene().buildIndex;
-        black = GameObject.Find("Canvas").transform.Find("black").GetComponent<FadeController>();
-        Player = GameObject.Find("Player").GetComponent<Player>();
+        black = FadeController.instance.GetComponent<FadeController>();
+        Player = Player.instance.GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -37,6 +37,7 @@ public class BackScene : MonoBehaviour
     }
     IEnumerator Scenemove() {
         yield return new WaitForSeconds(0.3f);
+       
         SceneManager.LoadScene(Scenenumber - 1);
     }
 
