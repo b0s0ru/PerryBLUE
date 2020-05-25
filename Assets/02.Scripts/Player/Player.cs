@@ -714,7 +714,7 @@ public class Player : MonoBehaviour
 
         if (map == 0 || map==24)
         {
-
+            
             Vector2 xy = GameObject.Find("Load").transform.position;
             transform.position = xy;
             map = buildIndex;

@@ -5,9 +5,9 @@ using UnityEngine.UI;
 public class Texts : MonoBehaviour
 {
     public New TextDB;
-    GameObject Text1;
-    Text player;
-    Text script;
+    public GameObject Text1;
+    public Text player;
+    public Text script;
     private static Texts instance;
     bool text = false;
     Player P;
@@ -89,8 +89,22 @@ public class Texts : MonoBehaviour
         TextDB = Resources.Load("DB/New") as New;
         DontDestroyOnLoad(gameObject);
     }
+
+    public void Setting()
+    {
+        Text1 = GameObject.Find("UI_Script").transform.Find("UI_normal_script").gameObject;
+        P = GameObject.Find("Player").GetComponent<Player>();
+        player = Text1.transform.GetChild(0).GetComponent<Text>();
+        script = Text1.transform.GetChild(1).GetComponent<Text>();
+        TextDB = Resources.Load("DB/New") as New;
+    }
+    
     private void Update()
     {
+        if (Text1 == null)
+        {
+            Setting();
+        }
         if (text)
         {
             if (Input.GetKeyDown(KeyCode.Z))

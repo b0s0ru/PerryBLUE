@@ -52,6 +52,7 @@ public class jenu : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         PlayerPrefs.SetInt("map", 3);
         SceneManager.LoadScene(3);
+
     }
 
 }
