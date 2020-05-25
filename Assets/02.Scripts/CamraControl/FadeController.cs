@@ -6,8 +6,16 @@ using UnityEngine.UI;
 public class FadeController : MonoBehaviour {
     public static FadeController instance;
 
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     // Start is called before the first frame update
-  
+
     public void FadeIn(float fadeOutTime, System.Action nextEvent = null){
 		StartCoroutine(CoFadeIn(fadeOutTime,nextEvent));
 	}

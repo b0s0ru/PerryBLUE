@@ -50,7 +50,7 @@ public class Damages : MonoBehaviour
         // spriteRenderer.color = new Color(255, 255, 255, 255);
         if (my.state != Monster.MonsterState.Die)
         {
-            if (s)
+            if (s==false)
             {
                 my.state = Monster.MonsterState.Moves;
             }
