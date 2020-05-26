@@ -30,7 +30,6 @@ public class Player : MonoBehaviour
     AudioSource Runbgm;
     AudioSource Attackbgm;
     public bool moveblock = false;
-    public bool pnife = false;
     public float mbs;
     public bool isUnBeatTime = false;
     public bool lands = false;
@@ -371,13 +370,13 @@ public class Player : MonoBehaviour
         if (stop == false)
         {
 
-            if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && pnife && isperry == true)
+            if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && isperry == true)
             {
                 state = PlayerState.Attack;
                 anim.SetTrigger("Attacking");
                 StartCoroutine(Attackis());
             }
-            else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.DownArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
+            else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.DownArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall)&& isperry == true)
             {
                 state = PlayerState.JumpAttack;
                 Attackbgm.Play();
@@ -387,7 +386,7 @@ public class Player : MonoBehaviour
 
 
             }
-            else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.UpArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
+            else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.UpArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall)  && isperry == true)
             {
                 state = PlayerState.JumpAttack;
                 Attackbgm.Play();
@@ -400,7 +399,7 @@ public class Player : MonoBehaviour
                 }
 
             }
-            else if (Input.GetKeyDown(KeyCode.Z) && (state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
+            else if (Input.GetKeyDown(KeyCode.Z) && (state == PlayerState.Jump || state == PlayerState.JumpFall)  && isperry == true)
             {
                 state = PlayerState.JumpAttack;
                 Attackbgm.Play();
@@ -506,7 +505,7 @@ public class Player : MonoBehaviour
     {
         
         Attackbgm.Play();
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.05f);
         if (state == PlayerState.Attack)
         {
             Kchild.kp.enabled = true;

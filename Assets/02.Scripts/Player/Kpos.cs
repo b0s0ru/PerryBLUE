@@ -20,7 +20,7 @@ public class Kpos : MonoBehaviour
        
         if (other.transform.tag == "Monster")
         {
-           
+            Debug.Log("s");
             hits.Play();
             other.gameObject.SendMessageUpwards("MobDamage", 10);
                 

@@ -22,7 +22,7 @@ public class MPos : MonoBehaviour
         if (other.gameObject.tag == "Object"){
         yes = true;
         others = other;
-        a.GetComponent<Rigidbody2D>().WakeUp();
+       
         }
      
     }

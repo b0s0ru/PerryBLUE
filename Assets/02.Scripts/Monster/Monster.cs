@@ -6,7 +6,7 @@ public class Monster : Character
 {
     public enum MonsterState
     {
-        Wait = 0, Moves, Tracks, Die, Damage
+        Wait = 0, Moves, Tracks, Die, Damage, Attacks
     }
 
    public static Transform target;
