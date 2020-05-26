@@ -41,14 +41,15 @@ public class jenu : MonoBehaviour
         if (water && Player.stop==false)
         {
             Player.stop = true;
-            black.FadeIn(0.3f);
             StartCoroutine("Scenemove");
 
         }
     }
     IEnumerator Scenemove()
     {
+        black.FadeIn(0.3f);
         Destroy(Player.gameObject);
+
         yield return new WaitForSeconds(0.3f);
         PlayerPrefs.SetInt("map", 3);
         SceneManager.LoadScene(3);
