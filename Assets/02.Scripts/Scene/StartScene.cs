@@ -30,7 +30,7 @@ public class StartScene : MonoBehaviour
         StartCoroutine("Scenemove");
        
     }
-   /* public void resan()
+    public void resan()
     {
         black.FadeIn(0.3f);
         
@@ -41,7 +41,7 @@ public class StartScene : MonoBehaviour
     {
         Destroy(GameObject.Find("Player").gameObject);
         SceneManager.LoadScene(0);
-    }*/
+    }
     IEnumerator Scenemove()
     {
 
