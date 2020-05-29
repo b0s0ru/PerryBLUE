@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
     public CinemachineVirtualCamera Vcamera;
     public bool[] Read;
     public int max = 300;
-    
+    public bool Startstop = false;
     
     public enum PlayerState
 
@@ -105,14 +105,14 @@ public class Player : MonoBehaviour
     public void MultSee()
     {
 
-        if (Input.GetKeyDown(KeyCode.C) && state == PlayerState.Wait && !isperry && stop == false)
+        if (Input.GetKeyDown(KeyCode.C) && state == PlayerState.Wait && !isperry && stop == false && Startstop==false)
         {
 
             Vcamera.m_Lens.FieldOfView = 120;
             state=PlayerState.See;
 
         }
-        else if (Input.GetKeyDown(KeyCode.C) && state == PlayerState.See && stop == false)
+        else if (Input.GetKeyDown(KeyCode.C) && state == PlayerState.See && stop == false && Startstop == false)
         {
             
             Vcamera.m_Lens.FieldOfView = 90;
@@ -120,11 +120,14 @@ public class Player : MonoBehaviour
 
         }
     }
+    
+    /*
     public void exit(){
 
         stop = false;
-    }
-    public void full()
+       
+    }*/
+    public void Full()
     {
         Hp = 100;
     }
@@ -142,7 +145,7 @@ public class Player : MonoBehaviour
     private void Down()
     {
 
-        if (Input.GetKey(KeyCode.DownArrow) && state == PlayerState.Wait && stop==false)
+        if (Input.GetKey(KeyCode.DownArrow) && state == PlayerState.Wait && stop==false &&Startstop == false)
         {
             
             anim.SetTrigger("sit");
@@ -222,7 +225,7 @@ public class Player : MonoBehaviour
     
     void Playergravity()
     {
-        if (stop == true)
+        if (stop == true ||Startstop == true)
         {
             moveDir.x = 0;
         }
@@ -254,7 +257,7 @@ public class Player : MonoBehaviour
     void JumpPlayer()
     {
 
-        if (isGround && Input.GetButton("Jump") && state == PlayerState.Wait && stop == false)
+        if (isGround && Input.GetButton("Jump") && state == PlayerState.Wait && stop == false && Startstop == false)
         {
            
             moveDir.y = SpeedJump;
@@ -280,7 +283,7 @@ public class Player : MonoBehaviour
     }
     void InputKey()
     {
-        if (stop == false && Hp >0) 
+        if (stop == false && Hp >0 && Startstop == false) 
         {
             if (state == PlayerState.Sit || state== PlayerState.See)
             {
@@ -336,7 +339,7 @@ public class Player : MonoBehaviour
     public void Jenu(bool rsq, GameObject switchs)
     {
         
-        if (stop == false)
+        if (stop == false && Startstop==false)
         {
             bool q = false;
             whatswitch = switchs;
@@ -368,7 +371,7 @@ public class Player : MonoBehaviour
     }
     void Attacks()
     {   
-        if (stop == false)
+        if (stop == false && Startstop == false)
         {
 
             if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && pnife && isperry == true)
@@ -417,7 +420,7 @@ public class Player : MonoBehaviour
     {
 
 
-        if (state != PlayerState.die&& stop==false)
+        if (state != PlayerState.die&& stop==false && Startstop == false)
         {
            
             if (!isUnBeatTime)
@@ -603,7 +606,7 @@ public class Player : MonoBehaviour
     void RunBgm()
     {
 
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && lands == false && state == PlayerState.Wait && stop == false)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && lands == false && state == PlayerState.Wait && stop == false && Startstop == false)
         {
 
             lands = true;
@@ -678,14 +681,14 @@ public class Player : MonoBehaviour
     IEnumerator Black()
     {
 
-
-        stop = true;
+        
+       Startstop = true;
         moveDir.x = 0;
         moveDir.y = 0;
         yield return new WaitForSeconds(0.5f);
        
         black.FadeOut(0.5f);
-        stop = false;
+        Startstop = false;
 
     }
     private void OnEnable()

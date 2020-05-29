@@ -10,7 +10,7 @@ public class Loming : Monster
     // Start is called before the first frame update
     void Start()
     {
-        Hp = 30;
+        Hp = 20;
         Damage = 10;
         speed = 2;
         plushp = 10;

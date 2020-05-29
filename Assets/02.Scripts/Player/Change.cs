@@ -26,7 +26,7 @@ public class Change : MonoBehaviour
     }
         private void Changes()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && a.ischange == false && a.isperry == true && a.state == Player.PlayerState.Wait && a.stop == false)
+        if (Input.GetKey(KeyCode.LeftShift) && a.ischange == false && a.isperry == true && a.state == Player.PlayerState.Wait && a.stop == false && a.Startstop == false)
         {
             a.isperry = false;
             a.ischange = true;
@@ -36,7 +36,7 @@ public class Change : MonoBehaviour
             a.Jumppower();
 
         }
-        else if (Input.GetKey(KeyCode.LeftShift) && a.ischange == false && a.isperry == false && a.state == Player.PlayerState.Wait&& a.stop == false)
+        else if (Input.GetKey(KeyCode.LeftShift) && a.ischange == false && a.isperry == false && a.state == Player.PlayerState.Wait&& a.stop == false && a.Startstop == false)
         {
             a.isperry = true;
             a.ischange = true;
@@ -46,7 +46,7 @@ public class Change : MonoBehaviour
             a.Jumppower();
         }
 
-        if (a.isperry == false && a.Finedustdamage == false&& a.stop == false && a.state!=Player.PlayerState.die)
+        if (a.isperry == false && a.Finedustdamage == false&& a.stop == false && a.state!=Player.PlayerState.die && a.Startstop == false)
         {
             StartCoroutine(Finedust());
             a.Finedustdamage = true;

@@ -41,7 +41,7 @@ public class MPos : MonoBehaviour
 
         if (yes)
         {
-            if (others.gameObject.tag == "Object" && Input.GetKey(KeyCode.UpArrow) && a.isperry == false && a.stop == false)
+            if (others.gameObject.tag == "Object" && Input.GetKey(KeyCode.UpArrow) && a.isperry == false && a.stop == false&& a.Startstop==false)
             {
                 a.stop = true;
 

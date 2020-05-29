@@ -26,7 +26,7 @@ public class NextScene : MonoBehaviour
 
         if (collision.transform.tag == "Mpos")
         {
-            Player.stop = true;
+            Player.Startstop = true;
             black.FadeIn(0.3f);
             StartCoroutine("Scenemove");
            

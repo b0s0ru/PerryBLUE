@@ -23,7 +23,7 @@ public class Save : MonoBehaviour
 
     public void Saves()
     {
-        s.full();
+        s.Full();
         PlayerPrefs.SetInt("map", s.index);
         for (int i = 1; i <=s.max; i++)
         {
