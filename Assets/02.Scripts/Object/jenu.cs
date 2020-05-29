@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 public class jenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    Player Player;
+    Player Players;
     FadeController black;
     bool water = false;
     private void Start()
     {
-         Player= Player.instance.GetComponent<Player>();
+         Players= Player.instance.GetComponent<Player>();
         black = FadeController.instance.GetComponent<FadeController>();
     }
    
@@ -38,9 +38,9 @@ public class jenu : MonoBehaviour
 
     private void Update()
     {
-        if (water && Player.stop==false)
+        if (water && Players.stop==false)
         {
-            Player.stop = true;
+            Players.stop = true;
             StartCoroutine("Scenemove");
 
         }
@@ -48,9 +48,9 @@ public class jenu : MonoBehaviour
     IEnumerator Scenemove()
     {
         black.FadeIn(0.3f);
-        Destroy(Player.gameObject);
-
+        Players.Startstop = true;
         yield return new WaitForSeconds(0.3f);
+        Destroy(Players.gameObject);
         PlayerPrefs.SetInt("map", 3);
         SceneManager.LoadScene(3);
 
