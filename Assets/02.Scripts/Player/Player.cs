@@ -27,8 +27,7 @@ public class Player : MonoBehaviour
     public GameObject Dpos;
     public GameObject eyesight;
     float gravity = 32;
-    AudioSource Runbgm;
-    AudioSource Attackbgm;
+   
     public bool moveblock = false;
     public bool pnife = false;
     public float mbs;
@@ -635,8 +634,7 @@ public class Player : MonoBehaviour
         
         Kchild =  transform.GetChild(2).GetComponent<Kpos>();
         Bpos = transform.GetChild(0).gameObject;
-        Attackbgm = GetComponent<AudioSource>();
-        Runbgm = Bpos.GetComponent<AudioSource>();
+      
         Mpos = transform.GetChild(1).gameObject;
         SMpos = transform.GetChild(5).gameObject;
         Dpos= transform.GetChild(6).gameObject;
@@ -718,9 +716,11 @@ public class Player : MonoBehaviour
         if (map == 0 || map==24)
         {
             
-            Vector2 xy = GameObject.Find("Load").transform.position;
+            Vector2 xy = GameObject.Find(PlayerPrefs.GetString("keys")).transform.position;
+            Debug.Log(PlayerPrefs.GetString("keys"));
             transform.position = xy;
             map = buildIndex;
+
 
         }
         else if (map < buildIndex)

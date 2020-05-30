@@ -25,6 +25,7 @@ public class Save : MonoBehaviour
     {
         s.Full();
         PlayerPrefs.SetInt("map", s.index);
+        PlayerPrefs.SetString("keys", gameObject.name);
         for (int i = 1; i <=s.max; i++)
         {
            

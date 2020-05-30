@@ -17,7 +17,7 @@ public class Monster : Character
     void Awake()
     {
 
-        target =  GameObject.FindWithTag("Player").GetComponent<Transform>();
+        target =  GameObject.Find("Player").GetComponent<Transform>();
        
 
     }

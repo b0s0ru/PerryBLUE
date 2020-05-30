@@ -8,6 +8,7 @@ public class Frame : MonoBehaviour
     void Awake()
     {
         Application.targetFrameRate = 60;
+        Screen.SetResolution(Screen.width, Screen.width * 9/ 16, true);
     }
 
     // Update is called once per frame

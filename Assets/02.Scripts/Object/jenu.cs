@@ -50,9 +50,14 @@ public class jenu : MonoBehaviour
         black.FadeIn(0.3f);
         Players.Startstop = true;
         yield return new WaitForSeconds(0.3f);
-        Destroy(Players.gameObject);
+        Destroy(GameObject.FindWithTag("sPlayer").gameObject);
+        yield return new WaitForSeconds(0.1f);
+        GameObject b = Instantiate(Resources.Load("char/Player")) as GameObject;
+        b.name = "Player";
         PlayerPrefs.SetInt("map", 3);
         SceneManager.LoadScene(3);
+       
+
 
     }
 

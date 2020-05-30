@@ -21,6 +21,12 @@ public class Button : MonoBehaviour
         {
 
             q.SetActive(true);
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            q.SetActive(false);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
     // Update is called once per frame

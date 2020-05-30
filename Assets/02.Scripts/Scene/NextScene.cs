@@ -14,7 +14,7 @@ public class NextScene : MonoBehaviour
     {
         Scenenumber = SceneManager.GetActiveScene().buildIndex;
         black =FadeController.instance.GetComponent<FadeController>();
-       Player= Player.instance.GetComponent<Player>();
+        Player= Player.instance.GetComponent<Player>();
     }
 
     // Update is called once per frame
