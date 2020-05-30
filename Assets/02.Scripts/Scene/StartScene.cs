@@ -49,13 +49,19 @@ public class StartScene : MonoBehaviour
         if (PlayerPrefs.HasKey("map"))
         {
             a = PlayerPrefs.GetInt("map");
+            GameObject b= Instantiate(Resources.Load("char/Player"))as GameObject;
+            b.name = "Player";
             SceneManager.LoadScene(a);
+            
         }
         else
         {
             
-            PlayerPrefs.DeleteKey("map");
+            PlayerPrefs.SetString("keys", "Load1");
+            PlayerPrefs.Save();
             SceneManager.LoadScene(22);
+            
+            
         }
     }
 }
