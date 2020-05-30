@@ -5,7 +5,7 @@ using UnityEngine;
 public class NewText : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int name;
+    public int names;
     
     void Start()
     {
@@ -22,12 +22,12 @@ public class NewText : MonoBehaviour
         if (other.gameObject.tag == "Mpos")
         {
             Player a = other.gameObject.transform.parent.GetComponent<Player>();
-            if (a.Read[name]==false)
+            if (a.Read[names]==false)
             {
                 
-                a.Read[name] = true;
+                a.Read[names] = true;
                 
-                singleton.TextOn(name.ToString());
+                singleton.TextOn(names.ToString());
             }
         }
 
