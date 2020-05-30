@@ -373,7 +373,7 @@ public class Player : MonoBehaviour
     {   
         if (stop == false && Startstop == false)
         {
-
+            var sm = SoundManager.Instance;
             if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && pnife && isperry == true)
             {
                 state = PlayerState.Attack;
@@ -383,7 +383,7 @@ public class Player : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.DownArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
             {
                 state = PlayerState.JumpAttack;
-                Attackbgm.Play();
+                sm.PlaySFX("Attack");
                 anim.SetTrigger("DownAttacking");
                 KDownchild.kp.enabled = true;
                 StartCoroutine(DownAirAttackis());
@@ -393,7 +393,7 @@ public class Player : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.UpArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
             {
                 state = PlayerState.JumpAttack;
-                Attackbgm.Play();
+                sm.PlaySFX("Attack");
                 anim.SetTrigger("UpAttacking");
                 KUpchild.kp.enabled = true;
                 StartCoroutine(UpAirAttackis());
@@ -406,7 +406,7 @@ public class Player : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Z) && (state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
             {
                 state = PlayerState.JumpAttack;
-                Attackbgm.Play();
+                sm.PlaySFX("Attack");
                 anim.SetTrigger("Attacking");
                 Kchild.kp.enabled = true;
                 StartCoroutine(AirAttackis());
@@ -507,8 +507,8 @@ public class Player : MonoBehaviour
     }
     IEnumerator Attackis()
     {
-        
-        Attackbgm.Play();
+        var sm = SoundManager.Instance;
+        sm.PlaySFX("Attack");
         yield return new WaitForSeconds(0.01f);
         if (state == PlayerState.Attack)
         {
@@ -619,8 +619,8 @@ public class Player : MonoBehaviour
         if (state != PlayerState.die)
         {
             lands = false;
-
-            Runbgm.Play();
+            var sm = SoundManager.Instance;
+            sm.PlaySFX("land");
         }
     }
 

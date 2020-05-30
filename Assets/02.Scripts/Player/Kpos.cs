@@ -21,7 +21,9 @@ public class Kpos : MonoBehaviour
         if (other.transform.tag == "Monster")
         {
            
-            hits.Play();
+           
+            var sm = SoundManager.Instance;
+            sm.PlaySFX("Hit");
             other.gameObject.SendMessageUpwards("MobDamage", 10);
                 
             kp.enabled = false;
