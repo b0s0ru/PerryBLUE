@@ -6,12 +6,14 @@ public class Damages : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
     Monster my;
+    Rigidbody2D ss;
     bool s=false;
     // Start is called before the first frame update
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         my = GetComponent<Monster>();
+        ss = GetComponent<Rigidbody2D>();
     }
     void MobDamage(int mDamage)
     {
@@ -26,7 +28,7 @@ public class Damages : MonoBehaviour
             }
             if (my.Hp>0)
             {
-               
+                ss.WakeUp(); 
                 my.anim.SetTrigger("Damage");
                 StopCoroutine("Hit");
                 StartCoroutine("Hit");
@@ -36,7 +38,6 @@ public class Damages : MonoBehaviour
     }
     IEnumerator Hit()
     {
-        
         if (my.state == Monster.MonsterState.Tracks)
         {
             s = true;
@@ -45,6 +46,7 @@ public class Damages : MonoBehaviour
             s = false;
         }
         my.state = Monster.MonsterState.Damage;
+        
         //  spriteRenderer.color = new Color32(0, 255, 255, 255);
         yield return new WaitForSeconds(1.5f);
         // spriteRenderer.color = new Color(255, 255, 255, 255);

@@ -372,6 +372,7 @@ public class Player : MonoBehaviour
     {   
         if (stop == false && Startstop == false)
         {
+            rbody.WakeUp();
             var sm = SoundManager.Instance;
             if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && pnife && isperry == true)
             {
@@ -428,7 +429,7 @@ public class Player : MonoBehaviour
                 Hp -= mDamage;
                // state = PlayerState.Damage;
                 isUnBeatTime = true;
-
+                rbody.WakeUp();
 
                 StartCoroutine("BeatTime");
                 StartCoroutine("Hit");

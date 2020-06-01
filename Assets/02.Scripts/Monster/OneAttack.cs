@@ -45,13 +45,18 @@ public class OneAttack : MonoBehaviour
             }
             
         }
-        if (mob.state == Monster.MonsterState.Moves && !bulletis)
+        else if (mob.state == Monster.MonsterState.Moves && !bulletis)
         {
             StopCoroutine("Monsteratack");
             StopCoroutine("Delays");
             bulletis = true;
         }
-      
+        else if (mob.state == Monster.MonsterState.Damage)
+        {
+            StopCoroutine("Monsteratack");
+            StopCoroutine("Delays");
+            bulletis = true;
+        }
       
     }
     IEnumerator Delays()
