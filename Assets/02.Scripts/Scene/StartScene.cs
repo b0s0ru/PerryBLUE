@@ -18,7 +18,8 @@ public class StartScene : MonoBehaviour
         for(int i=0; i<=1000; i++) {
             PlayerPrefs.DeleteKey("texts" + i);
         }
-       
+        PlayerPrefs.SetInt("test", 0);
+        PlayerPrefs.Save();
 
         StartCoroutine("Scenemove");
         
@@ -28,19 +29,25 @@ public class StartScene : MonoBehaviour
     {
         black.FadeIn(0.3f);
         StartCoroutine("Scenemove");
-       
+        PlayerPrefs.SetInt("test", 0);
+        PlayerPrefs.Save();
+
     }
-    public void resan()
+    
+    public void test(int a)
     {
-        black.FadeIn(0.3f);
-        
-        StartCoroutine("Scenemove");
+        PlayerPrefs.SetInt("test", 1);
+        PlayerPrefs.Save();
+        GameObject b = Instantiate(Resources.Load("char/Player")) as GameObject;
+        b.name = "Player";
+        SceneManager.LoadScene(a);
 
     }
     public void Re()
     {
         Destroy(GameObject.Find("Player").gameObject);
         SceneManager.LoadScene(0);
+        
     }
     IEnumerator Scenemove()
     {
@@ -64,4 +71,5 @@ public class StartScene : MonoBehaviour
             
         }
     }
+   
 }

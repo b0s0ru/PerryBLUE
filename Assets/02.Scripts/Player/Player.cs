@@ -712,29 +712,31 @@ public class Player : MonoBehaviour
     }
     public void MoveSetting(int buildIndex)
     {
+        
+            if ((map == 0 || map == 24)&& PlayerPrefs.GetInt("test") == 0d)
+            {
 
-        if (map == 0 || map==24)
-        {
-            
-            Vector2 xy = GameObject.Find(PlayerPrefs.GetString("keys")).transform.position;
-            Debug.Log(PlayerPrefs.GetString("keys"));
-            transform.position = xy;
-            map = buildIndex;
+                Vector2 xy = GameObject.Find(PlayerPrefs.GetString("keys")).transform.position;
+
+                transform.position = xy;
+                map = buildIndex;
 
 
-        }
-        else if (map < buildIndex)
-        {
-            Vector2 xy = GameObject.Find("Start").transform.position;
-            transform.position = xy;
-            map = buildIndex;
-        }
-        else if (map > buildIndex)
-        {
-            Vector2 xy = GameObject.Find("Back").transform.position;
-            transform.position = xy;
-            map = buildIndex;
-        }
+            }
+            else if (map < buildIndex)
+            {
+                Vector2 xy = GameObject.Find("Start").transform.position;
+                transform.position = xy;
+                map = buildIndex;
+            }
+            else if (map > buildIndex)
+            {
+                Vector2 xy = GameObject.Find("Back").transform.position;
+                transform.position = xy;
+                map = buildIndex;
+            }
+        
+        
 
     }
 
