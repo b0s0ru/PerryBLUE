@@ -11,7 +11,7 @@ public class OneAttack : MonoBehaviour
     Animator anim;
     GameObject MonsterBullet;
     public Transform firePos;
-    bool bulletis = true;
+    bool bulletis;
     GameObject ins;
     public float delay;
     public string s;
@@ -21,7 +21,7 @@ public class OneAttack : MonoBehaviour
         mob = GetComponent<Monster>();
         anim = GetComponent<Animator>();
         MonsterBullet = Resources.Load(s, typeof(GameObject)) as GameObject;
-
+        bulletis = true;
     }
 
     // Update is called once per frame

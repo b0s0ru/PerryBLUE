@@ -5,15 +5,16 @@ using UnityEngine;
 public class Damages : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
-    Monster my;
-    Rigidbody2D ss;
-    bool s=false;
+    public Monster my;
+    public Rigidbody2D ss;
+    bool s;
     // Start is called before the first frame update
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         my = GetComponent<Monster>();
         ss = GetComponent<Rigidbody2D>();
+        s = false;
     }
     void MobDamage(int mDamage)
     {
@@ -38,6 +39,7 @@ public class Damages : MonoBehaviour
     }
     IEnumerator Hit()
     {
+
         if (my.state == Monster.MonsterState.Tracks)
         {
             s = true;

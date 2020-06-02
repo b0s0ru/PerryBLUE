@@ -21,7 +21,7 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (mob.state != Monster.MonsterState.Tracks && mob.state != Monster.MonsterState.Die && mob.state != Monster.MonsterState.Damage)
+        if (mob.state == Monster.MonsterState.Moves)
         {
             Moving();
         }
