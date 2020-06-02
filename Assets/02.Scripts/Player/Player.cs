@@ -35,11 +35,14 @@ public class Player : MonoBehaviour
     public bool lands;
     public int Key = 0;
     public bool isperry;
+    float timer = 0;
+    public int attackcount=0;
     public bool ischange;
     public bool Finedustdamage;
     public bool stop;
     FadeController black;
     int map=0;
+    float watchingtime = 0.8f;
     GameObject whatswitch;
     public int index;
     public CinemachineVirtualCamera Vcamera;
@@ -95,12 +98,44 @@ public class Player : MonoBehaviour
             RunBgm();
             Down();
             SetAnimation();
+            What();
            
         }
         Playergravity();
 
     }
-   
+    public void What()
+    {
+        if (attackcount>0)
+        {
+            timer += Time.deltaTime;
+            if (attackcount == 3)
+            {
+                attackcount = 0;
+                timer = 0;
+                anim.SetTrigger("What");
+
+            }
+            else if (timer > watchingtime)
+            {
+                attackcount = 0;
+                timer = 0;
+            }
+            if (moveDir.x != 0 || state!=PlayerState.Wait)
+            {
+                attackcount = 0;
+                timer = 0;
+            }
+            
+
+        }
+        if (state==PlayerState.Wait && stop==false && Startstop==false && !isperry && moveDir.x==0 && Input.GetKeyDown(KeyCode.Z))
+        {
+            attackcount+=1;
+            timer = 0;
+        }
+        
+    }
     public void MultSee()
     {
 
