@@ -10,7 +10,7 @@ public class One : Monster
     void Start()
     {
         Hp = 40;
-        Damage = 20;
+        Damage = 15;
         //speed = 2;
         plushp = 20;
         state = MonsterState.Moves;

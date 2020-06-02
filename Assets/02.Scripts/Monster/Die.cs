@@ -5,7 +5,7 @@ using UnityEngine;
 public class Die : MonoBehaviour
 {
     Monster my;
-    bool whodie = true;
+    bool whodie;
     public static Player players;
     // Start is called before the first frame update
     private void Awake()
@@ -14,7 +14,7 @@ public class Die : MonoBehaviour
     }
     void Start()
     {
-        
+        whodie = true;
         my = GetComponent<Monster>();
         
     }

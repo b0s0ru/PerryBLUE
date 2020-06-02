@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Texts : MonoBehaviour
 {
     public New TextDB;
@@ -103,6 +104,10 @@ public class Texts : MonoBehaviour
     {
         if (Text1 == null)
         {
+            if (SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                Destroy(gameObject);
+            }
             Setting();
         }
         if (text)

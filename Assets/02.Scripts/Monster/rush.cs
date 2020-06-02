@@ -11,7 +11,7 @@ public class rush : Monster
     void Start()
     {
         Hp = 30;
-        Damage = 30;
+        Damage = 25;
         speed = 1.5f;
         plushp = 30;
         state = MonsterState.Moves;

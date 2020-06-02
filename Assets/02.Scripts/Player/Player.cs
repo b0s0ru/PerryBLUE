@@ -26,18 +26,18 @@ public class Player : MonoBehaviour
     public GameObject SMpos;
     public GameObject Dpos;
     public GameObject eyesight;
-    float gravity = 32;
+    public float gravity = 32;
    
     public bool moveblock = false;
     public bool pnife = false;
     public float mbs;
-    public bool isUnBeatTime = false;
-    public bool lands = false;
+    public bool isUnBeatTime;
+    public bool lands;
     public int Key = 0;
-    public bool isperry = true;
-    public bool ischange = false;
-    public bool Finedustdamage = false;
-    public bool stop = false;
+    public bool isperry;
+    public bool ischange;
+    public bool Finedustdamage;
+    public bool stop;
     FadeController black;
     int map=0;
     GameObject whatswitch;
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     public CinemachineVirtualCamera Vcamera;
     public bool[] Read;
     public int max = 300;
-    public bool Startstop = false;
+    public bool Startstop;
     
     public enum PlayerState
 
@@ -627,7 +627,7 @@ public class Player : MonoBehaviour
 
     void InitPlayer()
     {
-
+        
         Read = new bool[1000];
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -643,10 +643,20 @@ public class Player : MonoBehaviour
         KDownchild = transform.GetChild(9).GetComponent<Kpos>();
         speed = 7.2f;
         Hp = 100;
+        Startstop = false;
+        stop = false;
+        moveblock = false;
+        pnife = false;
+        isUnBeatTime = false;
+        lands = false;
+        isperry = true;
+        ischange = false;
+        Finedustdamage = false;
         Jumppower();
         eyesight = transform.GetChild(7).gameObject;
         eyesight.SetActive(true);
         Textsave();
+
 
     }
     void Textsave()
