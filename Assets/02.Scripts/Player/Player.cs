@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
         if (attackcount>0)
         {
             timer += Time.deltaTime;
-            if (attackcount == 3)
+            if (attackcount == 3 && stop==false)
             {
                 attackcount = 0;
                 timer = 0;
@@ -121,7 +121,7 @@ public class Player : MonoBehaviour
                 attackcount = 0;
                 timer = 0;
             }
-            if (moveDir.x != 0 || state!=PlayerState.Wait)
+            if (state!=PlayerState.Wait)
             {
                 attackcount = 0;
                 timer = 0;
@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
             
 
         }
-        if (state==PlayerState.Wait && stop==false && Startstop==false && !isperry && moveDir.x==0 && Input.GetKeyDown(KeyCode.Z))
+        if (state==PlayerState.Wait && stop==false && Startstop==false && !isperry  && Input.GetKeyDown(KeyCode.Z))
         {
             attackcount+=1;
             timer = 0;
@@ -375,6 +375,7 @@ public class Player : MonoBehaviour
         
         if (stop == false && Startstop==false)
         {
+            attackcount = 0;
             bool q = false;
             whatswitch = switchs;
             if (0 <= switchs.transform.position.x - transform.position.x && !rsq)
@@ -389,6 +390,7 @@ public class Player : MonoBehaviour
 
             if (isperry == false && state == PlayerState.Wait && Input.GetKeyDown(KeyCode.Z) && q==true)
             {
+                
                 anim.SetTrigger("Button");
                 StartCoroutine("JButton");
                
