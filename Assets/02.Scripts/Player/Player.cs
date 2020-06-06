@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     public float gravity = 32;
    
     public bool moveblock = false;
-    public bool pnife = false;
+
     public float mbs;
     public bool isUnBeatTime;
     public bool lands;
@@ -75,15 +75,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-
-    {
-        if (state != PlayerState.die)
-        {
-           
-
-        }
-    }
+    
 
     void FixedUpdate()
     {
@@ -411,13 +403,13 @@ public class Player : MonoBehaviour
         {
             rbody.WakeUp();
             var sm = SoundManager.Instance;
-            if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait && pnife && isperry == true)
+            if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait &&  isperry == true)
             {
                 state = PlayerState.Attack;
                 anim.SetTrigger("Attacking");
                 StartCoroutine(Attackis());
             }
-            else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.DownArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
+            else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.DownArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall)  && isperry == true)
             {
                 state = PlayerState.JumpAttack;
                 sm.PlaySFX("Attack");
@@ -427,7 +419,7 @@ public class Player : MonoBehaviour
 
 
             }
-            else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.UpArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
+            else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.UpArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall)  && isperry == true)
             {
                 state = PlayerState.JumpAttack;
                 sm.PlaySFX("Attack");
@@ -440,7 +432,7 @@ public class Player : MonoBehaviour
                 }
 
             }
-            else if (Input.GetKeyDown(KeyCode.Z) && (state == PlayerState.Jump || state == PlayerState.JumpFall) && pnife && isperry == true)
+            else if (Input.GetKeyDown(KeyCode.Z) && (state == PlayerState.Jump || state == PlayerState.JumpFall)  && isperry == true)
             {
                 state = PlayerState.JumpAttack;
                 sm.PlaySFX("Attack");
@@ -682,8 +674,7 @@ public class Player : MonoBehaviour
         Hp = 100;
         Startstop = false;
         stop = false;
-        moveblock = false;
-        pnife = false;
+        moveblock = false;    
         isUnBeatTime = false;
         lands = false;
         isperry = true;

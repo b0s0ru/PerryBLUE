@@ -648,10 +648,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 406928355}
     m_Modifications:
-    - target: {fileID: 2086953037, guid: 89797f34b3c62a140a693fd77b039065, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3179964418453933453, guid: 89797f34b3c62a140a693fd77b039065,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -761,11 +757,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI_menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 3179964418543990619, guid: 89797f34b3c62a140a693fd77b039065,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89797f34b3c62a140a693fd77b039065, type: 3}
@@ -1074,7 +1065,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338968127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100.22, y: -67.1, z: -81.66084}
+  m_LocalPosition: {x: -100.22, y: -67, z: -81.66084}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1712,7 +1703,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086599548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2, y: -3.66, z: -81.66084}
+  m_LocalPosition: {x: 3.2, y: -3.91, z: -81.66084}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47636,12 +47627,12 @@ PrefabInstance:
     - target: {fileID: 4244008067673252409, guid: e68f3c4b177317541b006a79bb682e3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -66.10899
+      value: -62.86215
       objectReference: {fileID: 0}
     - target: {fileID: 4244008067673252409, guid: e68f3c4b177317541b006a79bb682e3b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 60.56348
+      value: 53.39322
       objectReference: {fileID: 0}
     - target: {fileID: 4244008067673252409, guid: e68f3c4b177317541b006a79bb682e3b,
         type: 3}
@@ -47712,8 +47703,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 60.89705, y: 60.480377, z: 69.20608}
-  m_Center: {x: -56.076942, y: -33.497326, z: 25.274311}
+  m_Size: {x: 97.1209, y: 68.12136, z: 69.20608}
+  m_Center: {x: -53.246883, y: -33.92185, z: 25.274311}
 --- !u!1 &5145925940016914662
 GameObject:
   m_ObjectHideFlags: 0

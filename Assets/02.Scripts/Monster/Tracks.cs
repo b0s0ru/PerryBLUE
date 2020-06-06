@@ -18,7 +18,7 @@ public class Tracks : MonoBehaviour
     void Update()
     {
         
-        if (mob.state == Monster.MonsterState.Tracks)
+        if (mob.state == Monster.MonsterState.Tracks&& target!=null)
         {
             dir = (target.position - transform.position);
             dir.y += 1.2f;

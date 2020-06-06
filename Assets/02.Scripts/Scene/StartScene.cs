@@ -45,9 +45,12 @@ public class StartScene : MonoBehaviour
     }
     public void Re()
     {
+        Player.instance.state = Player.PlayerState.die;
         Destroy(GameObject.Find("Player").gameObject);
+        
         SceneManager.LoadScene(0);
         
+
     }
     IEnumerator Scenemove()
     {
