@@ -983,7 +983,6 @@ GameObject:
   - component: {fileID: 4924891143404942821}
   - component: {fileID: 4924891143404942824}
   - component: {fileID: 4924891143404942825}
-  - component: {fileID: 649325592}
   - component: {fileID: 1503714536}
   m_Layer: 9
   m_Name: Player
@@ -1141,13 +1140,14 @@ MonoBehaviour:
   SMpos: {fileID: 0}
   Dpos: {fileID: 0}
   eyesight: {fileID: 0}
+  gravity: 32
   moveblock: 0
-  pnife: 0
   mbs: 0
   isUnBeatTime: 0
   lands: 0
   Key: 0
   isperry: 1
+  attackcount: 0
   ischange: 0
   Finedustdamage: 0
   stop: 0
@@ -1156,18 +1156,6 @@ MonoBehaviour:
   Read: 
   max: 300
   Startstop: 0
---- !u!114 &649325592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4924891143404942820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74550ff3f79e40045a82412485072798, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1503714536
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,8 +20,8 @@ public class Damages : MonoBehaviour
     {
         if (my.state != Monster.MonsterState.Die)
         {
-               
-           
+
+            ss.WakeUp();
             my.Hp -= mDamage;
             if (my.Hp < 0)
             {
@@ -40,7 +40,7 @@ public class Damages : MonoBehaviour
     IEnumerator Hit()
     {
 
-        if (my.state == Monster.MonsterState.Tracks)
+        if (my.state == Monster.MonsterState.Tracks|| my.state==Monster.MonsterState.Attacks)
         {
             s = true;
         }else if (my.state == Monster.MonsterState.Moves)
