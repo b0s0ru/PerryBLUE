@@ -40,7 +40,7 @@ public class OneMonsterAttack : MonoBehaviour
         }
         if (collision.transform.tag == "Mpos")
         {
-            Debug.Log("s");
+            
             collision.gameObject.SendMessageUpwards("SetDamage", Damage);
            
             Destroy(gameObject);
