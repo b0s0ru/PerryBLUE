@@ -11,7 +11,9 @@ TrueTypeFontImporter:
   fontName: NanumGothic
   fontNames:
   - NanumGothic
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2322929bf2f67f944a8c17534dbc7df7, type: 3}
+  - {fileID: 12800000, guid: e2c9e1ccc73c0094994dddda20a8f9cb, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
