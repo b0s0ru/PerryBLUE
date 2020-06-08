@@ -52,7 +52,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4849724253620848991}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -235,7 +235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4849724254063747760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -322,8 +322,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC9C0\uAE08\uC740 3\uC2DC 5\uBD84 \uB098\uB294 \uC790\uACE0 \uC2F6\uB2E4..."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7f5cdbfacc2e51d4db2dc0724b5810a8, type: 2}
-  m_sharedMaterial: {fileID: 8603213540714191277, guid: 7f5cdbfacc2e51d4db2dc0724b5810a8,
+  m_fontAsset: {fileID: 11400000, guid: 3b9ad8fe7d03c9d40a2d0a64529fc3b4, type: 2}
+  m_sharedMaterial: {fileID: -2515416436266151189, guid: 3b9ad8fe7d03c9d40a2d0a64529fc3b4,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -397,7 +397,7 @@ MonoBehaviour:
     linkCount: 0
     lineCount: 1
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -465,7 +465,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4849724254785455402}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -700,8 +700,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uD398\uB9AC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ee47ac2aa3781ac4aab6bbbfff8ccfe8, type: 2}
-  m_sharedMaterial: {fileID: -9030593045635424383, guid: ee47ac2aa3781ac4aab6bbbfff8ccfe8,
+  m_fontAsset: {fileID: 11400000, guid: 08dcdbea47f5c78439a14c0454c585cc, type: 2}
+  m_sharedMaterial: {fileID: 2410890044502304002, guid: 08dcdbea47f5c78439a14c0454c585cc,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
