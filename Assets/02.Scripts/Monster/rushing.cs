@@ -10,7 +10,7 @@ public class rushing : MonoBehaviour
     
     Animator anim;
     GameObject MonsterBullet;
-    bool repair;
+   
     Vector3 moveVelocity = Vector3.zero;
     GameObject ins;
     public float delay;
@@ -26,7 +26,7 @@ public class rushing : MonoBehaviour
         MonsterBullet = Resources.Load(s, typeof(GameObject)) as GameObject;
         if (Monster.target == null) return;
         rushs = true;
-        repair = false;
+        
     }
 
     // Update is called once per frame

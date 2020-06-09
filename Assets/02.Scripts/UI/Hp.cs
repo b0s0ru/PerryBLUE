@@ -8,6 +8,7 @@ public class Hp : MonoBehaviour
     public Image progress;
     public Text hp;
     public Player Players;
+
     //Use this for initialization
     private void Start()
     {
@@ -26,8 +27,8 @@ public class Hp : MonoBehaviour
         {
             hps = Players.Hp;
             progress.fillAmount = hps / 100;
-            string str = hps.ToString();
-            hp.text = str;
+           // string str = hps.ToString();
+           // hp.text = str;
         }
     }
 }

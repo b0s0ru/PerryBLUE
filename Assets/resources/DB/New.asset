@@ -19,375 +19,537 @@ MonoBehaviour:
     name: "\uC774\uB984"
     text: "\uB300\uC0AC"
     next: "0(\uB9C8\uCE68), 1(\uB2E4\uC74C)"
+    state: "(\uD50C\uB808\uC774\uC5B4 \uC774\uBBF8\uC9C0\uAC00 \uC5EC\uB7EC\uAC1C
+      \uC77C\uACBD\uC6B0 1,2\uB85C \uD45C\uD604\uD55C\uB2E4)"
+    ilest: "(\uC77C\uB7EC\uC2A4\uD2B8\uAC00 \uB098\uC624\uB294 \uBD80\uBD84\uC5D0\uC11C
+      1,2..) \uC0C8\uB85C\uC6B4 \uC52C\uC774\uBA74 \uCD08\uAE30\uD654"
   - number: 1
     name: "\uC81C\uB204"
     text: "\uC73C\uC73C\u2026."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uB204\uAD70\uAC00 \uC4F0\uB7EC\uC838 \uC788\uB2E4. \uB204\uAD6C\uC9C0?"
     next: 0
+    state: 0
+    ilest: 0
   - number: 2
     name: "\uC81C\uB204"
     text: "\uC73C\uC73C\u2026."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "(\uC228\uC740 \uC544\uC9C1 \uC26C\uACE0 \uC788\uB294 \uAC83 \uAC19\uB2E4.
       \uC815\uC2E0\uC744 \uCC28\uB9AC\uC9C0 \uBABB\uD558\uB294 \uAC83\uC744 \uBCF4\uB2C8
       \uBBF8\uC57D\uD55C \uD0C8\uC218 \uC99D\uC138\uAC00 \uC788\uB2E4.)"
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uBB3C\u2026."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "(\uBB3C\uC774 \uD544\uC694\uD558\uB2E4. \uAE68\uB057\uD55C \uBB3C\uC774
       \uADFC\uCC98\uC5D0 \uC788\uC744\uAE4C?)"
     next: 0
+    state: 0
+    ilest: 0
   - number: 3
     name: "\uD398\uB9AC"
     text: "(\uC0DD\uC218\uB97C \uC785\uC218\uD588\uB2E4. \uC544\uC774\uC5D0\uAC8C
       \uB3CC\uC544\uAC00\uC790.)"
     next: 0
+    state: 0
+    ilest: 0
   - number: 4
     name: "\uD398\uB9AC"
     text: "(\uC4F0\uB7EC\uC9C4 \uC544\uC774\uB294 \uC5B4\uB5BB\uAC8C \uD574\uC57C
       \uD558\uC9C0?)"
     next: 0
+    state: 0
+    ilest: 0
   - number: 5
     name: "\uD398\uB9AC"
     text: "(\uBBF8\uC57D\uD55C \uD0C8\uC218 \uC99D\uC138\uAC00 \uC788\uB2E4. \uC5EC\uC804\uD788
       \uC815\uC2E0\uC744 \uBABB\uCC28\uB9AC\uB294 \uAC83 \uAC19\uB2E4.)"
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "(\uC548\uAC1C\uC5D0 \uC7A0\uC2DC \uB178\uCD9C\uB418\uB354\uB77C\uB3C4
       \uBC29\uB3C5\uBA74\uC744 \uBC97\uACA8 \uC9C1\uC811 \uBB3C\uC744 \uD758\uB824\uC918\uC57C
       \uD55C\uB2E4.)"
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\u2026\uC73C."
     next: 1
+    state: 1
+    ilest: 0
   - number: 6
     name: "\uC81C\uB204"
     text: "\uC73C\uC545! \uC800\uB9AC \uAEBC\uC838, \uAE61\uD1B5\uC544!"
     next: 1
+    state: 1
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uB098\uB294 \uAE61\uD1B5\uC774 \uC544\uB0D0."
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "...\uBB50?"
     next: 1
+    state: 1
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC138\uC0C1\uC5D0. \uB108 \uC9C4\uC9DC \uC0AC\uB78C\uC774\uC57C?"
     next: 1
+    state: 1
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC0AC\uB78C\uC744 \uBCF4\uB294 \uAC8C \uC5BC\uB9C8\uB9CC\uC778\uC9C0
       \uBAA8\uB974\uACA0\uB124! \uD5C9! \uB098 \uC65C \uBC29\uB3C5\uBA74 \uBC97\uACE0
       \uC788\uC5B4."
     next: 1
+    state: 1
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC774 \uB3C4\uB451\uB188! \uB0B4 \uBC29\uB3C5\uBA74\uC73C\uB85C \uC5B4\uCA4C\uB824\uACE0!
       \uB108\uB294 \uB354 \uC88B\uC740 \uAC70 \uB07C\uACE0 \uC788\uC796\uC544!"
     next: 1
+    state: 1
+    ilest: 1
   - number: 0
     name: "\uD398\uB9AC"
-    text: "\uBB3C\uC744 \uBA39\uC774\uB824\uBA74 \uC5B4\uCA54 \uC218 \uC5C6\uC5C8\u2026\u2026."
+    text: "\uBB3C\uC744 \uBA39\uC774\uB824\uBA74 \uC5B4\uCA54 \uC218 \uC5C6\uC5C8\u2026\u2026. "
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC124\uB9C8 \uB098\uB97C \uC8FD\uC5EC\uBC84\uB9B4 \uC148\uC774\uC57C?
-      \uB098 \uAC19\uC740 \uC5B4\uB9B0\uC544\uC774\uB97C?"
+      \uB098 \uAC19\uC740 \uC5B4\uB9B0\uC544\uC774\uB97C? "
     next: 1
+    state: 1
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uC544\uB2C8 \uB124\uAC00 \uC4F0\uB7EC\uC838 \uC788\uC5B4\uC11C\u2026\u2026."
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uBA4D\uCCAD\uD55C \uAE61\uD1B5 \uB140\uC11D\uB4E4\uD55C\uD14C\uC11C \uACA8\uC6B0
       \uBC97\uC5B4\uB098\uB098 \uD588\uB354\uB2C8, \uC5B4\uB9B0\uC560\uB97C \uC0C1\uB300\uB85C
       \uB3C4\uB451\uC9C8\uC774\uB098 \uD558\uB294 \uB188\uC5D0\uAC8C \uC8FD\uB294\uAD6C\uB098!"
     next: 1
+    state: 1
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uD3C9\uC0DD\uC744 \uAE61\uD1B5\uD55C\uD14C \uCAD3\uAE30\uBA74\uC11C \uC0B4\uC558\uB294\uB370!"
     next: 1
+    state: 1
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: ......
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uBB50, \uC591\uC2EC\uC740 \uC788\uB098\uBCF4\uB124. \uC544\uC8FC \uACE8\uB85C
       \uAC08 \uBED4 \uD588\uC5B4."
     next: 1
+    state: 2
+    ilest: 2
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uC55E\uC73C\uB85C\uB294 \uC870\uC2EC\uD574."
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC57C, \uC7A0\uC2DC\uB9CC! \uC774\uB300\uB85C \uAC04\uB2E4\uACE0? \uC5B4\uB514
       \uAC00\uB294\uB370?"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uB098\uB294 \uD0C0\uC6CC\uB85C \uAC08 \uAC70\uC57C."
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uD0C0\uC6CC? \uB108 \uBBF8\uCCE4\uB0D0? \uC8FC\uBCC0\uC5D0 \uC55E\uB4A4\uBD84\uAC04
       \uBABB\uD558\uACE0 \uB808\uC774\uC800 \uC3F4\uB300\uB294 \uAE61\uD1B5 \uB140\uC11D\uB4E4\uC774
       \uCC9C\uC9C0\uC778\uB370 \uD0C0\uC6CC\uAE4C\uC9C0 \uAC04\uB2E4\uACE0?"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uD0C0\uC6CC\uB85C \uAC00\uB294 \uAE38\uC740 \uC54C\uAE30\uB098 \uD558\uACE0?
       \uB108 \uC81C\uC815\uC2E0\uC774\uC57C?"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uB098\uB294 \uD0C0\uC6CC\uB85C \uAC00\uC57C\uB9CC \uD574."
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uB0B4\uAC00 \uC654\uB358 \uAE38\uC5D0\uB294 \uC21C\uCC30\uC6A9 \uB85C\uBD07\uBFD0\uC774\uC5C8\uC5B4.
       \uB3CC\uC544\uAC00\uBA74 \uB4E4\uD0A4\uC9C0 \uC54A\uACE0 \uC548\uC804\uD558\uAC8C
       \uAC08  \uC218 \uC788\uC744 \uAC70\uC57C."
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: ...
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\u2026 \uC820\uC7A5. \uADF8\uB7FC \uAC19\uC774 \uAC00! \uC774\uB534 \uACF3\uC5D0
       \uC5B4\uB9B0\uC560\uB97C \uB450\uACE0 \uAC00\uB2E4\uB2C8. \uADF8\uAC8C \uC5B4\uB978\uC774
       \uD560 \uC9D3\uC774\uB0D0?"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC801\uC5B4\uBD24\uC790 \uC5B4\uB51C \uAC00\uB4E0 \uAE61\uD1B5 \uCC9C\uAD6D\uC778\uB370,
       \uC0DD\uC874\uC790\uB4E4\uB07C\uB9AC\uB77C\uB3C4 \uBB49\uCCD0\uC57C\uC9C0!"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uB098\uB294 \uC81C\uB204\uC57C."
     next: 1
+    state: 2
+    ilest: 3
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uC81C\uB204?"
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uADF8\uB798, \uB0B4 \uC774\uB984! \uAC04\uB9CC\uC5D0 \uB9CC\uB09C \uC0DD\uC874\uC790\uAC00
       \uBBF8\uCE5C\uB188\uC774\uB77C\uB2C8. \uC5B4\uD734."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uB10C \uC774\uB984\uC774 \uBB50\uC57C? \uC124\uB9C8 \uBBF8\uCCD0\uC11C
       \uC774\uB984\uB3C4 \uBAA8\uB974\uB294 \uAC74 \uC544\uB2C8\uC9C0?"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uB098\uB294\u2026. \uD398\uB9AC."
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uD398\uB9AC? \uC0DD\uAC01\uBCF4\uB2E4 \uBA40\uCA61\uD55C \uC774\uB984\uC774\uB124."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC5B4\uCA54 \uC218 \uC5C6\uC9C0. \uB0B4\uAC00 \uC5B4\uB9AC\uAE34 \uD574\uB3C4
       \uB0A0 \uB54C\uBD80\uD130 \uC774 \uBC14\uB2E5\uC5D0 \uC0B4\uC544\uC11C \uAE38
       \uD558\uB098\uB294 \uC798 \uCC3E\uAC70\uB4E0."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uD0C0\uC6CC\uAE4C\uC9C0 \uAC00\uB294 \uAE38\uC744 \uC54C\uB824\uC904\uAC8C."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uB300\uC2E0 \uB0A0 \uC880 \uC798 \uC9C0\uCF1C\uC918\uC57C \uD574. \uB108\uB791
       \uB2E4\uB974\uAC8C \uB098\uB294 \uC800 \uAE61\uD1B5\uC774 \uD22D \uCE58\uBA74
       \uC8FD\uB294\uB2E4\uACE0!"
     next: 0
+    state: 2
+    ilest: 0
   - number: 10
     name: "\uC81C\uB204"
     text: "\uCC14\uB9AC\uBA74 \uC544\uD504\uACA0\uB294\uAC78. \uB108, \uB098 \uC798
       \uC9C0\uCF1C\uC918\uC57C \uD55C\uB2E4?"
     next: 0
+    state: 2
+    ilest: 0
   - number: 11
     name: "\uC81C\uB204"
     text: "\uAE38\uC774 \uB9C9\uD614\uC796\uC544! \uC804\uC5D0\uB294 \uC774\uB807\uC9C0
       \uC54A\uC558\uB294\uB370. \uAE61\uD1B5 \uB140\uC11D\uB4E4 \uC9D3\uC774 \uBD84\uBA85\uD574!"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC774\uAC74 \uAE61\uD1B5\uB4E4\uC744 \uB9C9\uAE30 \uC704\uD574 \uC0AC\uB78C\uB4E4\uC774
       \uB9CC\uB4E0 \uBC29\uC870\uBB38\uC774\uC57C. \uB124 \uCE7C\uC9C8\uB85C\uB294
       \uC5B4\uB9BC\uB3C4 \uC5C6\uC744 \uAC78."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC5C4\uB9C8\uAC00 \uBC29\uC870\uBB38\uC740 \uC218\uB3D9\uC73C\uB85C \uC791\uB3D9\uB41C\uB2E4\uACE0
       \uD588\uC5B4."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC5B4\uB518\uAC00\uC5D0 \uC774 \uACE0\uCCA0 \uB369\uC5B4\uB9AC\uB97C
       \uC5F4 \uC218 \uC788\uB294 \uBC29\uBC95\uC774 \uC788\uC744\uC9C0\uB3C4 \uBAB0\uB77C."
     next: 0
+    state: 2
+    ilest: 0
   - number: 12
     name: "\uC81C\uB204"
     text: "\uCC99 \uBD10\uB3C4 \uC800\uAC8C \uBB38\uC744 \uC5F4 \uC218 \uC788\uB294
       \uB808\uBC84\uB124! \uAC00\uC11C \uB2F9\uACA8\uBD10!"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uC5B4\uB514\uC5D0?"
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC800\uAE30 \uC788\uC796\uC544! \u2026\uB108 \uC124\uB9C8 \uB808\uBC84\uAC00
       \uBB54\uC9C0 \uBAA8\uB974\uB294 \uAC70\uC57C?"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC5B4\uD734, \uB2F5\uB2F5\uD574! \uBE44\uCF1C\uBD10!"
     next: 0
+    state: 2
+    ilest: 0
   - number: 13
     name: "\uC81C\uB204"
     text: "\uC5B4\uB54C? \uB0B4 \uB9D0\uC774 \uB9DE\uC9C0?"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uBB50. \uB808\uBC84 \uB2F9\uAE30\uB294 \uAC83 \uC815\uB3C4\uB294 \uD574\uC904
       \uC218 \uC788\uC5B4."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uB098\uAC19\uC740 \uC5B4\uB9B0\uC560\uB3C4 \uC544\uB294 \uB808\uBC84\uB97C
       \uBAA8\uB974\uB2E4\uB2C8. \uB124\uAC00 \uBB34\uC2A8 \uC0DD\uAC01\uC73C\uB85C
       \uD0C0\uC6CC\uC5D0 \uAC04\uB2E4\uACE0 \uD558\uB294 \uAC74\uC9C0 \uBAA8\uB974\uACA0\uB2E4."
     next: 0
+    state: 2
+    ilest: 0
   - number: 14
     name: "\uC81C\uB204"
     text: "\uC774\uC0C1\uD558\uB124. \uBD84\uBA85 \uC5EC\uAE30\uC5D0 \uAE38\uC774
       \uC788\uC744 \uD150\uB370."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uC81C\uB204. \uC5EC\uAE30 \uC9C0\uBC18\uC774\u2026."
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC870\uC6A9\uD788 \uD574\uBD10. \uB2E4\uB978 \uAE38\uC744 \uCC3E\uC544\uBCFC
       \uD14C\uB2C8\uAE4C."
     next: 0
+    state: 2
+    ilest: 0
   - number: 15
     name: "\uD398\uB9AC"
     text: "\uB2E4\uCE5C \uACF3\uC740 \uC5C6\uC5B4?"
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uAE5C\uC9DD \uB180\uB790\uC796\uC544! \uC774\uB7F0 \uAC74 \uBBF8\uB9AC\uBBF8\uB9AC
       \uB9D0\uD574\uC8FC\uB780 \uB9D0\uC774\uC57C!"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\u2026\uB2E4\uCE5C \uB374 \uC5C6\uC5B4. \uC774\uB798\uC11C\uC57C \uC704\uB85C
       \uB2E4\uC2DC \uC62C\uB77C\uAC08 \uC218 \uC788\uC744\uC9C0\uB294 \uBAA8\uB974\uACA0\uC9C0\uB9CC."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC77C\uB2E8 \uC55E\uC73C\uB85C \uAC00\uBCF4\uC790. \uAE38\uC774 \uC788\uC744\uC9C0\uB3C4
       \uBAB0\uB77C."
     next: 0
+    state: 2
+    ilest: 0
   - number: 16
     name: "\uC81C\uB204"
     text: "\uD0C0\uC6CC\uB85C \uAC00\uB824\uBA74 \uC774 \uB2E4\uB9AC\uB97C \uAC74\uB108\uC57C
       \uD574."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uACE0\uCCA0 \uB140\uC11D\uB4E4\uC774 \uAC00\uB9CC\uD788 \uC788\uC744
       \uB9AC\uAC00 \uC5C6\uC9C0. \uB5A8\uC5B4\uC9C0\uC9C0 \uC54A\uAC8C \uC870\uC2EC\uD574!"
     next: 0
+    state: 2
+    ilest: 0
   - number: 17
     name: "\uC81C\uB204"
     text: "\u2026."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uC81C\uB204?"
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC544\uBB34 \uAC83\uB3C4 \uC544\uB2C8\uC57C."
     next: 0
+    state: 2
+    ilest: 0
   - number: 18
     name: "\uC81C\uB204"
     text: "\u2026 \uB2E4\uB9AC\uAC00 \uB04A\uC5B4\uC838\uC788\uC5B4."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uB2E4\uB9AC\uAC00?"
     next: 1
+    state: 0
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC774\uC0C1\uD574. \uC6D0\uB798\uB294 \uC774\uB807\uC9C0 \uC54A\uC558\uB294\uB370!"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC544\uBB34\uB9AC \uAE61\uD1B5 \uB140\uC11D\uB4E4\uC774\uB77C\uB3C4 \uB2E4\uB9AC\uB97C
       \uC774\uB807\uAC8C \uBB34\uB108\uB728\uB9AC\uB294 \uAC74 \uBD88\uAC00\uB2A5\uD574.
       \uC774\uAC8C \uC5B4\uB5BB\uAC8C \uB41C \uAC70\uC9C0?"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
     text: "\uC55E\uC73C\uB85C \uAC00\uBCF4\uC790. \uAE38\uC774 \uC788\uC744\uC9C0\uB3C4
       \uBAB0\uB77C."
     next: 0
+    state: 0
+    ilest: 0
   - number: 19
     name: "\uC81C\uB204"
     text: "\uC88B\uC544. \uC774 \uAC74\uBB3C \uB4A4\uB85C \uB3CC\uC544\uAC00\uBA74
       \uB418\uACA0\uC5B4."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC5B4\uB514\uBCF4\uC790, \uAC74\uBB3C \uC774\uB984\uC774\u2026. \uBC15\uBB3C\uAD00?"
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC5C4\uB9C8\uD55C\uD14C \uB4E4\uC740 \uC801 \uC788\uC5B4! \uC544\uC8FC
       \uC61B\uB0A0\uC5D0\uB294 \uC9C0\uAE08\uCC98\uB7FC \uC548\uAC1C\uAC00 \uB07C\uB294
       \uC138\uC0C1\uC774 \uC544\uB2C8\uC5C8\uB300. "
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uBC15\uBB3C\uAD00\uC740 \uADF8\uB54C\uC758 \uBCF4\uBB3C\uB4E4\uC744 \uBAA8\uC544\uB454
       \uACF3\uC774\uB7AC\uC5B4."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uC2E4\uC81C\uB85C \uC628 \uAC74 \uCC98\uC74C\uC774\uC57C. \uC5B4\uC11C
       \uB4E4\uC5B4\uAC00\uBCF4\uC790."
     next: 1
+    state: 2
+    ilest: 0
   - number: 0
     name: "\uC81C\uB204"
     text: "\uB0B4\uC6A9\uC801\uC5B4\uB193\uC73C\uC138\uBBA4"
     next: 0
+    state: 0
+    ilest: 0
   - number: 20
     name: "\uD398\uB9AC"
     text: "\uC55E\uC5D0 \uBCBD\uC774 \uC788\uB2E4."
     next: 0
+    state: 0
+    ilest: 0

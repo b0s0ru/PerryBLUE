@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class StartScene : MonoBehaviour
 {
-    public int a = 0;
+     int a = 0;
     FadeController black;
     // Update is called once per frame
     void Start()
@@ -45,12 +45,21 @@ public class StartScene : MonoBehaviour
     }
     public void Re()
     {
-        Player.instance.state = Player.PlayerState.die;
-        Destroy(GameObject.Find("Player").gameObject);
+        black.FadeIn(1f);
+        Invoke("Restart", 2f);
+     
         
-        SceneManager.LoadScene(0);
+       
+        
+       
         
 
+    }
+    public void Restart()
+    {
+        Player.instance.state = Player.PlayerState.die;
+        Destroy(GameObject.Find("Player").gameObject);
+        SceneManager.LoadScene(0);
     }
     IEnumerator Scenemove()
     {

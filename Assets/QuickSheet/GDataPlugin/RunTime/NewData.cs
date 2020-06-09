@@ -24,4 +24,12 @@ public class NewData
   string next;
   public string Next { get {return next; } set { next = value;} }
   
+  [SerializeField]
+  string state;
+  public string State { get {return state; } set { state = value;} }
+  
+  [SerializeField]
+  string ilest;
+  public string Ilest { get {return ilest; } set { ilest = value;} }
+  
 }
