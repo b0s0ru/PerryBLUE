@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class Texts : MonoBehaviour
 {
     public New TextDB;
     public GameObject Text1;
-    public Text player;
-    public Text script;
+    public TextMeshProUGUI player;
+    public TextMeshProUGUI script;
     private static Texts instance;
+    public GameObject image;
     bool text = false;
     Player P;
     int i;
@@ -83,20 +85,22 @@ public class Texts : MonoBehaviour
             return;
 
         }
-        Text1 = GameObject.Find("UI_Script").transform.Find("UI_normal_script").gameObject;
+        Text1 = GameObject.Find("Canvas").transform.Find("P_script").gameObject;
         P = GameObject.Find("Player").GetComponent<Player>();
-        player = Text1.transform.GetChild(0).GetComponent<Text>();
-        script = Text1.transform.GetChild(1).GetComponent<Text>();
+        player = Text1.transform.Find("background").transform.Find("back2").transform.Find("back3_name").transform.Find("Text_name").GetComponent<TextMeshProUGUI>();
+        script = Text1.transform.Find("background").transform.Find("back2").transform.Find("Text_speak").GetComponent<TextMeshProUGUI>();
         TextDB = Resources.Load("DB/New") as New;
+        image = Text1.transform.Find("background").transform.Find("back2").transform.Find("stand").gameObject;
         DontDestroyOnLoad(gameObject);
     }
 
     public void Setting()
     {
-        Text1 = GameObject.Find("UI_Script").transform.Find("UI_normal_script").gameObject;
+        Text1 = GameObject.Find("Canvas").transform.Find("P_script").gameObject;
         P = GameObject.Find("Player").GetComponent<Player>();
-        player = Text1.transform.GetChild(0).GetComponent<Text>();
-        script = Text1.transform.GetChild(1).GetComponent<Text>();
+        player = Text1.transform.Find("background").transform.Find("back2").transform.Find("back3_name").transform.Find("Text_name").GetComponent<TextMeshProUGUI>();
+        script = Text1.transform.Find("background").transform.Find("back2").transform.Find("Text_speak").GetComponent<TextMeshProUGUI>();
+        image = Text1.transform.Find("background").transform.Find("back2").transform.Find("stand").gameObject;
         TextDB = Resources.Load("DB/New") as New;
     }
     
@@ -128,13 +132,42 @@ public class Texts : MonoBehaviour
         
         Text1.gameObject.SetActive(true);
         text = true;
+        
        for(i=1; i<TextDB.dataArray.Length;i++)
         { 
             if (TextDB.dataArray[i].Number == a)
             {
+                NewData read = TextDB.dataArray[i];
+                string s= read.Name;
                
-                player.text =TextDB.dataArray[i].Name;
-                script.text = TextDB.dataArray[i].Text;
+                player.text = s;
+                if (s =="페리")
+                {
+                    Stands(0);
+                   
+                }else if (s == "제누")
+                {
+                    if (read.State=="1")
+                    {
+                        Stands(1);
+                    }else if (read.State == "2")
+                    {
+                        Stands(2);
+                    }
+                   
+                }
+                if (read.Ilest != "0")
+                {
+                    string Il = read.Ilest;
+                    int changenum = int.Parse(Il);
+                    GameObject o=GameObject.Find("Canvas").transform.Find("Ilest").gameObject;
+                    if (o.activeSelf==false)
+                    {
+                        o.SetActive(true);
+                    }
+                    o.GetComponent<ilest>().Change(changenum);
+                }
+                script.text = read.Text;
                 P.stop = true ;
                 break;
                 
@@ -142,14 +175,60 @@ public class Texts : MonoBehaviour
         }
        
     }
+    void Stands(int so)
+    {
+        int j;
+        for (j = 0; j < image.transform.childCount; j++)
+        {
+            if (j != so)
+            {
+                image.transform.GetChild(j).gameObject.SetActive(false);
+            }
+            image.transform.GetChild(so).gameObject.SetActive(true);
+        }
+
+    }
     public void TextUp()
     {
         if (TextDB.dataArray[i].Next == "1")
         {
             i++;
-            player.text = TextDB.dataArray[i].Name;
-            script.text = TextDB.dataArray[i].Text;
+            NewData read = TextDB.dataArray[i];
+            string s = read.Name;
+            player.text = s;
+          
             
+            if (s == "페리")
+            {
+                Stands(0);
+                
+            }
+            else if (s == "제누")
+            {
+                
+                if (read.State == "1")
+                {
+                    Stands(1);
+                    
+                }
+                else if (read.State == "2")
+                {
+                    Stands(2);
+                }
+
+            }
+            script.text = read.Text;
+            if (read.Ilest != "0")
+            {
+                string Il = read.Ilest;
+                int changenum = int.Parse(Il);
+                GameObject o = GameObject.Find("Canvas").transform.Find("Ilest").gameObject;
+                if (o.activeSelf == false)
+                {
+                    o.SetActive(true);
+                }
+                o.GetComponent<ilest>().Change(changenum);
+            }
         }
         else if (TextDB.dataArray[i].Next == "0")
         {
@@ -162,6 +241,16 @@ public class Texts : MonoBehaviour
         Text1.gameObject.SetActive(false);
         text = false;
         P.stop = false;
+
+        if (null != GameObject.Find("Canvas").transform.Find("Ilest"))
+        {
+            GameObject q = GameObject.Find("Canvas").transform.Find("Ilest").gameObject;
+            if (q.activeSelf == true)
+            {
+                q.SetActive(false);
+            }
+        }
+        
     }
 }
 

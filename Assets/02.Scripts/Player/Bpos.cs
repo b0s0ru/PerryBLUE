@@ -152,7 +152,7 @@ public class Bpos : MonoBehaviour
 
             if (a.gameObject != null)
             {
-                GameObject.Find("Canvas").transform.Find("UI_dead").gameObject.SetActive(true);
+                GameObject.Find("Canvas").transform.Find("dead").gameObject.SetActive(true);
                 Destroy(a.gameObject);
                 a.state = Player.PlayerState.die;
                 a.Hp = 0;
@@ -182,7 +182,7 @@ public class Bpos : MonoBehaviour
             if ((other.gameObject.tag == "down" || other.gameObject.tag=="time")&& (a.state==Player.PlayerState.Sit||a.state ==Player.PlayerState.See))
             {
                 a.state = Player.PlayerState.JumpFall;
-                a.Vcamera.SendMessage("UP");
+                a.Vcamera.m_Lens.FieldOfView = 90;
                 a.anim.SetTrigger("sitFall");
               //  a.transform.Translate(new Vector3(0, +0.45f, 0));
                 //transform.Translate(new Vector3(0, -0.3f, 0));

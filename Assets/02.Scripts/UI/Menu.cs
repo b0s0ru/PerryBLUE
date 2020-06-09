@@ -19,7 +19,8 @@ public class Menu : MonoBehaviour
     public void Esc()
     {
             Time.timeScale = 0;
-            transform.Find("UI_menu").gameObject.SetActive(true);
+            
+            transform.Find("menu_background").gameObject.SetActive(true);
         
     }
     public void GO()

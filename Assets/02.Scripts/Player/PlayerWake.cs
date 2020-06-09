@@ -14,7 +14,7 @@ public class PlayerWake : MonoBehaviour
         s.color = new Color(255, 255, 255, 0);
         a = Player.instance.GetComponent<Player>();
         StartCoroutine("Wake");
-        c = GameObject.Find("Canvas").transform.Find("UI_HPbar").gameObject;
+        c = GameObject.Find("Canvas").transform.Find("HPbar").gameObject;
         c.SetActive(false);
     }
     private void Update()
