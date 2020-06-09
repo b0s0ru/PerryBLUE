@@ -10,9 +10,9 @@ public class BGMsetting : MonoBehaviour
     public Scrollbar bgms;
     public Scrollbar sfxs;
     // Start is called before the first frame update
-    void Start()
+    public void ON()
     {
-        var sm = SoundManager.Instance;
+        
         float volume = PlayerPrefs.GetFloat("volumeBGM", 1);
         bgms.value = volume;
         volume = PlayerPrefs.GetFloat("volumeSFX", 1);
