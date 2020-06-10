@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 4849724253620848986}
   - component: {fileID: 4849724253620848989}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [NanumGothicLight SDF Material + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [NanumGothic Atlas Material + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC9C0\uAE08\uC740 3\uC2DC 5\uBD84 \uB098\uB294 \uC790\uACE0 \uC2F6\uB2E4..."
+  m_text: "\uD14D\uC2A4\uD2B8 \uB9DD\uAC00\uC84C\uC5B4....?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b9ad8fe7d03c9d40a2d0a64529fc3b4, type: 2}
   m_sharedMaterial: {fileID: -2515416436266151189, guid: 3b9ad8fe7d03c9d40a2d0a64529fc3b4,
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_textAlignment: 257
-  m_characterSpacing: -2
+  m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -574,14 +574,14 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 4849724254504234292}
-    characterCount: 21
+    characterCount: 13
     spriteCount: 0
-    spaceCount: 5
-    wordCount: 6
+    spaceCount: 1
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
-    materialCount: 1
+    materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
