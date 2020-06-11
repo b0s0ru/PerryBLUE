@@ -25,8 +25,12 @@ public class Sensing : MonoBehaviour
 
         if (other.gameObject.tag == "Mpos")
         {
-            transform.GetChild(0).gameObject.SetActive(true);
-        }
+
+            if (Player.instance.Hp>0)
+            {
+                transform.GetChild(0).gameObject.SetActive(true);
+            }
+            }
 
     }
 

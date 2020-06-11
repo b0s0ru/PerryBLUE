@@ -152,7 +152,7 @@ public class Bpos : MonoBehaviour
 
             if (a.gameObject != null)
             {
-                GameObject.Find("Canvas").transform.Find("dead").gameObject.SetActive(true);
+                GameObject.Find("Canvas").transform.Find("menu").transform.Find("dead").gameObject.SetActive(true);
                 Destroy(a.gameObject);
                 a.state = Player.PlayerState.die;
                 a.Hp = 0;
