@@ -27,7 +27,7 @@ public class OneAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Monster.target == null) return;
+        if (Monster.target == null || Monster.target.Equals(null)) return;
         playerPos = Monster.target.transform.position;
 
 
