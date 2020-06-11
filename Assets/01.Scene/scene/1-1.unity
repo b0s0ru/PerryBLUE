@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 118179720}
   - component: {fileID: 118179721}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: start_shift
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118179719}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -60.37967, y: -4.9028993, z: 406.41342}
+  m_LocalPosition: {x: -60.37967, y: -4.9028993, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2054212466}
@@ -37383,7 +37383,7 @@ GameObject:
   - component: {fileID: 441609923}
   - component: {fileID: 441609922}
   - component: {fileID: 441609921}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: (b)level2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53189,7 +53189,7 @@ GameObject:
   - component: {fileID: 1154344988}
   - component: {fileID: 1154344986}
   - component: {fileID: 1154344987}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54236,7 +54236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2054212466}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UI_Tag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54251,7 +54251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054212465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 60.37967, y: 4.9028993, z: -406.41342}
+  m_LocalPosition: {x: 60.4, y: 4.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1154344989}
