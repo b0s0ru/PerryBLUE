@@ -6,12 +6,17 @@ public class Save : MonoBehaviour
 {
     // Start is called before the first frame update
     static Player s;
-    ParticleSystem recovery;
+    
+    GameObject recovery;
+    ParticleSystem r1;
+    ParticleSystem r2;
 
     private void Start()
     {
         s=GameObject.Find("Player").transform.GetComponent<Player>();
-        recovery = GameObject.Find("parline1_add").transform.GetComponent<ParticleSystem>();
+        recovery = GameObject.Find("Eff_Heal");
+        r1=recovery.transform.GetChild(0).GetComponent<ParticleSystem>();
+        r2 = recovery.transform.GetChild(1).GetComponent<ParticleSystem>();
     }
     void OnTriggerStay2D(Collider2D other)
     {
@@ -25,7 +30,8 @@ public class Save : MonoBehaviour
 
     public void Saves()
     {
-        recovery.Play();
+        r1.Play();
+        r2.Play();
         s.Full();
         PlayerPrefs.SetInt("map", s.index);
         PlayerPrefs.SetString("keys", gameObject.name);
