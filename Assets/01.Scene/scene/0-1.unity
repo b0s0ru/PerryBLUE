@@ -955,7 +955,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565019282}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -66.10899, y: 60.56348, z: -18.888985}
+  m_LocalPosition: {x: -62.86215, y: 60.56348, z: -18.888985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 737692369}
@@ -1507,21 +1507,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1181973577}
     m_Modifications:
-    - target: {fileID: 4849724253620848989, guid: cebe73b7ebc21a24588b54352c331c04,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4849724253620848989, guid: cebe73b7ebc21a24588b54352c331c04,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4849724253620848989, guid: cebe73b7ebc21a24588b54352c331c04,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4849724254063747760, guid: cebe73b7ebc21a24588b54352c331c04,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1631,26 +1616,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_script
-      objectReference: {fileID: 0}
-    - target: {fileID: 4849724254063747763, guid: cebe73b7ebc21a24588b54352c331c04,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4849724254785455400, guid: cebe73b7ebc21a24588b54352c331c04,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4849724254785455400, guid: cebe73b7ebc21a24588b54352c331c04,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4849724254785455400, guid: cebe73b7ebc21a24588b54352c331c04,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cebe73b7ebc21a24588b54352c331c04, type: 3}
@@ -2888,7 +2853,7 @@ PrefabInstance:
     - target: {fileID: 3124357454637667068, guid: 2a0a8b090ca25ea4a86013b0ffaf912c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3124357454637667068, guid: 2a0a8b090ca25ea4a86013b0ffaf912c,
         type: 3}
@@ -93597,6 +93562,7 @@ MonoBehaviour:
   Read: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   max: 300
   Startstop: 0
+  Particle: {fileID: 0}
 --- !u!4 &4924891142640230924
 Transform:
   m_ObjectHideFlags: 0
