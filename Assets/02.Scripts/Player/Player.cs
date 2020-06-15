@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
     public bool[] Read;
     public int max = 300;
     public bool Startstop;
+    public ParticleSystem Particle;
     
     public enum PlayerState
 
@@ -641,6 +642,10 @@ public class Player : MonoBehaviour
 
             lands = true;
             Invoke("SRunBgm", 0.3f);
+            if (!Particle.isPlaying)
+            {
+                Particle.Play();
+            }
         }
 
     }
@@ -648,12 +653,19 @@ public class Player : MonoBehaviour
     {
         if (state != PlayerState.die)
         {
+          
             lands = false;
             var sm = SoundManager.Instance;
             sm.PlaySFX("land");
         }
     }
-
+    void PRunBgm()
+    {
+        if (state != PlayerState.die)
+        {
+            
+        }
+    }
 
     void InitPlayer()
     {
