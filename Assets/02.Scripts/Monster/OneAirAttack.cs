@@ -28,7 +28,12 @@ public class OneAirAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Monster.target == null || Monster.target.Equals(null)) return;
+        if (Monster.target == null || Monster.target.Equals(null))
+        {
+            StopCoroutine("Monsteratack");
+            return;
+        }
+        
         playerPos = Monster.target.transform.position;
 
 

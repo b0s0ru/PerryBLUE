@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
     public bool[] Read;
     public int max = 300;
     public bool Startstop;
-    public ParticleSystem Particle;
+    public ParticleSystem [] Particle;
     
     public enum PlayerState
 
@@ -77,13 +77,13 @@ public class Player : MonoBehaviour
 
     // Update is called once per frame
     
-
+    
     void FixedUpdate()
     {
         if (state != PlayerState.die)
         {
             Attacks();
-           
+            
             InputKey();
             JumpPlayer();
             MultSee();
@@ -92,9 +92,29 @@ public class Player : MonoBehaviour
             Down();
             SetAnimation();
             What();
-           
+            HPCh();
+
         }
         Playergravity();
+
+    }
+    public void HPCh()
+    {
+        
+        if (Hp <= 20)
+        {
+            if (!Particle[3].isPlaying)
+            {
+                Particle[3].Play();
+            }
+        }
+        else
+        {
+            if (Particle[3].isPlaying)
+            {
+                Particle[3].Stop();
+            }
+        }
 
     }
     public void What()
@@ -160,6 +180,8 @@ public class Player : MonoBehaviour
     }
     public void Killmob(int plushp)
     {
+      
+        Particle[4].Play();
         if (Hp + plushp > 100)
         {
             Hp = 100;
@@ -408,13 +430,23 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Z) && state == PlayerState.Wait &&  isperry == true)
             {
                 state = PlayerState.Attack;
+                if (transform.localScale.x==-1) {
+                    Particle[8].Play();
+                }
+                else
+                {
+                    Particle[5].Play();
+                   
+                }
                 anim.SetTrigger("Attacking");
                 StartCoroutine(Attackis());
             }
             else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.DownArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall)  && isperry == true)
             {
                 state = PlayerState.JumpAttack;
+                Particle[6].Play();
                 sm.PlaySFX("Attack");
+                
                 anim.SetTrigger("DownAttacking");
                 KDownchild.kp.enabled = true;
                 StartCoroutine(DownAirAttackis());
@@ -424,6 +456,7 @@ public class Player : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Z) && Input.GetKey(KeyCode.UpArrow) && (state == PlayerState.Jump || state == PlayerState.JumpFall)  && isperry == true)
             {
                 state = PlayerState.JumpAttack;
+                Particle[7].Play();
                 sm.PlaySFX("Attack");
                 anim.SetTrigger("UpAttacking");
                 KUpchild.kp.enabled = true;
@@ -437,6 +470,15 @@ public class Player : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Z) && (state == PlayerState.Jump || state == PlayerState.JumpFall)  && isperry == true)
             {
                 state = PlayerState.JumpAttack;
+                if (transform.localScale.x == -1)
+                {
+                    Particle[8].Play();
+                }
+                else
+                {
+                    Particle[5].Play();
+
+                }
                 sm.PlaySFX("Attack");
                 anim.SetTrigger("Attacking");
                 Kchild.kp.enabled = true;
@@ -456,6 +498,14 @@ public class Player : MonoBehaviour
            
             if (!isUnBeatTime)
             {
+                if (mDamage == 5)
+                {
+                    Particle[10].Play();
+                }
+                else
+                {
+                    Particle[11].Play();
+                }
                 Vcamera.m_Lens.FieldOfView = 90;
                 Hp -= mDamage;
                // state = PlayerState.Damage;
@@ -551,8 +601,11 @@ public class Player : MonoBehaviour
     }
     IEnumerator JButton()
     {
+       
         moveDir.x = 0;
+        Particle[9].Play();
         stop = true;
+        
         yield return new WaitForSeconds(1f);
         whatswitch.SendMessage("Change");
         yield return new WaitForSeconds(1f);
@@ -637,14 +690,21 @@ public class Player : MonoBehaviour
     void RunBgm()
     {
 
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && lands == false && state == PlayerState.Wait && stop == false && Startstop == false)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && lands == false && state == PlayerState.Wait && stop == false && Startstop == false&&moveDir.x!=0)
         {
 
             lands = true;
             Invoke("SRunBgm", 0.3f);
-            if (!Particle.isPlaying)
+            if (!Particle[0].isPlaying)
             {
-                Particle.Play();
+                Particle[0].Play();
+            }
+        }
+        if (((Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))&&(!Input.GetKey(KeyCode.RightArrow)&&!Input.GetKey(KeyCode.LeftArrow))||state!=PlayerState.Wait))
+        {
+            if (Particle[0].isPlaying)
+            {
+                Particle[0].Stop();
             }
         }
 
@@ -659,14 +719,7 @@ public class Player : MonoBehaviour
             sm.PlaySFX("land");
         }
     }
-    void PRunBgm()
-    {
-        if (state != PlayerState.die)
-        {
-            
-        }
-    }
-
+ 
     void InitPlayer()
     {
         

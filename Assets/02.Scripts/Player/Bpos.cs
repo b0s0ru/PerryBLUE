@@ -105,6 +105,8 @@ public class Bpos : MonoBehaviour
             if (a.state != Player.PlayerState.JumpDamage)
             {
                 a.anim.SetTrigger("Land");
+                a.Particle[2].Play();
+                
                 a.state = Player.PlayerState.Wait;
             }
             // a.anim.SetBool("isground", true);

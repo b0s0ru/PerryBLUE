@@ -8,6 +8,7 @@ public class Damages : MonoBehaviour
     public Monster my;
     public Rigidbody2D ss;
     bool s;
+    public ParticleSystem mobdamage;
     // Start is called before the first frame update
     private void Start()
     {
@@ -18,9 +19,10 @@ public class Damages : MonoBehaviour
     }
     void MobDamage(int mDamage)
     {
+
         if (my.state != Monster.MonsterState.Die)
         {
-
+            mobdamage.Play();
             ss.WakeUp();
             my.Hp -= mDamage;
             if (my.Hp < 0)
