@@ -42,7 +42,7 @@ public class Die : MonoBehaviour
 
     void Deads()
     {
-        GameObject.Find("Player").GetComponent<Player>().Killmob(10);
+        GameObject.Find("Player").GetComponent<Player>().Killmob(my.plushp);
         my.anim.SetTrigger("Die");
         StartCoroutine(Dies());
       
