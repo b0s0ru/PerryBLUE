@@ -165,7 +165,8 @@ MonoBehaviour:
     ilest: 0
   - number: 0
     name: "\uC81C\uB204"
-    text: "\uD3C9\uC0DD\uC744 \uAE61\uD1B5\uD55C\uD14C \uCAD3\uAE30\uBA74\uC11C \uC0B4\uC558\uB294\uB370!"
+    text: "\uD3C9\uC0DD\uC744 \uAE61\uD1B5\uD55C\uD14C \uCAD3\uAE30\uBA74\uC11C \uC0B4\uC558\uB294\uB370!
+      \uB0B4 \uC778\uC0DD \uC9C4\uC9DC \uAD6C\uCC28\uD558\uAE30 \uC9DD\uC774 \uC5C6\uB124!"
     next: 1
     state: 1
     ilest: 0
@@ -224,15 +225,16 @@ MonoBehaviour:
     ilest: 0
   - number: 0
     name: "\uD398\uB9AC"
-    text: "\uB0B4\uAC00 \uC654\uB358 \uAE38\uC5D0\uB294 \uC21C\uCC30\uC6A9 \uB85C\uBD07\uBFD0\uC774\uC5C8\uC5B4.
-      \uB3CC\uC544\uAC00\uBA74 \uB4E4\uD0A4\uC9C0 \uC54A\uACE0 \uC548\uC804\uD558\uAC8C
-      \uAC08  \uC218 \uC788\uC744 \uAC70\uC57C."
+    text: "\uB0B4\uAC00 \uC654\uB358 \uAE38\uC758 \uB85C\uBD07\uB4E4\uC740 \uBAA8\uB450
+      \uCC98\uB9AC\uD588\uC5B4. \uB0A8\uC740 \uAC83\uC740 \uC21C\uCC30\uC6A9 \uB85C\uBD07\uB4E4
+      \uBFD0\uC774\uB2C8 \uB3CC\uC544\uAC00\uBA74 \uB4E4\uD0A4\uC9C0 \uC54A\uACE0
+      \uC548\uC804\uD558\uAC8C \uAC08  \uC218 \uC788\uC744 \uAC70\uC57C."
     next: 1
     state: 0
     ilest: 0
   - number: 0
     name: "\uC81C\uB204"
-    text: ...
+    text: "\uB85C\uBD07\uB4E4\uC744 \uCC98\uB9AC\uD588\uB2E4\uACE0?"
     next: 1
     state: 2
     ilest: 0
@@ -305,9 +307,15 @@ MonoBehaviour:
     ilest: 0
   - number: 0
     name: "\uC81C\uB204"
-    text: "\uB300\uC2E0 \uB0A0 \uC880 \uC798 \uC9C0\uCF1C\uC918\uC57C \uD574. \uB108\uB791
-      \uB2E4\uB974\uAC8C \uB098\uB294 \uC800 \uAE61\uD1B5\uC774 \uD22D \uCE58\uBA74
-      \uC8FD\uB294\uB2E4\uACE0!"
+    text: "\uBCF4\uC544\uD558\uB2C8 \uD798 \uC880 \uC4F0\uB294 \uBAA8\uC591\uC778\uB370.
+      \uB300\uC2E0 \uB0A0 \uC798 \uC9C0\uCF1C\uC918\uC57C \uD574."
+    next: 1
+    state: 2
+    ilest: 0
+  - number: 0
+    name: "\uC81C\uB204"
+    text: "\uB108\uB791 \uB2E4\uB974\uAC8C \uB098\uB294 \uC800 \uAE61\uD1B5\uC774
+      \uD22D \uCE58\uBA74 \uC8FD\uB294\uB2E4\uACE0!"
     next: 0
     state: 2
     ilest: 0
@@ -552,4 +560,59 @@ MonoBehaviour:
     text: "\uC55E\uC5D0 \uBCBD\uC774 \uC788\uB2E4."
     next: 0
     state: 0
+    ilest: 0
+  - number: 21
+    name: "\uC81C\uB204"
+    text: "\uD0C0\uC6CC\uB85C \uAC00\uB294 \uAE38\uC740 \uBC18\uB300\uCABD\uC774\uC57C."
+    next: 0
+    state: 2
+    ilest: 0
+  - number: 22
+    name: "\uC81C\uB204"
+    text: "\uC5EC\uAE30\uB294 \uB0B4\uAC00 \uC4F0\uB7EC\uC84C\uB358 \uACF3\uC774\uC796\uC544.
+      \uC4F0\uB7EC\uC84C\uC744 \uB54C\uB294 \uC601\uB77D\uC5C6\uC774 \uC8FD\uB294
+      \uC904\uB9CC \uC54C\uC558\uB294\uB370."
+    next: 1
+    state: 2
+    ilest: 0
+  - number: 0
+    name: "\uC81C\uB204"
+    text: "\uC0AC\uB78C\uC744 \uB2E4\uC2DC \uB9CC\uB0A0 \uC218 \uC788\uC744 \uAC70\uB77C\uACE0\uB294
+      \uC0DD\uAC01 \uBABB\uD588\uC5B4."
+    next: 1
+    state: 2
+    ilest: 0
+  - number: 0
+    name: "\uC81C\uB204"
+    text: "\uB108\uB294? \uB108\uB3C4 \uC0DD\uC874\uC790\uB97C \uB9CC\uB09C \uC801
+      \uC788\uC5B4?"
+    next: 1
+    state: 2
+    ilest: 0
+  - number: 0
+    name: "\uC81C\uB204"
+    text: "... \uC0DD\uAC01\uD574\uBCF4\uB2C8\uAE4C \uBCC4\uB85C \uC88B\uC740 \uC9C8\uBB38\uC740
+      \uC544\uB2C8\uB124. \uADF8\uB7EC\uBA74 \uD63C\uC790 \uB2E4\uB2D0\uB9AC\uAC00
+      \uC5C6\uC796\uC544. \uB410\uC5B4, \uBB34\uC2DC\uD574."
+    next: 0
+    state: 2
+    ilest: 0
+  - number: 23
+    name: "\uC81C\uB204"
+    text: "\uC774\uB7F0 \uB2E4 \uBB34\uB108\uC9C4 \uAC74\uBB3C\uC740 \uC65C \uC628\uAC70\uC57C?
+      \uBB50\uAC00 \uBCF4\uC774\uAE30\uB77C\uB3C4 \uD558\uB0D0?"
+    next: 0
+    state: 2
+    ilest: 0
+  - number: 24
+    name: "\uC81C\uB204"
+    text: "\uC774 \uBC29\uC740 \uBB50\uC9C0?"
+    next: 1
+    state: 2
+    ilest: 0
+  - number: 0
+    name: "\uC81C\uB204"
+    text: "\uC0AC\uB78C\uC774 \uC0B4\uC558\uB358 \uD754\uC801\uC774 \uC788\uC5B4."
+    next: 0
+    state: 2
     ilest: 0
