@@ -76,8 +76,16 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    
-    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)&& Startstop==false)
+        {
+            
+            GameObject.Find("Canvas").transform.Find("menu").SendMessage("Esc");
+        }
+        
+    }
+
     void FixedUpdate()
     {
         if (state != PlayerState.die)
@@ -376,11 +384,7 @@ public class Player : MonoBehaviour
             }
 
           
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                
-                GameObject.Find("Canvas").transform.Find("menu").SendMessage("Esc");
-            }
+            
 
 
         }
@@ -722,7 +726,7 @@ public class Player : MonoBehaviour
  
     void InitPlayer()
     {
-        
+        black = GameObject.Find("Canvas").transform.Find("black").GetComponent<FadeController>();
         Read = new bool[1000];
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -774,6 +778,7 @@ public class Player : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode level)
     {
+        
         black = GameObject.Find("Canvas").transform.Find("black").GetComponent<FadeController>();
         index = SceneManager.GetActiveScene().buildIndex;
         Vcamera = GameObject.Find("CM").GetComponent<CinemachineVirtualCamera>();
@@ -789,8 +794,10 @@ public class Player : MonoBehaviour
         moveDir.x = 0;
         moveDir.y = 0;
         yield return new WaitForSeconds(0.5f);
+        black.FadeOut(1f);
+        yield return new WaitForSeconds(0.5f);
+        
        
-        black.FadeOut(0.5f);
         Startstop = false;
 
     }
@@ -825,21 +832,23 @@ public class Player : MonoBehaviour
 
                 transform.position = xy;
                 map = buildIndex;
+              
 
-
-            }
+        }
             else if (map < buildIndex)
             {
                 Vector2 xy = GameObject.Find("Start").transform.position;
                 transform.position = xy;
                 map = buildIndex;
-            }
+                
+        }
             else if (map > buildIndex)
             {
                 Vector2 xy = GameObject.Find("Back").transform.position;
                 transform.position = xy;
                 map = buildIndex;
-            }
+                
+        }
         
         
 

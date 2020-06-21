@@ -15,7 +15,7 @@ public class Tracks : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
         if (mob.state == Monster.MonsterState.Tracks&& target!=null)

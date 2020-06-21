@@ -26,7 +26,7 @@ public class OneAirAttack : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Monster.target == null || Monster.target.Equals(null))
         {
