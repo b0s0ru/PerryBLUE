@@ -14,6 +14,8 @@ public class Texts : MonoBehaviour
     public GameObject image;
     bool text = false;
     Player P;
+    string otext;
+    string stext;
     int i;
     public static Texts Instance
 
@@ -72,10 +74,10 @@ public class Texts : MonoBehaviour
     private void Awake()
 
     {
-        
+
         var objs = FindObjectsOfType<Texts>();
-       
-      
+
+
         if (objs.Length != 1)
 
         {
@@ -103,7 +105,7 @@ public class Texts : MonoBehaviour
         image = Text1.transform.Find("background").transform.Find("back2").transform.Find("stand").gameObject;
         TextDB = Resources.Load("DB/New") as New;
     }
-    
+
     private void Update()
     {
         if (Text1 == null)
@@ -129,51 +131,55 @@ public class Texts : MonoBehaviour
     }
     public void TextOn(string a)
     {
-        
+
         Text1.gameObject.SetActive(true);
         text = true;
-        
-       for(i=1; i<TextDB.dataArray.Length;i++)
-        { 
+
+        for (i = 1; i < TextDB.dataArray.Length; i++)
+        {
             if (TextDB.dataArray[i].Number == a)
             {
                 NewData read = TextDB.dataArray[i];
-                string s= read.Name;
-               
+                string s = read.Name;
+
                 player.text = s;
-                if (s =="페리")
+                if (s == "페리")
                 {
                     Stands(0);
-                   
-                }else if (s == "제누")
+
+                }
+                else if (s == "제누")
                 {
-                    if (read.State=="1")
+                    if (read.State == "1")
                     {
                         Stands(1);
-                    }else if (read.State == "2")
+                    }
+                    else if (read.State == "2")
                     {
                         Stands(2);
                     }
-                   
+
                 }
                 if (read.Ilest != "0")
                 {
                     string Il = read.Ilest;
                     int changenum = int.Parse(Il);
-                    GameObject o=GameObject.Find("Canvas").transform.Find("Ilest").gameObject;
-                    if (o.activeSelf==false)
+                    GameObject o = GameObject.Find("Canvas").transform.Find("Ilest").gameObject;
+                    if (o.activeSelf == false)
                     {
                         o.SetActive(true);
                     }
                     o.GetComponent<ilest>().IlestChange(changenum);
                 }
-                script.text = read.Text;
-                P.stop = true ;
+                otext = read.Text;
+                StartCoroutine("TypingAction");
+
+                P.stop = true;
                 break;
-                
+
             }
         }
-       
+
     }
     void Stands(int so)
     {
@@ -196,20 +202,20 @@ public class Texts : MonoBehaviour
             NewData read = TextDB.dataArray[i];
             string s = read.Name;
             player.text = s;
-          
-            
+            otext = read.Text;
+
             if (s == "페리")
             {
                 Stands(0);
-                
+
             }
             else if (s == "제누")
             {
-                
+
                 if (read.State == "1")
                 {
                     Stands(1);
-                    
+
                 }
                 else if (read.State == "2")
                 {
@@ -217,7 +223,9 @@ public class Texts : MonoBehaviour
                 }
 
             }
-            script.text = read.Text;
+
+            StopCoroutine("TypingAction");
+            StartCoroutine("TypingAction");
             if (read.Ilest != "0")
             {
                 string Il = read.Ilest;
@@ -234,7 +242,7 @@ public class Texts : MonoBehaviour
         {
             TextOff();
         }
-       
+
     }
     public void TextOff()
     {
@@ -250,10 +258,25 @@ public class Texts : MonoBehaviour
                 q.SetActive(false);
             }
         }
+
+    }
+
+    IEnumerator TypingAction()
+    {
+        for (int i = 0; i <=otext.Length; i++)
+        {
+
+            
+
+            stext += otext.Substring(0, i);
+            script.text = stext;
+            stext = "";
+            yield return new WaitForSeconds(0.045f);
+        }
         
     }
-}
 
+}
 
 
 /*
