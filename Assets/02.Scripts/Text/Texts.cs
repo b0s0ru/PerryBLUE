@@ -165,7 +165,7 @@ public class Texts : MonoBehaviour
                     {
                         o.SetActive(true);
                     }
-                    o.GetComponent<ilest>().Change(changenum);
+                    o.GetComponent<ilest>().IlestChange(changenum);
                 }
                 script.text = read.Text;
                 P.stop = true ;
@@ -227,7 +227,7 @@ public class Texts : MonoBehaviour
                 {
                     o.SetActive(true);
                 }
-                o.GetComponent<ilest>().Change(changenum);
+                o.GetComponent<ilest>().IlestChange(changenum);
             }
         }
         else if (TextDB.dataArray[i].Next == "0")

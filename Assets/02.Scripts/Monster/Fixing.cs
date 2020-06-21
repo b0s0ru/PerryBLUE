@@ -14,7 +14,7 @@ public class Fixing : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         x = s.localScale.x;
         if (x == 1 && change==true)

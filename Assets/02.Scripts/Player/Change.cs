@@ -12,7 +12,7 @@ public class Change : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (a.state != Player.PlayerState.die)
         {
@@ -30,6 +30,7 @@ public class Change : MonoBehaviour
         {
             a.isperry = false;
             a.ischange = true;
+            a.Particle[12].Play();
             StartCoroutine(ChangeTime());
             a.eyesight.SetActive(false);
             a.anim.SetBool("Perry", false);
@@ -40,6 +41,7 @@ public class Change : MonoBehaviour
         {
             a.isperry = true;
             a.ischange = true;
+            a.Particle[12].Play();
             StartCoroutine(ChangeTime());
             a.eyesight.SetActive(true);
             a.anim.SetBool("Perry", true);

@@ -17,7 +17,7 @@ public class PlayerWake : MonoBehaviour
         c = GameObject.Find("Canvas").transform.Find("HPbar").gameObject;
         c.SetActive(false);
     }
-    private void Update()
+    private void FixedUpdate()
     {
         a.stop = true;
     }
