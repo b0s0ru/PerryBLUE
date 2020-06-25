@@ -32,7 +32,7 @@ public class AudioControl : MonoBehaviour
 
         a = SceneManager.GetActiveScene().buildIndex;
 
-        if (a == 22 || a == 23 || a == 1 || a == 2)
+        if (a == 23 || a == 24 || a == 1 || a == 2)
         {
             bgmname = "Wind";
             if (bgmname != changename)
@@ -43,7 +43,7 @@ public class AudioControl : MonoBehaviour
 
 
         }
-        else if (a == 24 || (a >= 3 && a <= 11) || a == 0)
+        else if (a == 25 || (a >= 3 && a <= 11) || a == 0)
         {
             bgmname = "ameno";
             if (bgmname != changename)
@@ -53,9 +53,18 @@ public class AudioControl : MonoBehaviour
             }
 
         }
-        else if (a >= 12 && a <= 20)
+        else if (a >= 12 && a <= 21)
         {
             bgmname = "kodoku";
+            if (bgmname != changename)
+            {
+                Audio1(bgmname);
+
+            }
+        }
+        else
+        {
+            bgmname = "BOSS";
             if (bgmname != changename)
             {
                 Audio1(bgmname);

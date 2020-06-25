@@ -78,7 +78,7 @@ public class StartScene : MonoBehaviour
             
             PlayerPrefs.SetString("keys", "Load1");
             PlayerPrefs.Save();
-            SceneManager.LoadScene(22);
+            SceneManager.LoadScene(23);
             
             
         }

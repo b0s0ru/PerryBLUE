@@ -825,7 +825,7 @@ public class Player : MonoBehaviour
     public void MoveSetting(int buildIndex)
     {
         
-            if ((map == 0 || map == 24)&& PlayerPrefs.GetInt("test") == 0d)
+            if ((map == 0 || map == 25)&& PlayerPrefs.GetInt("test") == 0)
             {
 
                 Vector2 xy = GameObject.Find(PlayerPrefs.GetString("keys")).transform.position;
