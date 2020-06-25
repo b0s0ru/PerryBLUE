@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OneMonsterAttack : MonoBehaviour
+public class OnBossBullet : MonoBehaviour
 {
-
+    // Start is called before the first frame update
     public float Damage;
 
     Transform c;
@@ -13,31 +13,37 @@ public class OneMonsterAttack : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-      //  Destroy(this.gameObject, 3);
-      c=Monster.target.GetComponent<Transform>();
-        dir= (c.position - transform.position);
-        dir.Normalize();
+        //  Destroy(this.gameObject, 3);
+        //c = Monster.target.GetComponent<Transform>();
+        int ax = Random.Range(-100, 100);
+        int ay = Random.Range(-100, 100);
 
-        GetComponent<Rigidbody2D>().AddForce(dir * 250);
-        
+        dir.x = ax;
+        dir.y = ay;
+        dir.Normalize();
+      
+        GetComponent<Rigidbody2D>().AddForce(dir * 450);
+
     }
     private void Start()
     {
 
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, 2.5f);
     }
+    private void Update()
+    {
 
+
+
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 8)
-        {
-            Destroy(gameObject);
-        }
+       
         if (collision.transform.tag == "Mpos")
         {
-            
+
             collision.gameObject.SendMessageUpwards("SetDamage", Damage);
-           
+
             Destroy(gameObject);
         }
     }
